@@ -1,0 +1,6028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="GreenButtonDataStyleSheet.xslt"?>
+
+<!--
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+
+To view this data file in a browser in a more readable tabluar form
+please download the GreenButtonDataStyleSheet.xslt file by copying and
+pasting the following link in your browser and place the file in the same
+directory as this XML file:
+=====|
+http://www.greenbuttondata.org/data/downloading.aspx?file=GreenButtonDataStyleSheet.xslt
+|=====
+
+Please leave this heading comment section in this file.
+
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+=========================================================
+-->
+<!--
+==========================================================================
+Sample Green Button Data File:  1dayLP_365Days.xml
+Version: 0.7 20130208
+     Author: Ron Pasquarelli, Marty Burns (Hypertek for EnerNex)
+     Notice: This is draft prototype developed for SGIP by the Administrator Technical Team (EnerNex)
+==========================================================================
+Copyright (c) 2012 EnergyOS.org
+
+Licensed by EnergyOS.org under one or more contributor license agreements.
+
+See the NOTICE file distributed with this work for additional 
+information regarding copyright ownership. The EnergyOS.org licenses this 
+file to you under the Apache License, Version 2.0 (the "; License; "); 
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at:
+http://www.apache.org/licenses/LICENSE-2.0
+  
+Unless required by applicable law or agreed to in writing, software 
+distributed under the License is distributed on an "AS IS" BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
+implied.  See the License for the specific language governing 
+permissions and limitations under the License.
+-->
+    
+<feed xmlns="http://www.w3.org/2005/Atom" xsi:schemaLocation="http://naesb.org/espi espiDerived.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <id>urn:uuid:191199F6-1987-4711-82F9-A6CD65A98AEA</id>
+ <title>ThirdPartyX Batch Feed</title>
+ <updated>2012-10-24T00:00:00Z</updated>
+ <link rel="self" href="/ThirdParty/83e269c1/Batch"/>
+    <entry>
+    <id>urn:uuid:0A2CCD58-5A07-4F9D-8DA7-B470624C16C0</id>
+        <link rel="self" href="RetailCustomer/9b6c7063/UsagePoint/01"/>
+        <link rel="up" href="RetailCustomer/9b6c7063/UsagePoint"/>
+        <link rel="related" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading"/>
+        <link rel="related" href="RetailCustomer/9b6c7063/UsagePoint/01/ElectricPowerUsageSummary"/>
+        <link rel="related" href="LocalTimeParameters/01"/>
+        <title>my house</title>
+        <content>
+            <UsagePoint xmlns="http://naesb.org/espi">
+                <ServiceCategory>
+                    <kind>0</kind>
+                </ServiceCategory>
+            </UsagePoint>
+        </content>
+        <published>2012-10-24T00:00:00Z</published>
+        <updated>2012-10-24T00:00:00Z</updated>
+    </entry>
+    <entry>
+    <id>urn:uuid:D6508B9B-9351-4DFD-A284-E45BB75AEAA9</id>
+            <link rel="self" href="LocalTimeParameters/01"/>
+            <link rel="up" href="LocalTimeParameters"/>
+            <title>DST For North America</title>
+            <content>
+            <LocalTimeParameters xmlns="http://naesb.org/espi">
+                        <dstEndRule>B40E2000</dstEndRule>
+                        <dstOffset>3600</dstOffset>
+                        <dstStartRule>360E2000</dstStartRule>
+                        <tzOffset>-18000</tzOffset>
+            </LocalTimeParameters>
+        </content>
+        <published>2012-10-24T00:00:00Z</published>
+        <updated>2012-10-24T00:00:00Z</updated>
+    </entry>
+    <entry>
+    <id>urn:uuid:1176D26F-D89F-41AD-AC72-30714E49F44E</id>
+        <link rel="self" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/01"/>
+        <link rel="up" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading"/>
+        <link rel="related" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/01/IntervalBlock"/>
+        <link rel="related" href="ReadingType/07"/>
+        <title>Daily Electricity Consumption</title>
+        <content>
+            <MeterReading xmlns="http://naesb.org/espi"/>
+        </content>
+        <published>2012-10-24T00:00:00Z</published>
+        <updated>2012-10-24T00:00:00Z</updated>
+    </entry>
+<entry>
+    <id>urn:uuid:5A357514-E9A1-454C-8F08-CCD2419DFF4E</id>
+    <link rel="self" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/01/IntervalBlock/0173"/>
+    <link rel="up" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/01/IntervalBlock"/>
+    <title/>
+    <content>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325394000</start>
+        <!-- start date: 1/1/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>442883</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325394000</start>
+         <!-- 1/1/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>72696</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325480400</start>
+        <!-- start date: 1/2/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>595282</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325480400</start>
+         <!-- 1/2/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63673</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325566800</start>
+        <!-- start date: 1/3/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>565112</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325566800</start>
+         <!-- 1/3/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60446</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325653200</start>
+        <!-- start date: 1/4/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>622957</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325653200</start>
+         <!-- 1/4/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66633</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325739600</start>
+        <!-- start date: 1/5/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>569060</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325739600</start>
+         <!-- 1/5/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60868</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325826000</start>
+        <!-- start date: 1/6/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>537750</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325826000</start>
+         <!-- 1/6/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>57519</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325912400</start>
+        <!-- start date: 1/7/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>475315</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325912400</start>
+         <!-- 1/7/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>78019</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1325998800</start>
+        <!-- start date: 1/8/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>500276</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1325998800</start>
+         <!-- 1/8/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>82116</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326085200</start>
+        <!-- start date: 1/9/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>616865</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326085200</start>
+         <!-- 1/9/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65981</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326171600</start>
+        <!-- start date: 1/10/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>572562</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326171600</start>
+         <!-- 1/10/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61243</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326258000</start>
+        <!-- start date: 1/11/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>564347</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326258000</start>
+         <!-- 1/11/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60364</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326344400</start>
+        <!-- start date: 1/12/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>543475</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326344400</start>
+         <!-- 1/12/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>58131</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326430800</start>
+        <!-- start date: 1/13/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>533441</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326430800</start>
+         <!-- 1/13/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>57058</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326517200</start>
+        <!-- start date: 1/14/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>478207</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326517200</start>
+         <!-- 1/14/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>78494</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326603600</start>
+        <!-- start date: 1/15/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>473604</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326603600</start>
+         <!-- 1/15/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>77738</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326690000</start>
+        <!-- start date: 1/16/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>590547</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326690000</start>
+         <!-- 1/16/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63166</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326776400</start>
+        <!-- start date: 1/17/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>577782</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326776400</start>
+         <!-- 1/17/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61801</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326862800</start>
+        <!-- start date: 1/18/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>632836</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326862800</start>
+         <!-- 1/18/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67690</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1326949200</start>
+        <!-- start date: 1/19/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>612165</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1326949200</start>
+         <!-- 1/19/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65479</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327035600</start>
+        <!-- start date: 1/20/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>579745</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327035600</start>
+         <!-- 1/20/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62011</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327122000</start>
+        <!-- start date: 1/21/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>413863</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327122000</start>
+         <!-- 1/21/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67932</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327208400</start>
+        <!-- start date: 1/22/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>419130</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327208400</start>
+         <!-- 1/22/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>68797</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327294800</start>
+        <!-- start date: 1/23/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>524716</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327294800</start>
+         <!-- 1/23/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>56125</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327381200</start>
+        <!-- start date: 1/24/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>586371</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327381200</start>
+         <!-- 1/24/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62720</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327467600</start>
+        <!-- start date: 1/25/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>603891</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327467600</start>
+         <!-- 1/25/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64594</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327554000</start>
+        <!-- start date: 1/26/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>571473</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327554000</start>
+         <!-- 1/26/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61126</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327640400</start>
+        <!-- start date: 1/27/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>572236</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327640400</start>
+         <!-- 1/27/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61208</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327726800</start>
+        <!-- start date: 1/28/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>494283</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327726800</start>
+         <!-- 1/28/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>81133</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327813200</start>
+        <!-- start date: 1/29/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>455177</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327813200</start>
+         <!-- 1/29/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>74714</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327899600</start>
+        <!-- start date: 1/30/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>590931</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327899600</start>
+         <!-- 1/30/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63207</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1327986000</start>
+        <!-- start date: 1/31/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>538687</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1327986000</start>
+         <!-- 1/31/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>57619</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328072400</start>
+        <!-- start date: 2/1/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>560972</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328072400</start>
+         <!-- 2/1/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60003</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328158800</start>
+        <!-- start date: 2/2/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>572841</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328158800</start>
+         <!-- 2/2/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61272</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328245200</start>
+        <!-- start date: 2/3/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>582396</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328245200</start>
+         <!-- 2/3/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62294</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328331600</start>
+        <!-- start date: 2/4/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>487640</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328331600</start>
+         <!-- 2/4/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>80042</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328418000</start>
+        <!-- start date: 2/5/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>450994</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328418000</start>
+         <!-- 2/5/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>74027</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328504400</start>
+        <!-- start date: 2/6/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>589439</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328504400</start>
+         <!-- 2/6/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63048</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328590800</start>
+        <!-- start date: 2/7/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>573321</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328590800</start>
+         <!-- 2/7/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61324</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328677200</start>
+        <!-- start date: 2/8/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>546939</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328677200</start>
+         <!-- 2/8/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>58502</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328763600</start>
+        <!-- start date: 2/9/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>612241</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328763600</start>
+         <!-- 2/9/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65487</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328850000</start>
+        <!-- start date: 2/10/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>594924</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328850000</start>
+         <!-- 2/10/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63635</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1328936400</start>
+        <!-- start date: 2/11/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>495809</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1328936400</start>
+         <!-- 2/11/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>81383</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329022800</start>
+        <!-- start date: 2/12/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>455746</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329022800</start>
+         <!-- 2/12/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>74807</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329109200</start>
+        <!-- start date: 2/13/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>612668</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329109200</start>
+         <!-- 2/13/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65532</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329195600</start>
+        <!-- start date: 2/14/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>618243</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329195600</start>
+         <!-- 2/14/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66129</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329282000</start>
+        <!-- start date: 2/15/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>623799</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329282000</start>
+         <!-- 2/15/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66723</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329368400</start>
+        <!-- start date: 2/16/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>619637</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329368400</start>
+         <!-- 2/16/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66278</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329454800</start>
+        <!-- start date: 2/17/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>587394</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329454800</start>
+         <!-- 2/17/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62829</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329541200</start>
+        <!-- start date: 2/18/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>484531</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329541200</start>
+         <!-- 2/18/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>79532</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329627600</start>
+        <!-- start date: 2/19/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>468288</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329627600</start>
+         <!-- 2/19/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>76866</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329714000</start>
+        <!-- start date: 2/20/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>595157</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329714000</start>
+         <!-- 2/20/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63659</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329800400</start>
+        <!-- start date: 2/21/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>617470</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329800400</start>
+         <!-- 2/21/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66046</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329886800</start>
+        <!-- start date: 2/22/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>562415</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329886800</start>
+         <!-- 2/22/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60157</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1329973200</start>
+        <!-- start date: 2/23/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627002</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1329973200</start>
+         <!-- 2/23/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67066</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330059600</start>
+        <!-- start date: 2/24/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>583484</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330059600</start>
+         <!-- 2/24/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62411</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330146000</start>
+        <!-- start date: 2/25/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>479165</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330146000</start>
+         <!-- 2/25/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>78651</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330232400</start>
+        <!-- start date: 2/26/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>442408</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330232400</start>
+         <!-- 2/26/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>72618</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330318800</start>
+        <!-- start date: 2/27/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>598593</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330318800</start>
+         <!-- 2/27/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64027</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330405200</start>
+        <!-- start date: 2/28/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>608323</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330405200</start>
+         <!-- 2/28/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65068</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330491600</start>
+        <!-- start date: 2/29/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>622435</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330491600</start>
+         <!-- 2/29/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66577</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330578000</start>
+        <!-- start date: 3/1/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>587250</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330578000</start>
+         <!-- 3/1/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62814</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330664400</start>
+        <!-- start date: 3/2/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>606431</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330664400</start>
+         <!-- 3/2/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64865</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330750800</start>
+        <!-- start date: 3/3/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>430438</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330750800</start>
+         <!-- 3/3/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>70653</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330837200</start>
+        <!-- start date: 3/4/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>415547</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330837200</start>
+         <!-- 3/4/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>68209</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1330923600</start>
+        <!-- start date: 3/5/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>551767</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1330923600</start>
+         <!-- 3/5/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59018</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331010000</start>
+        <!-- start date: 3/6/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>594448</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331010000</start>
+         <!-- 3/6/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63584</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331096400</start>
+        <!-- start date: 3/7/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>614954</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331096400</start>
+         <!-- 3/7/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65777</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331182800</start>
+        <!-- start date: 3/8/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>562247</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331182800</start>
+         <!-- 3/8/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60139</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331269200</start>
+        <!-- start date: 3/9/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>600153</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331269200</start>
+         <!-- 3/9/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64194</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331355600</start>
+        <!-- start date: 3/10/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>438566</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331355600</start>
+         <!-- 3/10/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>71987</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>82800</duration>
+        <start>1331442000</start>
+        <!-- start date: 3/11/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>461508</cost>
+    <timePeriod>
+        <duration>82800</duration>
+        <start>1331442000</start>
+         <!-- 3/11/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>75249</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331524800</start>
+        <!-- start date: 3/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>596852</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331524800</start>
+         <!-- 3/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63841</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331611200</start>
+        <!-- start date: 3/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>598034</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331611200</start>
+         <!-- 3/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63967</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331697600</start>
+        <!-- start date: 3/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627704</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331697600</start>
+         <!-- 3/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67141</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331784000</start>
+        <!-- start date: 3/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>633817</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331784000</start>
+         <!-- 3/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67795</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331870400</start>
+        <!-- start date: 3/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>553733</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331870400</start>
+         <!-- 3/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59229</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1331956800</start>
+        <!-- start date: 3/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>428914</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1331956800</start>
+         <!-- 3/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70403</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332043200</start>
+        <!-- start date: 3/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>469155</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332043200</start>
+         <!-- 3/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>77008</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332129600</start>
+        <!-- start date: 3/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>611925</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332129600</start>
+         <!-- 3/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65453</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332216000</start>
+        <!-- start date: 3/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>593626</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332216000</start>
+         <!-- 3/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63496</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332302400</start>
+        <!-- start date: 3/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>525713</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332302400</start>
+         <!-- 3/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56232</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332388800</start>
+        <!-- start date: 3/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>571277</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332388800</start>
+         <!-- 3/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61105</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332475200</start>
+        <!-- start date: 3/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>526779</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332475200</start>
+         <!-- 3/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56346</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332561600</start>
+        <!-- start date: 3/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>483110</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332561600</start>
+         <!-- 3/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>79299</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332648000</start>
+        <!-- start date: 3/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>434496</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332648000</start>
+         <!-- 3/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>71319</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332734400</start>
+        <!-- start date: 3/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>584785</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332734400</start>
+         <!-- 3/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62550</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332820800</start>
+        <!-- start date: 3/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>520999</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332820800</start>
+         <!-- 3/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55727</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332907200</start>
+        <!-- start date: 3/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>549282</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332907200</start>
+         <!-- 3/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58752</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1332993600</start>
+        <!-- start date: 3/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>629046</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1332993600</start>
+         <!-- 3/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67284</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333080000</start>
+        <!-- start date: 3/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>523510</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333080000</start>
+         <!-- 3/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55996</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333166400</start>
+        <!-- start date: 3/31/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>504031</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333166400</start>
+         <!-- 3/31/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>82733</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333252800</start>
+        <!-- start date: 4/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>452882</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333252800</start>
+         <!-- 4/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>74337</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333339200</start>
+        <!-- start date: 4/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>562875</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333339200</start>
+         <!-- 4/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60206</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333425600</start>
+        <!-- start date: 4/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>538213</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333425600</start>
+         <!-- 4/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57568</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333512000</start>
+        <!-- start date: 4/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>592693</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333512000</start>
+         <!-- 4/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63396</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333598400</start>
+        <!-- start date: 4/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>595977</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333598400</start>
+         <!-- 4/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63747</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333684800</start>
+        <!-- start date: 4/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>569268</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333684800</start>
+         <!-- 4/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60890</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333771200</start>
+        <!-- start date: 4/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>413352</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333771200</start>
+         <!-- 4/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67848</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333857600</start>
+        <!-- start date: 4/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>445562</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333857600</start>
+         <!-- 4/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73136</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1333944000</start>
+        <!-- start date: 4/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>525904</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1333944000</start>
+         <!-- 4/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56252</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334030400</start>
+        <!-- start date: 4/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>619236</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334030400</start>
+         <!-- 4/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66235</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334116800</start>
+        <!-- start date: 4/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>533072</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334116800</start>
+         <!-- 4/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57019</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334203200</start>
+        <!-- start date: 4/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>520256</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334203200</start>
+         <!-- 4/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55648</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334289600</start>
+        <!-- start date: 4/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>557483</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334289600</start>
+         <!-- 4/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59630</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334376000</start>
+        <!-- start date: 4/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>466564</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334376000</start>
+         <!-- 4/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76583</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334462400</start>
+        <!-- start date: 4/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>468885</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334462400</start>
+         <!-- 4/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76964</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334548800</start>
+        <!-- start date: 4/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>620803</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334548800</start>
+         <!-- 4/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66403</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334635200</start>
+        <!-- start date: 4/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>629970</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334635200</start>
+         <!-- 4/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67383</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334721600</start>
+        <!-- start date: 4/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>545147</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334721600</start>
+         <!-- 4/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58310</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334808000</start>
+        <!-- start date: 4/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>560401</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334808000</start>
+         <!-- 4/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59942</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334894400</start>
+        <!-- start date: 4/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>619118</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334894400</start>
+         <!-- 4/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66222</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1334980800</start>
+        <!-- start date: 4/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>464555</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1334980800</start>
+         <!-- 4/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76253</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335067200</start>
+        <!-- start date: 4/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>504486</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335067200</start>
+         <!-- 4/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>82807</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335153600</start>
+        <!-- start date: 4/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>584217</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335153600</start>
+         <!-- 4/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62489</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335240000</start>
+        <!-- start date: 4/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627050</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335240000</start>
+         <!-- 4/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67071</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335326400</start>
+        <!-- start date: 4/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>581754</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335326400</start>
+         <!-- 4/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62226</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335412800</start>
+        <!-- start date: 4/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>605090</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335412800</start>
+         <!-- 4/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64722</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335499200</start>
+        <!-- start date: 4/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>576975</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335499200</start>
+         <!-- 4/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61715</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335585600</start>
+        <!-- start date: 4/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>489212</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335585600</start>
+         <!-- 4/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>80300</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335672000</start>
+        <!-- start date: 4/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>503324</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335672000</start>
+         <!-- 4/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>82617</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335758400</start>
+        <!-- start date: 4/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>552058</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335758400</start>
+         <!-- 4/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59049</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335844800</start>
+        <!-- start date: 5/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>580668</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335844800</start>
+         <!-- 5/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62110</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1335931200</start>
+        <!-- start date: 5/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>521881</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1335931200</start>
+         <!-- 5/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55822</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336017600</start>
+        <!-- start date: 5/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>609896</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336017600</start>
+         <!-- 5/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65236</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336104000</start>
+        <!-- start date: 5/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>632532</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336104000</start>
+         <!-- 5/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67657</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336190400</start>
+        <!-- start date: 5/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>447865</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336190400</start>
+         <!-- 5/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73514</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336276800</start>
+        <!-- start date: 5/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>497115</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336276800</start>
+         <!-- 5/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>81598</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336363200</start>
+        <!-- start date: 5/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>525661</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336363200</start>
+         <!-- 5/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56226</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336449600</start>
+        <!-- start date: 5/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>585671</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336449600</start>
+         <!-- 5/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62645</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336536000</start>
+        <!-- start date: 5/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>592373</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336536000</start>
+         <!-- 5/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63362</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336622400</start>
+        <!-- start date: 5/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>553098</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336622400</start>
+         <!-- 5/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59161</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336708800</start>
+        <!-- start date: 5/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>605797</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336708800</start>
+         <!-- 5/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64798</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336795200</start>
+        <!-- start date: 5/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>436961</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336795200</start>
+         <!-- 5/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>71724</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336881600</start>
+        <!-- start date: 5/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>461288</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336881600</start>
+         <!-- 5/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>75717</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1336968000</start>
+        <!-- start date: 5/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>522512</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1336968000</start>
+         <!-- 5/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55889</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337054400</start>
+        <!-- start date: 5/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>584306</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337054400</start>
+         <!-- 5/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62499</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337140800</start>
+        <!-- start date: 5/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>520704</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337140800</start>
+         <!-- 5/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55696</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337227200</start>
+        <!-- start date: 5/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627504</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337227200</start>
+         <!-- 5/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67119</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337313600</start>
+        <!-- start date: 5/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>523056</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337313600</start>
+         <!-- 5/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55947</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337400000</start>
+        <!-- start date: 5/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>419683</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337400000</start>
+         <!-- 5/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>68888</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337486400</start>
+        <!-- start date: 5/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>428554</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337486400</start>
+         <!-- 5/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70344</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337572800</start>
+        <!-- start date: 5/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>596993</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337572800</start>
+         <!-- 5/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63856</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337659200</start>
+        <!-- start date: 5/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>572688</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337659200</start>
+         <!-- 5/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61256</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337745600</start>
+        <!-- start date: 5/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>533247</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337745600</start>
+         <!-- 5/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57037</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337832000</start>
+        <!-- start date: 5/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>548600</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337832000</start>
+         <!-- 5/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58680</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1337918400</start>
+        <!-- start date: 5/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>631111</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1337918400</start>
+         <!-- 5/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67505</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338004800</start>
+        <!-- start date: 5/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>428678</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338004800</start>
+         <!-- 5/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70364</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338091200</start>
+        <!-- start date: 5/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>455999</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338091200</start>
+         <!-- 5/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>74849</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338177600</start>
+        <!-- start date: 5/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>526267</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338177600</start>
+         <!-- 5/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56291</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338264000</start>
+        <!-- start date: 5/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>549467</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338264000</start>
+         <!-- 5/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58772</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338350400</start>
+        <!-- start date: 5/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>566087</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338350400</start>
+         <!-- 5/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60550</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338436800</start>
+        <!-- start date: 5/31/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>596615</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338436800</start>
+         <!-- 5/31/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63815</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338523200</start>
+        <!-- start date: 6/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>631771</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338523200</start>
+         <!-- 6/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67576</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338609600</start>
+        <!-- start date: 6/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>431817</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338609600</start>
+         <!-- 6/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70879</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338696000</start>
+        <!-- start date: 6/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>484089</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338696000</start>
+         <!-- 6/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>79459</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338782400</start>
+        <!-- start date: 6/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>545790</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338782400</start>
+         <!-- 6/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58379</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338868800</start>
+        <!-- start date: 6/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>583416</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338868800</start>
+         <!-- 6/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62404</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1338955200</start>
+        <!-- start date: 6/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>626725</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1338955200</start>
+         <!-- 6/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67036</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339041600</start>
+        <!-- start date: 6/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>569265</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339041600</start>
+         <!-- 6/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60890</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339128000</start>
+        <!-- start date: 6/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>632447</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339128000</start>
+         <!-- 6/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67648</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339214400</start>
+        <!-- start date: 6/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>446503</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339214400</start>
+         <!-- 6/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73290</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339300800</start>
+        <!-- start date: 6/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>465723</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339300800</start>
+         <!-- 6/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76445</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339387200</start>
+        <!-- start date: 6/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>583077</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339387200</start>
+         <!-- 6/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62367</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339473600</start>
+        <!-- start date: 6/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>603550</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339473600</start>
+         <!-- 6/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64557</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339560000</start>
+        <!-- start date: 6/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>523809</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339560000</start>
+         <!-- 6/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56028</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339646400</start>
+        <!-- start date: 6/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>522241</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339646400</start>
+         <!-- 6/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55860</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339732800</start>
+        <!-- start date: 6/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>520738</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339732800</start>
+         <!-- 6/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>55699</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339819200</start>
+        <!-- start date: 6/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>426897</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339819200</start>
+         <!-- 6/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70072</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339905600</start>
+        <!-- start date: 6/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>470727</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339905600</start>
+         <!-- 6/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>77266</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1339992000</start>
+        <!-- start date: 6/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>630095</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1339992000</start>
+         <!-- 6/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67396</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340078400</start>
+        <!-- start date: 6/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>560595</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340078400</start>
+         <!-- 6/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59963</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340164800</start>
+        <!-- start date: 6/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>625293</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340164800</start>
+         <!-- 6/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66883</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340251200</start>
+        <!-- start date: 6/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>537988</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340251200</start>
+         <!-- 6/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57544</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340337600</start>
+        <!-- start date: 6/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>530028</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340337600</start>
+         <!-- 6/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56693</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340424000</start>
+        <!-- start date: 6/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>413271</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340424000</start>
+         <!-- 6/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67835</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340510400</start>
+        <!-- start date: 6/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>422846</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340510400</start>
+         <!-- 6/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>69407</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340596800</start>
+        <!-- start date: 6/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>575528</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340596800</start>
+         <!-- 6/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61560</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340683200</start>
+        <!-- start date: 6/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>600148</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340683200</start>
+         <!-- 6/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64193</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340769600</start>
+        <!-- start date: 6/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>597740</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340769600</start>
+         <!-- 6/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63936</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340856000</start>
+        <!-- start date: 6/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>614230</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340856000</start>
+         <!-- 6/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65700</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1340942400</start>
+        <!-- start date: 6/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>558609</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1340942400</start>
+         <!-- 6/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59750</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341028800</start>
+        <!-- start date: 6/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>448317</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341028800</start>
+         <!-- 6/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73588</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341115200</start>
+        <!-- start date: 7/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>426854</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341115200</start>
+         <!-- 7/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70065</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341201600</start>
+        <!-- start date: 7/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>531111</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341201600</start>
+         <!-- 7/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56809</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341288000</start>
+        <!-- start date: 7/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>597670</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341288000</start>
+         <!-- 7/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63928</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341374400</start>
+        <!-- start date: 7/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>529042</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341374400</start>
+         <!-- 7/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56588</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341460800</start>
+        <!-- start date: 7/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>536543</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341460800</start>
+         <!-- 7/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57390</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341547200</start>
+        <!-- start date: 7/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>524882</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341547200</start>
+         <!-- 7/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56143</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341633600</start>
+        <!-- start date: 7/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>436704</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341633600</start>
+         <!-- 7/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>71682</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341720000</start>
+        <!-- start date: 7/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>445335</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341720000</start>
+         <!-- 7/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73098</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341806400</start>
+        <!-- start date: 7/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>588026</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341806400</start>
+         <!-- 7/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62897</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341892800</start>
+        <!-- start date: 7/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>544830</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341892800</start>
+         <!-- 7/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58276</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1341979200</start>
+        <!-- start date: 7/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>571897</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1341979200</start>
+         <!-- 7/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61172</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342065600</start>
+        <!-- start date: 7/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>617914</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342065600</start>
+         <!-- 7/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66094</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342152000</start>
+        <!-- start date: 7/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>523815</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342152000</start>
+         <!-- 7/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56029</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342238400</start>
+        <!-- start date: 7/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>438807</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342238400</start>
+         <!-- 7/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>72027</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342324800</start>
+        <!-- start date: 7/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>446094</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342324800</start>
+         <!-- 7/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73223</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342411200</start>
+        <!-- start date: 7/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>536875</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342411200</start>
+         <!-- 7/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57425</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342497600</start>
+        <!-- start date: 7/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>561823</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342497600</start>
+         <!-- 7/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60094</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342584000</start>
+        <!-- start date: 7/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>620114</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342584000</start>
+         <!-- 7/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66329</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342670400</start>
+        <!-- start date: 7/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>529149</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342670400</start>
+         <!-- 7/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56599</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342756800</start>
+        <!-- start date: 7/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>600816</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342756800</start>
+         <!-- 7/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64265</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342843200</start>
+        <!-- start date: 7/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>482999</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342843200</start>
+         <!-- 7/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>79281</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1342929600</start>
+        <!-- start date: 7/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>484688</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1342929600</start>
+         <!-- 7/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>79558</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343016000</start>
+        <!-- start date: 7/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>560939</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343016000</start>
+         <!-- 7/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59999</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343102400</start>
+        <!-- start date: 7/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>536244</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343102400</start>
+         <!-- 7/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57358</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343188800</start>
+        <!-- start date: 7/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>621932</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343188800</start>
+         <!-- 7/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66523</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343275200</start>
+        <!-- start date: 7/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>553684</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343275200</start>
+         <!-- 7/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59223</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343361600</start>
+        <!-- start date: 7/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>559877</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343361600</start>
+         <!-- 7/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59886</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343448000</start>
+        <!-- start date: 7/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>485525</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343448000</start>
+         <!-- 7/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>79695</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343534400</start>
+        <!-- start date: 7/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>447010</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343534400</start>
+         <!-- 7/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73373</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343620800</start>
+        <!-- start date: 7/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>621775</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343620800</start>
+         <!-- 7/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66507</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343707200</start>
+        <!-- start date: 7/31/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>604729</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343707200</start>
+         <!-- 7/31/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64683</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343793600</start>
+        <!-- start date: 8/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>565209</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343793600</start>
+         <!-- 8/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60456</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343880000</start>
+        <!-- start date: 8/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>573415</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343880000</start>
+         <!-- 8/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61334</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1343966400</start>
+        <!-- start date: 8/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>526387</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1343966400</start>
+         <!-- 8/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56304</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344052800</start>
+        <!-- start date: 8/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>418026</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344052800</start>
+         <!-- 8/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>68616</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344139200</start>
+        <!-- start date: 8/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>431859</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344139200</start>
+         <!-- 8/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70886</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344225600</start>
+        <!-- start date: 8/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>525882</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344225600</start>
+         <!-- 8/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56250</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344312000</start>
+        <!-- start date: 8/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>579633</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344312000</start>
+         <!-- 8/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61999</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344398400</start>
+        <!-- start date: 8/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>547262</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344398400</start>
+         <!-- 8/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58536</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344484800</start>
+        <!-- start date: 8/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>539066</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344484800</start>
+         <!-- 8/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57660</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344571200</start>
+        <!-- start date: 8/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>612676</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344571200</start>
+         <!-- 8/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65533</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344657600</start>
+        <!-- start date: 8/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>464417</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344657600</start>
+         <!-- 8/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76230</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344744000</start>
+        <!-- start date: 8/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>459621</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344744000</start>
+         <!-- 8/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>75443</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344830400</start>
+        <!-- start date: 8/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>577920</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344830400</start>
+         <!-- 8/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61816</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1344916800</start>
+        <!-- start date: 8/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>595330</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1344916800</start>
+         <!-- 8/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63678</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345003200</start>
+        <!-- start date: 8/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>597901</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345003200</start>
+         <!-- 8/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63953</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345089600</start>
+        <!-- start date: 8/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>562849</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345089600</start>
+         <!-- 8/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60204</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345176000</start>
+        <!-- start date: 8/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>569683</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345176000</start>
+         <!-- 8/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60935</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345262400</start>
+        <!-- start date: 8/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>459182</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345262400</start>
+         <!-- 8/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>75371</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345348800</start>
+        <!-- start date: 8/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>460269</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345348800</start>
+         <!-- 8/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>75549</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345435200</start>
+        <!-- start date: 8/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>524058</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345435200</start>
+         <!-- 8/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56054</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345521600</start>
+        <!-- start date: 8/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>543274</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345521600</start>
+         <!-- 8/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58110</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345608000</start>
+        <!-- start date: 8/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>536568</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345608000</start>
+         <!-- 8/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57393</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345694400</start>
+        <!-- start date: 8/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627491</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345694400</start>
+         <!-- 8/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67118</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345780800</start>
+        <!-- start date: 8/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>625622</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345780800</start>
+         <!-- 8/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66918</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345867200</start>
+        <!-- start date: 8/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>446691</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345867200</start>
+         <!-- 8/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>73321</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1345953600</start>
+        <!-- start date: 8/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>461814</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1345953600</start>
+         <!-- 8/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>75803</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346040000</start>
+        <!-- start date: 8/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>574370</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346040000</start>
+         <!-- 8/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61436</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346126400</start>
+        <!-- start date: 8/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>577393</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346126400</start>
+         <!-- 8/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61759</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346212800</start>
+        <!-- start date: 8/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>549917</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346212800</start>
+         <!-- 8/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58820</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346299200</start>
+        <!-- start date: 8/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>536080</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346299200</start>
+         <!-- 8/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57340</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346385600</start>
+        <!-- start date: 8/31/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>628334</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346385600</start>
+         <!-- 8/31/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67208</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346472000</start>
+        <!-- start date: 9/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>451232</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346472000</start>
+         <!-- 9/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>74066</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346558400</start>
+        <!-- start date: 9/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>489755</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346558400</start>
+         <!-- 9/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>80390</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346644800</start>
+        <!-- start date: 9/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>608006</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346644800</start>
+         <!-- 9/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65034</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346731200</start>
+        <!-- start date: 9/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>557197</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346731200</start>
+         <!-- 9/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59599</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346817600</start>
+        <!-- start date: 9/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>606426</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346817600</start>
+         <!-- 9/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64865</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346904000</start>
+        <!-- start date: 9/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>587989</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346904000</start>
+         <!-- 9/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62893</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1346990400</start>
+        <!-- start date: 9/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>565745</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1346990400</start>
+         <!-- 9/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60513</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347076800</start>
+        <!-- start date: 9/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>498835</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347076800</start>
+         <!-- 9/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>81880</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347163200</start>
+        <!-- start date: 9/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>474339</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347163200</start>
+         <!-- 9/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>77859</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347249600</start>
+        <!-- start date: 9/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>625745</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347249600</start>
+         <!-- 9/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66931</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347336000</start>
+        <!-- start date: 9/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>574686</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347336000</start>
+         <!-- 9/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61470</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347422400</start>
+        <!-- start date: 9/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>608746</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347422400</start>
+         <!-- 9/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65113</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347508800</start>
+        <!-- start date: 9/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>539301</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347508800</start>
+         <!-- 9/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57685</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347595200</start>
+        <!-- start date: 9/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>584505</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347595200</start>
+         <!-- 9/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62520</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347681600</start>
+        <!-- start date: 9/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>442257</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347681600</start>
+         <!-- 9/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>72593</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347768000</start>
+        <!-- start date: 9/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>432744</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347768000</start>
+         <!-- 9/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>71031</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347854400</start>
+        <!-- start date: 9/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>548033</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347854400</start>
+         <!-- 9/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58619</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1347940800</start>
+        <!-- start date: 9/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>566565</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1347940800</start>
+         <!-- 9/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60601</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348027200</start>
+        <!-- start date: 9/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>613871</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348027200</start>
+         <!-- 9/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>65661</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348113600</start>
+        <!-- start date: 9/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>617713</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348113600</start>
+         <!-- 9/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66072</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348200000</start>
+        <!-- start date: 9/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>536805</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348200000</start>
+         <!-- 9/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57418</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348286400</start>
+        <!-- start date: 9/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>458590</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348286400</start>
+         <!-- 9/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>75274</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348372800</start>
+        <!-- start date: 9/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>452454</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348372800</start>
+         <!-- 9/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>74267</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348459200</start>
+        <!-- start date: 9/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>596903</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348459200</start>
+         <!-- 9/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63846</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348545600</start>
+        <!-- start date: 9/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>634653</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348545600</start>
+         <!-- 9/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>67884</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348632000</start>
+        <!-- start date: 9/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>551802</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348632000</start>
+         <!-- 9/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59022</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348718400</start>
+        <!-- start date: 9/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>557673</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348718400</start>
+         <!-- 9/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59650</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348804800</start>
+        <!-- start date: 9/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>568372</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348804800</start>
+         <!-- 9/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>60794</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348891200</start>
+        <!-- start date: 9/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>468061</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348891200</start>
+         <!-- 9/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76829</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1348977600</start>
+        <!-- start date: 9/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>427859</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1348977600</start>
+         <!-- 9/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70230</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349064000</start>
+        <!-- start date: 10/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>624770</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349064000</start>
+         <!-- 10/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66827</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349150400</start>
+        <!-- start date: 10/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>550949</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349150400</start>
+         <!-- 10/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58931</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349236800</start>
+        <!-- start date: 10/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>579607</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349236800</start>
+         <!-- 10/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61996</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349323200</start>
+        <!-- start date: 10/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>545446</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349323200</start>
+         <!-- 10/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58342</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349409600</start>
+        <!-- start date: 10/5/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>571840</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349409600</start>
+         <!-- 10/5/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61165</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349496000</start>
+        <!-- start date: 10/6/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>475930</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349496000</start>
+         <!-- 10/6/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>78120</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349582400</start>
+        <!-- start date: 10/7/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>453369</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349582400</start>
+         <!-- 10/7/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>74417</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349668800</start>
+        <!-- start date: 10/8/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>552524</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349668800</start>
+         <!-- 10/8/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59099</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349755200</start>
+        <!-- start date: 10/9/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>529893</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349755200</start>
+         <!-- 10/9/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56679</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349841600</start>
+        <!-- start date: 10/10/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>584283</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349841600</start>
+         <!-- 10/10/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62496</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1349928000</start>
+        <!-- start date: 10/11/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>598686</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1349928000</start>
+         <!-- 10/11/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64037</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350014400</start>
+        <!-- start date: 10/12/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>534928</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350014400</start>
+         <!-- 10/12/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57217</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350100800</start>
+        <!-- start date: 10/13/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>414401</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350100800</start>
+         <!-- 10/13/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>68021</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350187200</start>
+        <!-- start date: 10/14/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>472806</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350187200</start>
+         <!-- 10/14/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>77607</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350273600</start>
+        <!-- start date: 10/15/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>532174</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350273600</start>
+         <!-- 10/15/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56923</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350360000</start>
+        <!-- start date: 10/16/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>525857</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350360000</start>
+         <!-- 10/16/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56247</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350446400</start>
+        <!-- start date: 10/17/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>625730</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350446400</start>
+         <!-- 10/17/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66930</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350532800</start>
+        <!-- start date: 10/18/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>537811</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350532800</start>
+         <!-- 10/18/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57525</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350619200</start>
+        <!-- start date: 10/19/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>534373</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350619200</start>
+         <!-- 10/19/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>57158</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350705600</start>
+        <!-- start date: 10/20/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>468407</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350705600</start>
+         <!-- 10/20/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>76885</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350792000</start>
+        <!-- start date: 10/21/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>479828</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350792000</start>
+         <!-- 10/21/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>78760</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350878400</start>
+        <!-- start date: 10/22/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>596773</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350878400</start>
+         <!-- 10/22/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>63832</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1350964800</start>
+        <!-- start date: 10/23/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>527713</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1350964800</start>
+         <!-- 10/23/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>56445</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351051200</start>
+        <!-- start date: 10/24/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>588666</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351051200</start>
+         <!-- 10/24/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62965</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351137600</start>
+        <!-- start date: 10/25/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>577577</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351137600</start>
+         <!-- 10/25/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61779</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351224000</start>
+        <!-- start date: 10/26/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>550000</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351224000</start>
+         <!-- 10/26/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>58829</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351310400</start>
+        <!-- start date: 10/27/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>482113</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351310400</start>
+         <!-- 10/27/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>79135</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351396800</start>
+        <!-- start date: 10/28/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>452119</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351396800</start>
+         <!-- 10/28/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>74212</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351483200</start>
+        <!-- start date: 10/29/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>600203</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351483200</start>
+         <!-- 10/29/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>64199</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351569600</start>
+        <!-- start date: 10/30/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>625860</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351569600</start>
+         <!-- 10/30/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>66943</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351656000</start>
+        <!-- start date: 10/31/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>553222</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351656000</start>
+         <!-- 10/31/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>59174</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351742400</start>
+        <!-- start date: 11/1/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>577797</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351742400</start>
+         <!-- 11/1/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>61803</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351828800</start>
+        <!-- start date: 11/2/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>586346</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351828800</start>
+         <!-- 11/2/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>62717</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1351915200</start>
+        <!-- start date: 11/3/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>427572</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1351915200</start>
+         <!-- 11/3/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>70183</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>90000</duration>
+        <start>1352001600</start>
+        <!-- start date: 11/4/2012 4:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>434825</cost>
+    <timePeriod>
+        <duration>90000</duration>
+        <start>1352001600</start>
+         <!-- 11/4/2012 4:00:00 AM  -->
+    </timePeriod>
+    <value>71844</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352091600</start>
+        <!-- start date: 11/5/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>531267</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352091600</start>
+         <!-- 11/5/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>56826</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352178000</start>
+        <!-- start date: 11/6/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627226</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352178000</start>
+         <!-- 11/6/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67090</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352264400</start>
+        <!-- start date: 11/7/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>624425</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352264400</start>
+         <!-- 11/7/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66790</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352350800</start>
+        <!-- start date: 11/8/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>607178</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352350800</start>
+         <!-- 11/8/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64945</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352437200</start>
+        <!-- start date: 11/9/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>555524</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352437200</start>
+         <!-- 11/9/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59420</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352523600</start>
+        <!-- start date: 11/10/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>415975</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352523600</start>
+         <!-- 11/10/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>68279</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352610000</start>
+        <!-- start date: 11/11/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>476577</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352610000</start>
+         <!-- 11/11/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>78226</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352696400</start>
+        <!-- start date: 11/12/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>572479</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352696400</start>
+         <!-- 11/12/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61234</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352782800</start>
+        <!-- start date: 11/13/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>558769</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352782800</start>
+         <!-- 11/13/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59767</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352869200</start>
+        <!-- start date: 11/14/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>613757</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352869200</start>
+         <!-- 11/14/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65649</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1352955600</start>
+        <!-- start date: 11/15/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>630846</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1352955600</start>
+         <!-- 11/15/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67477</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353042000</start>
+        <!-- start date: 11/16/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>632155</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353042000</start>
+         <!-- 11/16/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67617</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353128400</start>
+        <!-- start date: 11/17/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>414447</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353128400</start>
+         <!-- 11/17/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>68028</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353214800</start>
+        <!-- start date: 11/18/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>447835</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353214800</start>
+         <!-- 11/18/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>73509</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353301200</start>
+        <!-- start date: 11/19/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>611786</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353301200</start>
+         <!-- 11/19/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>65438</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353387600</start>
+        <!-- start date: 11/20/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>539902</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353387600</start>
+         <!-- 11/20/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>57749</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353474000</start>
+        <!-- start date: 11/21/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>582391</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353474000</start>
+         <!-- 11/21/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62294</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353560400</start>
+        <!-- start date: 11/22/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>592091</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353560400</start>
+         <!-- 11/22/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63331</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353646800</start>
+        <!-- start date: 11/23/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>605955</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353646800</start>
+         <!-- 11/23/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64814</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353733200</start>
+        <!-- start date: 11/24/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>455434</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353733200</start>
+         <!-- 11/24/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>74756</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353819600</start>
+        <!-- start date: 11/25/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>464080</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353819600</start>
+         <!-- 11/25/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>76175</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353906000</start>
+        <!-- start date: 11/26/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>552136</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353906000</start>
+         <!-- 11/26/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59058</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1353992400</start>
+        <!-- start date: 11/27/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>634663</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1353992400</start>
+         <!-- 11/27/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67885</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354078800</start>
+        <!-- start date: 11/28/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>557893</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354078800</start>
+         <!-- 11/28/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59674</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354165200</start>
+        <!-- start date: 11/29/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>557104</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354165200</start>
+         <!-- 11/29/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59589</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354251600</start>
+        <!-- start date: 11/30/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>524186</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354251600</start>
+         <!-- 11/30/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>56068</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354338000</start>
+        <!-- start date: 12/1/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>482194</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354338000</start>
+         <!-- 12/1/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>79148</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354424400</start>
+        <!-- start date: 12/2/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>435608</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354424400</start>
+         <!-- 12/2/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>71502</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354510800</start>
+        <!-- start date: 12/3/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>557908</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354510800</start>
+         <!-- 12/3/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>59675</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354597200</start>
+        <!-- start date: 12/4/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>525407</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354597200</start>
+         <!-- 12/4/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>56199</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354683600</start>
+        <!-- start date: 12/5/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>620451</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354683600</start>
+         <!-- 12/5/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66365</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354770000</start>
+        <!-- start date: 12/6/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>595174</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354770000</start>
+         <!-- 12/6/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63661</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354856400</start>
+        <!-- start date: 12/7/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>634452</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354856400</start>
+         <!-- 12/7/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67862</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1354942800</start>
+        <!-- start date: 12/8/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>469504</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1354942800</start>
+         <!-- 12/8/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>77065</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355029200</start>
+        <!-- start date: 12/9/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>485519</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355029200</start>
+         <!-- 12/9/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>79694</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355115600</start>
+        <!-- start date: 12/10/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>563074</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355115600</start>
+         <!-- 12/10/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60228</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355202000</start>
+        <!-- start date: 12/11/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>600594</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355202000</start>
+         <!-- 12/11/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>64241</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355288400</start>
+        <!-- start date: 12/12/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>534016</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355288400</start>
+         <!-- 12/12/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>57120</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355374800</start>
+        <!-- start date: 12/13/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>588595</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355374800</start>
+         <!-- 12/13/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62958</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355461200</start>
+        <!-- start date: 12/14/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>535706</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355461200</start>
+         <!-- 12/14/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>57300</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355547600</start>
+        <!-- start date: 12/15/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>419812</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355547600</start>
+         <!-- 12/15/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>68909</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355634000</start>
+        <!-- start date: 12/16/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>440505</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355634000</start>
+         <!-- 12/16/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>72305</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355720400</start>
+        <!-- start date: 12/17/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>577522</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355720400</start>
+         <!-- 12/17/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61773</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355806800</start>
+        <!-- start date: 12/18/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>568728</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355806800</start>
+         <!-- 12/18/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60832</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355893200</start>
+        <!-- start date: 12/19/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>573546</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355893200</start>
+         <!-- 12/19/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61348</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1355979600</start>
+        <!-- start date: 12/20/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>587712</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1355979600</start>
+         <!-- 12/20/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>62863</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356066000</start>
+        <!-- start date: 12/21/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>567553</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356066000</start>
+         <!-- 12/21/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60707</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356152400</start>
+        <!-- start date: 12/22/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>463491</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356152400</start>
+         <!-- 12/22/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>76078</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356238800</start>
+        <!-- start date: 12/23/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>484090</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356238800</start>
+         <!-- 12/23/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>79460</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356325200</start>
+        <!-- start date: 12/24/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>627456</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356325200</start>
+         <!-- 12/24/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67114</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356411600</start>
+        <!-- start date: 12/25/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>620013</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356411600</start>
+         <!-- 12/25/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>66318</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356498000</start>
+        <!-- start date: 12/26/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>631571</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356498000</start>
+         <!-- 12/26/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>67554</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356584400</start>
+        <!-- start date: 12/27/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>564289</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356584400</start>
+         <!-- 12/27/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>60358</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356670800</start>
+        <!-- start date: 12/28/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>597057</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356670800</start>
+         <!-- 12/28/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>63863</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356757200</start>
+        <!-- start date: 12/29/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>427249</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356757200</start>
+         <!-- 12/29/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>70130</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356843600</start>
+        <!-- start date: 12/30/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>496055</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356843600</start>
+         <!-- 12/30/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>81424</value>
+</IntervalReading>
+</IntervalBlock>
+<IntervalBlock xmlns="http://naesb.org/espi">
+    <interval>
+        <duration>86400</duration>
+        <start>1356930000</start>
+        <!-- start date: 12/31/2012 5:00:00 AM -->
+    </interval>
+<IntervalReading>
+    <cost>579353</cost>
+    <timePeriod>
+        <duration>86400</duration>
+        <start>1356930000</start>
+         <!-- 12/31/2012 5:00:00 AM  -->
+    </timePeriod>
+    <value>61969</value>
+</IntervalReading>
+</IntervalBlock>
+    </content>
+    <published>2012-10-24T00:00:00Z</published>
+    <updated>2012-10-24T00:00:00Z</updated>
+</entry>
+    <entry>
+    <id>urn:uuid:72B47EE0-373C-4827-86D8-0D9EE178DEB4</id>
+        <link rel="self" href="ReadingType/07"/>
+        <link rel="up" href="ReadingType"/>
+        <title>Energy Delivered (kWh)</title>
+        <content>
+            <ReadingType xmlns="http://naesb.org/espi">
+                <accumulationBehaviour>4</accumulationBehaviour>
+                <commodity>1</commodity>
+                <currency>840</currency>
+                <dataQualifier>12</dataQualifier>
+                <flowDirection>1</flowDirection>
+                <intervalLength>86400</intervalLength>
+                <kind>12</kind>
+                <phase>769</phase>
+                <powerOfTenMultiplier>0</powerOfTenMultiplier>
+                <timeAttribute>0</timeAttribute>
+                <uom>72</uom>
+            </ReadingType>
+        </content>
+        <published>2012-10-24T00:00:00Z</published>
+        <updated>2012-10-24T00:00:00Z</updated>
+    </entry>
+    <entry>
+    <id>urn:uuid:C5239D87-07F8-4687-9174-CB9DAFCBF7D4</id>
+        <link rel="self" href="RetailCustomer/9b6c7063/ElectricPowerUsageSummary/01"/>
+        <link rel="up" type="" href="RetailCustomer/9b6c7063/UsagePoint/01/ElectricPowerUsageSummary"/>
+        <title>Usage Summary</title>
+        <content>
+            <ElectricPowerUsageSummary xmlns="http://naesb.org/espi">
+                <billingPeriod>
+                    <duration>2592000</duration>
+                    <start>1325394000</start>
+                </billingPeriod>
+                <billLastPeriod>20840000</billLastPeriod>
+                <billToDate>182372000</billToDate>
+                <costAdditionalLastPeriod>4525000</costAdditionalLastPeriod>
+                <currency>840</currency>
+                <overallConsumptionLastPeriod>
+                    <powerOfTenMultiplier>0</powerOfTenMultiplier>
+                    <uom>72</uom>
+                    <value>1982682</value>
+                </overallConsumptionLastPeriod>
+                <currentBillingPeriodOverAllConsumption>
+                    <powerOfTenMultiplier>0</powerOfTenMultiplier>
+                    <timeStamp>1357016400</timeStamp>
+                    <uom>72</uom>
+                    <value>22007989</value>
+                </currentBillingPeriodOverAllConsumption>
+                <qualityOfReading>14</qualityOfReading>
+                <statusTimeStamp>1357016400</statusTimeStamp>
+            </ElectricPowerUsageSummary>
+        </content>
+        <published>2012-10-24T00:00:00Z</published>
+        <updated>2012-10-24T00:00:00Z</updated>
+    </entry>
+</feed>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+==========================================================================
+ html: index.html
+    Version: 0.7.20121130
+     Author: Ron Pasquarelli, Marty Burns (Hypertek for EnerNex)
+     Notice: This is draft prototype developed for SGIP by the Administrator Technical Team (EnerNex)
+========================================================================== 
+-->
+<html>
+<head>
+
+<style type="text/css">
+
+table, td, th
+{
+	border:1px solid rgb(6,134,34); 
+	border-collapse:collapse;
+}
+th
+{
+	background-color:rgb(6,134,34);
+	color:white;
+}
+
+.TableHeader {
+	font-family:Verdana;
+	font-size:16pt;
+	font-style:normal;  
+	background-color:rgb(6,134,34);
+	color:white;	
+	border:1px solid rgb(6,134,34); 
+}
+	
+.TableText {
+	color: black;
+	font-family:Verdana;
+	font-size: 12pt;
+	font-style:normal;
+}	 
+	 
+.dummytable
+{
+border:0;
+}
+
+input.button_add {
+    background-image: url('http://www.greenbuttondata.org/images/green-DownloadText48.png'); /* 16x16 px */
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 16px;
+    padding-left: 16px;
+    vertical-align: middle;
+}
+
+	
+</style>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>The Green Button Data Demonstration</title>
+<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/jsxml.js"></script>
+<script language="javascript" type="text/javascript" src="js/highcharts.js" ></script>
+<script language="javascript" type="text/javascript" src="js/greendevelop.js"></script>
+<script language="javascript" type="text/javascript">
+ 
+	function GBPress()
+	{
+		var e = document.getElementById("fileSelection");
+		var iSelIdx = e.options[e.selectedIndex].value;
+	
+		if(iSelIdx==1)
+		{
+			refreshResult('./data/15MinLP_15Days.xml','./data/GreenButtonDataOrgDeveloperStyleSheet.xslt');
+		}	
+		if(iSelIdx==2)
+		{
+			refreshResult('./data/1dayLP_45Days.xml','./data/GreenButtonDataOrgDeveloperStyleSheet.xslt');
+		}		
+		if(iSelIdx==3)
+		{
+			refreshResult('./data/1hrLP_32Days.xml','./data/GreenButtonDataOrgDeveloperStyleSheet.xslt');
+		}			
+	};
+
+	function GBPressDownload()
+	{
+		var url;
+		var e = document.getElementById("fileSelection");
+		var iSelIdx = e.options[e.selectedIndex].value;
+		
+		if(iSelIdx==1)
+		{
+			url='./data/15MinLP_15Days.zip'; 
+		}
+		if(iSelIdx==2)
+		{
+			url='./data/1dayLP_45Days.zip'; 
+		}			
+		if(iSelIdx==3)
+		{
+			url='./data/1hrLP_32Days.zip'; 
+		}			
+		window.open(url,'Download');
+	};
+
+</script>
+</head>
+
+
+<body>
+
+
+<!--<span style="font-family:Verdana; font-size:larger; font-weight:bold; ">The Green Button Data Page: Energy Usage Information Demonstration</span>-->
+<table width="100%" height="70px">
+  <tr bgcolor="#404040">
+  <td align="center"> <span style="font-family:Impact; font-size:28px; ">
+    <font color="#ffffff">The</font> <font color="#86C67C">Green Button</font> <font color="#ffffff">Data Demonstration
+   </font></span>
+     </td></tr>
+  <table margin="5">
+   <tbody>
+   <tr>
+    <td bgcolor="#86C67C">
+    <span style="font-family:Calibri; font-size:16px; ">
+<p>The Green Button Challenge is one step towards realizing the common-sense idea that consumers should have access to their own energy usage information in a downloadable, easy-to-use electronic format, offered by their utility or retail energy service provider.</p> <p>In September 2011, U.S. Chief Technology Officer Aneesh Chopra challenged utilities across the country to develop a "Green Button"-detailed customer usage information available for download in a simple, common format.</p> 
+    <p></p>
+    <p>
+    For further information<ul><li><a href="http://www.whitehouse.gov/blog/2011/11/21/empowering-customers-green-button" target="_blank">Empowering Customers With a Green Button | The White House</a> <li><a href="http://collaborate.nist.gov/twiki-sggrid/bin/view/SmartGrid/GreenButtonInitiative" target="_blank">NIST Smart Grid Green Button Initiative</a></ul>
+    </p>
+    </td>
+    <td><iframe width="400" height="225" src="http://www.youtube.com/embed/NRZoSz0EwBU" frameborder="0" allowfullscreen></iframe></td>
+   </tr>
+   </tbody>
+  </table>
+ </tbody>
+</table>
+ 
+ 
+<table border="0" width = "100%">
+ <tr>
+  <td width="30%" valign="top"><span style="font-family:Calibri; font-size:16px; ">
+Please select a sample data file:
+   <select id="fileSelection">
+	  <option value="1">15MinLP_15Days.xml</option>
+	  <option value="2">1dayLP_45Days.xml</option>	
+	  <option value="3">1hrLP_32Days.xml</option>		
+   </select>
+   then display or download by clicking on one of the Green Buttons.
+   </br>
+   </td><td width="35%" valign="top"><span style="font-family:Calibri; font-size:16px; ">
+After displaying, clicking on a Daily Usage bar navigates to Hourly Usage information for that day. Clicking again on an Hourly Usage bar navigates back to Daily Usage.
+  </td>
+  <td>
+  <button class="button_add" style="background: transparent" onclick="GBPress()"><img src="http://www.greenbuttondata.org/images/green-ViewText48Enex.png" /></button>
+     <button class="button_add" style="background: transparent" onclick="GBPressDownload()"><img src="http://www.greenbuttondata.org/images/green-DownloadText48Enex.png" /></button>
+  </td>  
+ </tr>
+</table>
+</br>
+
+
+
+<div id="container" style="width: 1000px; height: 400px; margin: 0 auto"></div>
+<p></p>
+<div id="example" />
+<p></p>
+
+
+</body>
+</html>
