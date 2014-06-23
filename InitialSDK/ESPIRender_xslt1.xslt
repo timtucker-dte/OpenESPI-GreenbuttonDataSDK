@@ -8,13 +8,33 @@
 ========================================================================== 
 Copyright (c) 2011, 2012 EnergyOS.Org
  
-Licensed by EnergyOS.Org under one or more contributor license agreements.
- 
-See the NOTICE file distributed with this work for additional information regarding copyright ownership.  The EnergyOS.org licenses this file to you under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at:
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.
+This product includes software developed within the EnergyOS Initiative
+Copyright (c) 2011, 2012, 2013, 2014 EnergyOS.Org
 
+Licensed by EnergyOS.Org under one or more contributor license agreements.
+See the NOTICE section file below for additional information
+regarding copyright ownership.  The EnergyOS.org licenses this file
+to you under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License.  You may obtain a copy
+of the License at:
+ 
+  http://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+
+______________________________________________________
+NOTICE
+______________________________________________________
+This file incorporates with the author's permission part of the contents of datetime_lib.xsl
+	(c)2001,2002 MarrowSoft Limited.  ALL RIGHTS RESERVED.
+        No limitation on use - except this code may not be published,
+        in whole or in part, without prior written consent of copyright
+        owner.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:espi="http://naesb.org/espi" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<xsl:variable name="XML" select="/"/>
