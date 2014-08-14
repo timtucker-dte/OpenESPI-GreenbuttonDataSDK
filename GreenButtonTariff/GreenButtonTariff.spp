@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
+		<File FilePath="data\1hrLP_32DaysCost.xml" HomeFolder="Yes"/>
+		<File FilePath="data\1hrLP_32DaysNoCost.xml" HomeFolder="Yes"/>
+		<File FilePath="data\1hrLP_32DaysNoCostTEST_FIXED_TARIFF.xml" HomeFolder="Yes"/>
+		<File FilePath="data\1hrLP_32DaysNoCostTEST_VARY_TARIFF.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Coastal_Multi_Family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Coastal_Single_Family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Desert_Multi_Family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Desert_Single_Family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Inland_Multi_Family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Inland_Single_Family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Mountain_Multi_family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\2Month_Mountain_Single_family_Jan_1_2011_to_Mar_1_2011.xml" HomeFolder="Yes"/>
+		<File FilePath="data\atom.xsd" HomeFolder="Yes"/>
+		<File FilePath="data\espi.xsd" HomeFolder="Yes"/>
+		<File FilePath="data\espiDerived.xsd" HomeFolder="Yes"/>
+		<File FilePath="data\GreenButtonDataStyleSheet.xslt" HomeFolder="Yes"/>
+		<File FilePath="data\SampleTariffTable.xlsx" HomeFolder="Yes"/>
+		<File FilePath="TariffSample.xml" HomeFolder="Yes"/>
+		<File FilePath="data\TariffSampleTEST_FIXED_TARIFF.xml" HomeFolder="Yes"/>
+		<File FilePath="data\TariffSampleTEST_VARY_TARIFF.xml" HomeFolder="Yes"/>
+		<File FilePath="data\TestWrapper.html" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt">
+		<File FilePath="GreenButtonApplyTariff.xslt" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery"/>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath="atom.xsd" HomeFolder="Yes"/>
+		<File FilePath="espi.xsd" HomeFolder="Yes"/>
+		<File FilePath="espiDerived.xsd" HomeFolder="Yes"/>
+		<File FilePath="tariff.xsd" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="Entities" ExtStr="ent"/>
+</Project>

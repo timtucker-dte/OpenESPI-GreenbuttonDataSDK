@@ -1,0 +1,1 @@
+ msxsl %1 GreenButtonApplyTariff.xslt > SampleGen1.xml
