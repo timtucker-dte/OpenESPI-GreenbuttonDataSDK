@@ -1,1 +1,1 @@
- msxsl %1 GreenButtonApplyTariff.xslt > SampleGen1.xml
+ msxsl %1 GreenButtonApplyTariff.xslt pTariffFileName=TariffSample.xml > SampleGen1.xml

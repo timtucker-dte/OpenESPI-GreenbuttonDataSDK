@@ -2,7 +2,7 @@
 <!--
 ==========================================================================
  Stylesheet: GreenButtonDataStyleSheet.xsl
-    Version: 0.7.20130104
+    Version: 0.7 20120501
      Author: Ron Pasquarelli, Marty Burns (Hypertek for EnerNex)
      Notice: This is draft prototype developed for SGIP by the Administrator Technical Team (EnerNex)
 ========================================================================== 
@@ -22,7 +22,9 @@ Unless required by applicable law or agreed to in writing, software distributed 
 	<xsl:variable name="gl_PresentationMultiplierGas" select="5"/>
 	<xsl:variable name="gl_PresentationMultiplierTherms" select="0"/>
 	<xsl:variable name="gl_PresentationMultiplierWater" select="3"/>
+	<xsl:variable name="gl_ServiceKind" select="$XML/atom:feed/atom:entry/atom:content/espi:UsagePoint/espi:ServiceCategory/espi:kind"/>
 	<xsl:variable name="GL_DEBUG_TIME" select="0"/>
+	
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -69,206 +71,151 @@ Unless required by applicable law or agreed to in writing, software distributed 
 			</head>
 			<body>
 				<xsl:for-each select="$XML">
-					<xsl:for-each select="atom:feed/atom:entry/atom:content/espi:UsagePoint">
-						<xsl:variable name="MeterReadingLink">
-							<xsl:for-each select="../../atom:link[@rel='related']/@href">
-								<xsl:if test="count($XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=current()]]/atom:content/espi:MeterReading) > 0">
-									<xsl:value-of select="."/>
-								</xsl:if>
-							</xsl:for-each>
-						</xsl:variable>
-
-						<xsl:variable name="LocalTimeParamsLink">
-							<xsl:for-each select="../../atom:link[@rel='related']/@href">
-								<xsl:if test="count($XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=current()]]/atom:content/espi:LocalTimeParameters) > 0">
-									<xsl:value-of select="."/>
-								</xsl:if>
-							</xsl:for-each>
-						</xsl:variable>
-						
-						<xsl:variable name="UsageSummaryLink">
-							<xsl:for-each select="../../atom:link[@rel='related']/@href">
-								<xsl:if test="count($XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=current()]]/atom:content/espi:ElectricPowerUsageSummary) > 0">
-									<xsl:value-of select="."/>
-								</xsl:if>
-							</xsl:for-each>
-						</xsl:variable>
-												
-						<xsl:variable name="ServiceKind" select="espi:ServiceCategory/espi:kind"/>
-
-					<p>
-					<xsl:variable name="UnitsAxisName">
-						<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=$MeterReadingLink]]/atom:content/espi:MeterReading">
-							<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=current()/../../atom:link[@rel='related']/@href]]/atom:content/espi:ReadingType/espi:uom">
-								<xsl:call-template name="UOMForPlot"/>	
-							</xsl:for-each>
-						</xsl:for-each>
-					</xsl:variable>
-					<xsl:variable name="CostAxisName">
-						<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=$MeterReadingLink]]/atom:content/espi:MeterReading">
-							<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=current()/../../atom:link[@rel='related']/@href]]/atom:content/espi:ReadingType/espi:currency">
-								<xsl:choose>
-									<xsl:when test=". = 840">
-										<xsl:text>$</xsl:text>
-									</xsl:when>
-									<xsl:when test=". = 978">
-										<xsl:text>Euro</xsl:text>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:text>unknown</xsl:text>
-									</xsl:otherwise>
-								</xsl:choose>
-							</xsl:for-each>
-						</xsl:for-each>
-					</xsl:variable>
-					
 					<!-- The following javascript is used when plotting -->
-					<!-- <script type="text/javascript">initComp('<xsl:value-of select="$CostAxisName"/>','<xsl:value-of select="$UnitsAxisName"/>');</script> -->
-	
-						</p>
-						<br/>
-						<table class="GBDataTable" width="100%">
-							<thead>
-								<tr>
-									<th>
-										<xsl:text>Usage Information</xsl:text>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<span>
-											<xsl:call-template name="UsagePoint"/>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<xsl:call-template name="ElectricPowerUsage">
-							<xsl:with-param name="MeterReadingLink" select="$MeterReadingLink"/>
-							<xsl:with-param name="LocalTimeParamsLink" select="$LocalTimeParamsLink"/>
-							<xsl:with-param name="UsageSummaryLink" select="$UsageSummaryLink"/>
-							<xsl:with-param name="ServiceKind" select="$ServiceKind"/>
-						</xsl:call-template>
-						<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=$MeterReadingLink]]/atom:content/espi:MeterReading">
-							<xsl:variable name="IntervalBlockLink">
-								<xsl:for-each select="../../atom:link[@rel='related']/@href">
-									<xsl:if test="count($XML/atom:feed/atom:entry[atom:link/@href=current()]/atom:content/espi:IntervalBlock)>0">
-										<xsl:value-of select="."/>
-									</xsl:if>
-								</xsl:for-each>
-							</xsl:variable>
-							<table class="GBDataTable" width="100%">
-								<thead>
-									<tr>
-										<th>
-											<xsl:text>Meter Reading Information</xsl:text>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<span>
-												<xsl:call-template name="MeterReading">
-													<xsl:with-param name="ServiceKind" select="$ServiceKind"/>
-												</xsl:call-template>
-											</span>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<br/>
-							<table class="GBDataTable" width="100%">
-								<thead>
-									<tr>
-										<th>
-											<xsl:text>Detailed Usage</xsl:text>
-											<br/>
-											<br/>
-											<!-- find start date -->
-											<xsl:variable name="StartDateTime">
-												<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link/@href=$IntervalBlockLink]/atom:content/espi:IntervalBlock[*]/espi:interval/espi:start">
-													<xsl:sort select="." data-type="number" order="ascending"/>
-													<xsl:if test="position() = 1">
-														<xsl:value-of select="."/>
-													</xsl:if>
-												</xsl:for-each>
-											</xsl:variable>
-											<!-- find end date -->
-											<xsl:variable name="EndDateTime">
-												<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link/@href=$IntervalBlockLink]/atom:content/espi:IntervalBlock[*]/espi:interval/espi:start">
-													<xsl:sort select="." data-type="number" order="descending"/>
-													<xsl:if test="position() = 1">
-														<xsl:value-of select="."/>
-													</xsl:if>
-												</xsl:for-each>
-											</xsl:variable>
-											<!-- find end duration -->
-											<xsl:variable name="EndDuration">
-												<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link/@href=$IntervalBlockLink]/atom:content/espi:IntervalBlock[*]/espi:interval/espi:start">
-													<xsl:sort select="." data-type="number" order="descending"/>
-													<xsl:if test="position() = 1">
-														<xsl:value-of select="../espi:duration"/>
-													</xsl:if>
-												</xsl:for-each>
-											</xsl:variable>
-											<span>
-												<xsl:text>Start date: </xsl:text>
-											</span>
-											<xsl:variable name="DSTStartUnix">
-												<xsl:call-template name="GetDSTEventDateUnixTime">
-													<xsl:with-param name="unixCurrDate" select="$StartDateTime"/>
-													<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
-												</xsl:call-template>
-											</xsl:variable>
-											<xsl:variable name="DSTEndUnix">
-												<xsl:call-template name="GetDSTEventDateUnixTime">
-													<xsl:with-param name="unixCurrDate" select="$StartDateTime"/>
-													<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
-												</xsl:call-template>
-											</xsl:variable>
-											<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
-											<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
-											<xsl:call-template name="Date2">
-												<xsl:with-param name="pdtTmp" select="$StartDateTime"/>
-												<xsl:with-param name="TZ" select="$TZ"/>
-												<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-												<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-												<xsl:with-param name="dstOffset" select="$dstOffset"/>
-											</xsl:call-template>
-											<span>
-												<xsl:text> for </xsl:text>
-											</span>
-											<span>
-												<xsl:value-of select="format-number((($EndDateTime + $EndDuration) - $StartDateTime) div(86400),&apos;##&apos;)"/>
-											</span>
-											<span>
-												<xsl:if test="format-number((($EndDateTime + $EndDuration) - $StartDateTime) div(86400),&apos;##&apos;)>1">
-													<xsl:text> days</xsl:text>
-												</xsl:if>
-												<xsl:if test="format-number((($EndDateTime + $EndDuration) - $StartDateTime) div(86400),&apos;##&apos;)=1">
-													<xsl:text> day</xsl:text>
-												</xsl:if>
-											</span>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											<xsl:call-template name="IntervalBlock">
-												<xsl:with-param name="IntervalBlockLink" select="$IntervalBlockLink"/>
-												<xsl:with-param name="LocalTimeParamsLink" select="$LocalTimeParamsLink"/>
-												<xsl:with-param name="ServiceKind" select="$ServiceKind"/>
-											</xsl:call-template>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</xsl:for-each>
-					</xsl:for-each>
+					<p>
+						<!-- <script type="text/javascript">initComp();</script> -->
+					</p>
+					<br/>
+					<table class="GBDataTable" width="100%">
+						<thead>
+							<tr>
+								<th>
+									<xsl:text>Usage Information</xsl:text>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<span>
+										<xsl:call-template name="UsagePoint"/>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br/>
+					<table class="GBDataTable" width="100%">
+						<thead>
+							<tr>
+								<th>
+									<xsl:text>Meter Reading Information</xsl:text>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<span>
+										<xsl:call-template name="MeterReading"/>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br/>
+					<table class="GBDataTable" width="100%">
+						<thead>
+							<tr>
+								<th>
+									<xsl:text>Summary of Usage Information*</xsl:text>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<span>
+										<xsl:call-template name="ElectricPowerUsage"/>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br/>
+					<table class="GBDataTable" width="100%">
+						<thead>
+							<tr>
+								<th>
+									<xsl:text>Detailed Usage</xsl:text>
+									<br/>
+									<br/>
+									<!-- find start date -->
+									<xsl:variable name="StartDateTime">
+										<xsl:for-each select="atom:feed/atom:entry[*]/atom:content/espi:IntervalBlock[*]/espi:interval/espi:start">
+											<xsl:sort select="." data-type="number" order="ascending"/>
+											<xsl:if test="position() = 1">
+												<xsl:value-of select="."/>
+											</xsl:if>
+										</xsl:for-each>
+									</xsl:variable>
+									<!-- find end date -->
+									<xsl:variable name="EndDateTime">
+										<xsl:for-each select="atom:feed/atom:entry[*]/atom:content/espi:IntervalBlock[*]/espi:interval/espi:start">
+											<xsl:sort select="." data-type="number" order="descending"/>
+											<xsl:if test="position() = 1">
+												<xsl:value-of select="."/>
+											</xsl:if>
+										</xsl:for-each>
+									</xsl:variable>
+									<!-- find end duration -->
+									<xsl:variable name="EndDuration">
+										<xsl:for-each select="atom:feed/atom:entry[*]/atom:content/espi:IntervalBlock[*]/espi:interval/espi:start">
+											<xsl:sort select="." data-type="number" order="descending"/>
+											<xsl:if test="position() = 1">
+												<xsl:value-of select="../espi:duration"/>
+											</xsl:if>
+										</xsl:for-each>
+									</xsl:variable>
+									<span>
+										<xsl:text>Start date: </xsl:text>
+									</span>
+									<xsl:variable name="DSTStartUnix">
+										<xsl:call-template name="GetDSTEventDateUnixTime">
+											<xsl:with-param name="unixCurrDate" select="$StartDateTime"/>
+											<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
+										</xsl:call-template>
+									</xsl:variable>
+									<xsl:variable name="DSTEndUnix">
+										<xsl:call-template name="GetDSTEventDateUnixTime">
+											<xsl:with-param name="unixCurrDate" select="$StartDateTime"/>
+											<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
+										</xsl:call-template>
+									</xsl:variable>
+									<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
+									<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
+									<xsl:call-template name="Date2">
+										<xsl:with-param name="pdtTmp" select="$StartDateTime"/>
+										<xsl:with-param name="TZ" select="$TZ"/>
+										<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+										<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+										<xsl:with-param name="dstOffset" select="$dstOffset"/>
+									</xsl:call-template>
+									<span>
+										<xsl:text> for </xsl:text>
+									</span>
+									<span>
+										<xsl:value-of select="format-number((($EndDateTime + $EndDuration) - $StartDateTime) div(86400),&apos;##&apos;)"/>
+									</span>
+									<span>
+										<xsl:if test="format-number((($EndDateTime + $EndDuration) - $StartDateTime) div(86400),&apos;##&apos;)>1">
+											<xsl:text> days</xsl:text>
+										</xsl:if>
+										<xsl:if test="format-number((($EndDateTime + $EndDuration) - $StartDateTime) div(86400),&apos;##&apos;)=1">
+											<xsl:text> day</xsl:text>
+										</xsl:if>
+									</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<xsl:call-template name="IntervalBlock"/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</xsl:for-each>
 				<span>
 					<xsl:text>&#160;</xsl:text>
@@ -283,10 +230,12 @@ Unless required by applicable law or agreed to in writing, software distributed 
  Description: Present UsagePoint attributes
 ========================================================================== -->
 	<xsl:template name="UsagePoint">
-		<xsl:text>For location: </xsl:text>
-		<xsl:value-of select="../../atom:title"/>
-		<!-- The following javascript is used when plotting -->
-		<!-- <script type="text/javascript">initLocation('<xsl:value-of select="../../atom:title"/>');</script> -->
+		<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:UsagePoint">
+			<xsl:text>For location: </xsl:text>
+			<xsl:value-of select="../../atom:title"/>
+			<!-- The following javascript is used when plotting -->
+			<!-- <script type="text/javascript">initLocation('<xsl:value-of select="../../atom:title"/>');</script> -->
+		</xsl:for-each>
 	</xsl:template>
 	<!--
 ==========================================================================
@@ -294,583 +243,53 @@ Unless required by applicable law or agreed to in writing, software distributed 
  Description: Present MeterReading attributes
 ========================================================================== -->
 	<xsl:template name="MeterReading">
-		<xsl:param name="ServiceKind"/>
-		<xsl:text>Type of readings: </xsl:text>
-		<xsl:choose>
-			<xsl:when test="$ServiceKind = 0">
-				<xsl:text>Electricity</xsl:text>
-			</xsl:when>
-			<xsl:when test="$ServiceKind = 1">
-				<xsl:text>Gas</xsl:text>
-			</xsl:when>
-			<xsl:when test="$ServiceKind = 2">
-				<xsl:text>Water</xsl:text>
-			</xsl:when>
-		</xsl:choose>	
-
-		<xsl:if test="../../atom:title">
-			<span>
-				<xsl:text>, </xsl:text>
-			</span>
-			<xsl:value-of select="../../atom:title"/>		
-		</xsl:if>
-
-		<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=current()/../../atom:link[@rel='related']/@href]]/atom:content/espi:ReadingType">
-			<span>
-				<xsl:text>, </xsl:text>
-			</span>
-			<xsl:for-each select="espi:uom">
-				<xsl:call-template name="UOM"/>
+		<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content">
+			<xsl:for-each select="espi:UsagePoint">
+				<xsl:for-each select="espi:ServiceCategory">
+					<xsl:for-each select="espi:kind">
+						<xsl:text>Type of readings: </xsl:text>
+						<xsl:choose>
+							<xsl:when test=". = 0">
+								<xsl:text>Electricity</xsl:text>
+							</xsl:when>
+							<xsl:when test=". = 1">
+								<xsl:text>Gas</xsl:text>
+							</xsl:when>
+							<xsl:when test=". = 2">
+								<xsl:text>Water</xsl:text>
+							</xsl:when>
+						</xsl:choose>
+					</xsl:for-each>
+				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="espi:phase">
-				<xsl:text>&#160;</xsl:text>
-				<xsl:choose>
-					<xsl:when test=". = 769">
-						<xsl:text>,</xsl:text>
-						<xsl:text>Two-Phase Residential Service</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-					</xsl:otherwise>
-				</xsl:choose>
+			<xsl:for-each select="espi:MeterReading">
+				<span>
+					<xsl:text>, </xsl:text>
+				</span>
+				<xsl:value-of select="../../atom:title"/>
+			</xsl:for-each>
+			<xsl:for-each select="espi:ReadingType">
+				<span>
+					<xsl:text>, </xsl:text>
+				</span>
+				<xsl:for-each select="espi:uom">
+					<xsl:call-template name="UOM"/>
+				</xsl:for-each>
+				<xsl:for-each select="espi:phase">
+					<xsl:text>&#160;</xsl:text>
+					<xsl:choose>
+						<xsl:when test=". = 769">
+							<xsl:text>,</xsl:text>
+							<xsl:text>Two-Phase Residential Service</xsl:text>
+						</xsl:when>
+						<xsl:otherwise>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:for-each>
 			</xsl:for-each>
 		</xsl:for-each>
 	</xsl:template>
-	
 	<!--
-==========================================================================
- Template: IntervalBlock
- Description: Present IntervalBlock attributes
-========================================================================== -->
-	<xsl:template name="IntervalBlock">
-		<xsl:param name="IntervalBlockLink"/>
-		<xsl:param name="LocalTimeParamsLink"/>
-		<xsl:param name="ServiceKind"/>
-
-		<xsl:variable name="ReadingTypeLink" select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=current()/../../atom:link[@rel='related']/@href]]/atom:content/espi:ReadingType/../../atom:link[@rel='self']/@href"/>
-		
-		<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link/@href=$IntervalBlockLink]/atom:content/espi:IntervalBlock">
-			<xsl:sort select="./espi:interval/espi:start" data-type="number" order="ascending"/>
-			<xsl:variable name="DSTStartUnix">
-				<xsl:call-template name="GetDSTEventDateUnixTime">
-					<xsl:with-param name="unixCurrDate" select="espi:interval/espi:start[1]"/>
-					<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
-				</xsl:call-template>
-			</xsl:variable>
-			<xsl:variable name="DSTEndUnix">
-				<xsl:call-template name="GetDSTEventDateUnixTime">
-					<xsl:with-param name="unixCurrDate" select="espi:interval/espi:start[1]"/>
-					<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
-				</xsl:call-template>
-			</xsl:variable>
-			<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
-			<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
-			<xsl:if test="$GL_DEBUG_TIME=1">
-				<xsl:text> DST:START: 
-					</xsl:text>
-				<xsl:value-of select="$DSTStartUnix"/>
-				<xsl:text> DST:End: 
-					</xsl:text>
-				<xsl:value-of select="$DSTEndUnix"/>
-				<xsl:text> Tz: </xsl:text>
-				<xsl:value-of select="$TZ"/>
-			</xsl:if>
-			<br/>
-			<table class="GBDataTable" width="100%">
-				<thead>
-					<tr>
-						<th>
-							<xsl:for-each select="espi:interval">
-								<xsl:text>Data for period starting: </xsl:text>
-								<xsl:for-each select="espi:start">
-									<!-- The following javascript is used when plotting -->
-									<!-- <script type="text/javascript">
-													compStartDay('<xsl:call-template name="Date">
-										<xsl:with-param name="TZ" select="$TZ"/>
-										<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-										<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-										<xsl:with-param name="dstOffset" select="$dstOffset"/>										
-									</xsl:call-template>');
-									</script> -->
-									<xsl:call-template name="Date">
-										<xsl:with-param name="TZ" select="$TZ"/>
-										<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-										<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-										<xsl:with-param name="dstOffset" select="$dstOffset"/>
-									</xsl:call-template>
-								</xsl:for-each>
-								<xsl:for-each select="espi:duration">
-									<xsl:text> for </xsl:text>
-									<span>
-										<xsl:if test="round((. div(3600)) div(24)) = ((. div(3600)) div(24))">
-											<xsl:value-of select="((. div(3600)) div(24))"/>
-											<xsl:if test="((. div(3600)) div(24))>1">
-												<xsl:text> days</xsl:text>
-											</xsl:if>
-											<xsl:if test="((. div(3600)) div(24))=1">
-												<xsl:text> day</xsl:text>
-											</xsl:if>
-										</xsl:if>
-										<xsl:if test="round((. div(3600)) div(24)) != ((. div(3600)) div(24))">
-											<xsl:value-of select=". div(3600)"/>
-											<xsl:if test=". div(3600)>1">
-												<xsl:text> hours</xsl:text>
-											</xsl:if>
-											<xsl:if test=". div(3600)=1">
-												<xsl:text> hour</xsl:text>
-											</xsl:if>
-										</xsl:if>
-										<!--<xsl:value-of select=". div(3600)"/>-->
-									</span>
-									<!--<xsl:text> hours</xsl:text>-->
-								</xsl:for-each>
-							</xsl:for-each>
-							<br/>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<table class="GBInnerDataTable" width="100%">
-								<thead>
-									<tr>
-										<th>
-											<xsl:text>Energy consumption time period</xsl:text>
-										</th>
-										<th>
-											<xsl:text>Usage</xsl:text>
-											<br/>
-											<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=$ReadingTypeLink]]/atom:content/espi:ReadingType">
-												<span>
-													<xsl:text>(</xsl:text>
-												</span>
-												<xsl:for-each select="espi:uom">
-													<xsl:call-template name="UOM"/>
-												</xsl:for-each>
-												<span>
-													<xsl:text>)</xsl:text>
-												</span>
-											</xsl:for-each>
-										</th>
-										<!-- see if cost exists -->
-										<xsl:if test="count(espi:IntervalReading/espi:cost)>0">
-											<th>
-												<xsl:text>Cost</xsl:text>
-												<br/>
-												<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=$ReadingTypeLink]]/atom:content/espi:ReadingType/espi:currency">
-													<span>
-														<xsl:text>(</xsl:text>
-													</span>
-													<xsl:call-template name="Currency"/>
-													<span>
-														<xsl:text>)</xsl:text>
-													</span>
-												</xsl:for-each>
-											</th>
-										</xsl:if>
-										<th>
-											<xsl:text>Events occurred</xsl:text>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<xsl:variable name="valuePoTM" select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=$ReadingTypeLink]]/atom:content/espi:ReadingType/espi:powerOfTenMultiplier"/>
-									<xsl:variable name="valueMultiplier">
-										<xsl:choose>
-											<xsl:when test="$valuePoTM=0">1</xsl:when>
-											<!--  0 = None -->
-											<xsl:when test="$valuePoTM=1">10</xsl:when>
-											<!--  1 = deca=x10 -->
-											<xsl:when test="$valuePoTM=2">100</xsl:when>
-											<!--  2 = hecto=x100 -->
-											<xsl:when test="$valuePoTM=3">1000</xsl:when>
-											<!--  3 = kilo=x1000 -->
-											<xsl:when test="$valuePoTM=6">1000000</xsl:when>
-											<!--  6 = Mega=x106 -->
-											<xsl:when test="$valuePoTM=9">1000000000</xsl:when>
-											<!--  9 = Giga=x109 -->
-											<xsl:when test="$valuePoTM=-3">0.001</xsl:when>
-											<!--  -3 = mili=x10-3 -->
-											<xsl:when test="$valuePoTM=-6">0.000001</xsl:when>
-											<!--  -6 = micro=x10-3 -->
-											<xsl:otherwise>1</xsl:otherwise>
-										</xsl:choose>
-									</xsl:variable>
-									<!-- always display graph in kWh -->
-									<xsl:for-each select="espi:IntervalReading">
-										<xsl:sort select="./espi:timePeriod/espi:start" data-type="number" order="ascending"/>
-										<xsl:variable name="PlotYVal" select="espi:value * $valueMultiplier"/>
-										<!-- The following javascript is used when plotting -->
-										<!-- <script type="text/javascript">compAddValueAndDate('<xsl:value-of select="$PlotYVal"/>','<xsl:for-each select="espi:timePeriod">
-												<xsl:for-each select="espi:start">
-													<xsl:call-template name="Date">
-															<xsl:with-param name="TZ" select="$TZ"/>
-															<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-															<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-															<xsl:with-param name="dstOffset" select="$dstOffset"/>
-															
-														</xsl:call-template>
-												</xsl:for-each>
-											</xsl:for-each>','<xsl:for-each select="espi:cost">
-												<xsl:value-of select="format-number( . div(100000),&quot;0.00&quot;)"/>
-											</xsl:for-each>');</script> -->
-										<tr>
-											<td>
-												<xsl:for-each select="espi:timePeriod">
-													<xsl:for-each select="espi:start">
-														<!--<xsl:call-template name="Date"/>-->
-														<xsl:call-template name="Date">
-															<xsl:with-param name="TZ" select="$TZ"/>
-															<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-															<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-															<xsl:with-param name="dstOffset" select="$dstOffset"/>
-														</xsl:call-template>
-													</xsl:for-each>
-													<span>
-														<xsl:text>to </xsl:text>
-													</span>
-													<xsl:call-template name="ConvStartPlusDuration">
-														<xsl:with-param name="vStart" select="espi:start"/>
-														<xsl:with-param name="vDuration" select="espi:duration"/>
-														<xsl:with-param name="TZ" select="$TZ"/>
-														<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-														<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-														<xsl:with-param name="dstOffset" select="$dstOffset"/>
-													</xsl:call-template>
-												</xsl:for-each>
-												<xsl:text>&#160;</xsl:text>
-											</td>
-											<td align="right">
-												<xsl:call-template name="ScaleValue">
-													<xsl:with-param name="Value" select="espi:value"/>
-													<xsl:with-param name="valuePoTM" select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=$ReadingTypeLink]]/atom:content/espi:ReadingType/espi:powerOfTenMultiplier"/>
-													<xsl:with-param name="ServiceKind" select="$ServiceKind"/>
-												</xsl:call-template>
-											</td>
-											<xsl:if test="count(espi:cost)>0">
-												<td align="right">
-													<xsl:for-each select="espi:cost">
-														<xsl:value-of select="format-number( . div(100000),&quot;#,###,##0.00&quot;)"/>
-													</xsl:for-each>
-												</td>
-											</xsl:if>
-											<td>
-												<span>
-													<xsl:text>&#160; </xsl:text>
-												</span>
-												<xsl:for-each select="espi:ReadingQuality">
-													<xsl:for-each select="espi:quality">
-														<xsl:choose>
-															<xsl:when test=". = &quot;&quot;">
-																<span>
-																	<xsl:text>None </xsl:text>
-																</span>
-															</xsl:when>
-															<xsl:when test=". != &quot;&quot;">
-																<xsl:apply-templates/>
-															</xsl:when>
-														</xsl:choose>
-													</xsl:for-each>
-												</xsl:for-each>
-											</td>
-										</tr>
-									</xsl:for-each>
-								</tbody>
-							</table>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</xsl:for-each>
-	</xsl:template>
-	<!--
-==========================================================================
- Template: ReadingType
- Description: Present ReadingType attributes
-========================================================================== -->
-	<!--<xsl:template name="ReadingType">
-		<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ReadingType">
-			<br/>
-			<xsl:value-of select="../../atom:title"/>
-			<br/>
-			<br/>
-			<xsl:for-each select="espi:accumulationBehaviour">
-				<xsl:text>Accumulation behaviour: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:commodity">
-				<xsl:text>Commodity: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:dataQualifier">
-				<xsl:text>Data qualifier: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:flowDirection">
-				<xsl:text>Flow direction: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:intervalLength">
-				<xsl:text>Interval length: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:kind">
-				<xsl:text>Kind: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:phase">
-				<xsl:text>Phase: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:powerOfTenMultiplier">
-				<xsl:text>Power of ten multiplier: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:for-each select="espi:timeAttribute">
-				<xsl:text>Time attribute: </xsl:text>
-				<xsl:apply-templates/>
-			</xsl:for-each>
-			<br/>
-			<xsl:text>UOM: </xsl:text>
-			<xsl:for-each select="espi:uom">
-				<xsl:call-template name="UOM"/>
-			</xsl:for-each>
-			<br/>
-		</xsl:for-each>
-	</xsl:template>-->
-	<!--
-==========================================================================
- Template: ElectricPowerUsage
- Description: Present ElectricPowerUsage attributes
-========================================================================== -->
-	<xsl:template name="ElectricPowerUsage">
-		<xsl:param name="LocalTimeParamsLink"/>
-		<xsl:param name="MeterReadingLink"/>
-		<xsl:param name="UsageSummaryLink"/>
-		<xsl:param name="ServiceKind"/>
-
-		<xsl:for-each select="../../atom:link[@rel='related']/@href">
-			<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=current()]]/atom:content/espi:ElectricPowerUsageSummary">
-				<br/>
-				<table class="GBDataTable" width="100%">
-					<thead>
-						<tr>
-							<th>
-								<xsl:text>Summary of Usage Information*</xsl:text>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<span>
-									<span>
-										<xsl:text>* Note: Quality of this summary and information is &quot;</xsl:text>
-									</span>
-									<xsl:if test="espi:qualityOfReading">
-										<xsl:for-each select="espi:qualityOfReading">
-											<xsl:choose>
-												<xsl:when test=". = 14">
-													<span>
-														<xsl:text>raw: data that has not gone through the validation, editing and estimation process</xsl:text>
-													</span>
-												</xsl:when>
-												<xsl:when test=". != 14">
-													<span>
-														<xsl:text>unknown</xsl:text>
-													</span>
-												</xsl:when>
-											</xsl:choose>
-										</xsl:for-each>
-									</xsl:if>
-									<xsl:if test="not(espi:qualityOfReading)">
-										<xsl:text>not specified</xsl:text>
-									</xsl:if>
-									<span>
-										<xsl:text>&quot;</xsl:text>
-									</span>
-									<br/>
-									<br/>
-									<xsl:text>Current billing period as of: </xsl:text>
-									<xsl:for-each select="espi:statusTimeStamp">
-										<xsl:variable name="DSTStartUnix">
-											<xsl:call-template name="GetDSTEventDateUnixTime">
-												<xsl:with-param name="unixCurrDate" select="."/>
-												<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
-											</xsl:call-template>
-										</xsl:variable>
-										<xsl:variable name="DSTEndUnix">
-											<xsl:call-template name="GetDSTEventDateUnixTime">
-												<xsl:with-param name="unixCurrDate" select="."/>
-												<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
-											</xsl:call-template>
-										</xsl:variable>
-										<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
-										<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
-										<xsl:call-template name="Date">
-											<xsl:with-param name="TZ" select="$TZ"/>
-											<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-											<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-											<xsl:with-param name="dstOffset" select="$dstOffset"/>
-										</xsl:call-template>
-									</xsl:for-each>
-									<br/>
-									<xsl:for-each select="espi:currency">
-										<xsl:text>Currency: </xsl:text>
-										<xsl:call-template name="Currency"/>
-										<xsl:text> (note: all costs presented are rounded to the nearest penny)</xsl:text>
-										<br/>
-									</xsl:for-each>
-									<xsl:for-each select="espi:billToDate">
-										<xsl:text>Cost of usage(</xsl:text>
-										<xsl:for-each select="../espi:currency">
-											<xsl:call-template name="Currency"/>
-										</xsl:for-each>
-										<xsl:text>): </xsl:text>
-										<xsl:value-of select="format-number( . div(100000),&apos;#,###,##0.00&apos;)"/>
-										<br/>
-									</xsl:for-each>
-									<xsl:text>Consumption</xsl:text>
-									<xsl:for-each select="espi:currentBillingPeriodOverAllConsumption">
-										<xsl:text>(</xsl:text>
-										<xsl:for-each select="espi:uom">
-											<xsl:call-template name="UOM"/>
-										</xsl:for-each>
-										<xsl:text>) </xsl:text>
-										<span>
-											<xsl:text>:</xsl:text>
-										</span>
-										<xsl:call-template name="ScaleValue">
-											<xsl:with-param name="Value" select="espi:value"/>
-											<xsl:with-param name="valuePoTM" select="espi:powerOfTenMultiplier"/>
-											<xsl:with-param name="ServiceKind" select="$ServiceKind"/>
-										</xsl:call-template>
-									</xsl:for-each>
-									<xsl:for-each select="espi:currentBillingPeriodOverAllConsumption"/>
-									<br/>
-									<br/>
-									<xsl:for-each select="espi:billingPeriod">
-										<xsl:variable name="vStart" select="round(espi:start)"/>
-										<xsl:text>Last billing period:</xsl:text>
-										<span>
-											<xsl:text>&#160;</xsl:text>
-										</span>
-										<xsl:for-each select="espi:start">
-											<xsl:variable name="DSTStartUnix">
-												<xsl:call-template name="GetDSTEventDateUnixTime">
-													<xsl:with-param name="unixCurrDate" select="."/>
-													<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
-												</xsl:call-template>
-											</xsl:variable>
-											<xsl:variable name="DSTEndUnix">
-												<xsl:call-template name="GetDSTEventDateUnixTime">
-													<xsl:with-param name="unixCurrDate" select="."/>
-													<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
-												</xsl:call-template>
-											</xsl:variable>
-											<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
-											<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
-											<xsl:call-template name="Date">
-												<xsl:with-param name="TZ" select="$TZ"/>
-												<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-												<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-												<xsl:with-param name="dstOffset" select="$dstOffset"/>
-											</xsl:call-template>
-										</xsl:for-each>
-										<span>
-											<xsl:text>&#160;</xsl:text>
-										</span>
-										<xsl:text>to </xsl:text>
-									</xsl:for-each>
-									<xsl:for-each select="espi:billingPeriod">
-										<xsl:variable name="DSTStartUnix">
-											<xsl:call-template name="GetDSTEventDateUnixTime">
-												<xsl:with-param name="unixCurrDate" select="espi:start"/>
-												<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
-											</xsl:call-template>
-										</xsl:variable>
-										<xsl:variable name="DSTEndUnix">
-											<xsl:call-template name="GetDSTEventDateUnixTime">
-												<xsl:with-param name="unixCurrDate" select="espi:start"/>
-												<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
-											</xsl:call-template>
-										</xsl:variable>
-										<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
-										<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry[atom:link/@rel='self' and atom:link/@href=$LocalTimeParamsLink]/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
-										<xsl:call-template name="ConvStartPlusDuration">
-											<xsl:with-param name="vStart" select="espi:start"/>
-											<xsl:with-param name="vDuration" select="espi:duration"/>
-											<xsl:with-param name="TZ" select="$TZ"/>
-											<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
-											<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
-											<xsl:with-param name="dstOffset" select="$dstOffset"/>
-										</xsl:call-template>
-									</xsl:for-each>
-									<br/>
-									<xsl:for-each select="espi:billLastPeriod">
-										<xsl:text>Bill last period(</xsl:text>
-										<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=$UsageSummaryLink]]/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
-											<xsl:call-template name="Currency"/>
-										</xsl:for-each>
-										<xsl:text>): </xsl:text>
-										<xsl:value-of select="format-number( . div(100000),&quot;#,###,##0.00&quot;)"/>
-										<br/>
-									</xsl:for-each>
-									<xsl:for-each select="espi:billLastPeriod">
-										<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=$UsageSummaryLink]]/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
-											<xsl:text>Cost of usage last billing period (</xsl:text>
-											<xsl:call-template name="Currency"/>
-											<xsl:text>):&#160; </xsl:text>
-										</xsl:for-each>
-										<xsl:value-of select="format-number((../espi:billLastPeriod - ../espi:costAdditionalLastPeriod)div(100000),&quot;#,###,##0.00&quot;)"/>
-										<br/>
-									</xsl:for-each>
-									<xsl:for-each select="espi:costAdditionalLastPeriod">
-										<xsl:text>Cost additional last period (taxes and other fixed charges) (</xsl:text>
-										<xsl:for-each select="$XML/atom:feed/atom:entry[atom:link[@rel='up' and @href=$UsageSummaryLink]]/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
-											<xsl:call-template name="Currency"/>
-										</xsl:for-each>
-										<xsl:text>): </xsl:text>
-										<xsl:value-of select="format-number( . div(100000),&apos;#,###,##0.00&apos;)"/>
-										<br/>
-									</xsl:for-each>
-									
-									<xsl:for-each select="espi:overallConsumptionLastPeriod">
-										<xsl:text>Consumption last period</xsl:text>
-										<xsl:text>(</xsl:text>
-										<xsl:for-each select="espi:uom">
-											<xsl:call-template name="UOM"/>
-										</xsl:for-each>
-										<xsl:text>) </xsl:text>
-										<span>
-											<xsl:text>:</xsl:text>
-										</span>
-										<xsl:call-template name="ScaleValue">
-											<xsl:with-param name="Value" select="espi:value"/>
-											<xsl:with-param name="valuePoTM" select="espi:powerOfTenMultiplier"/>
-											<xsl:with-param name="ServiceKind" select="$ServiceKind"/>
-										</xsl:call-template>
-									</xsl:for-each>	
-								</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>		
-				<br/>
-			</xsl:for-each>
-		</xsl:for-each>
-		<br/>
-	</xsl:template>
-	
-<!--
 ==========================================================================
  Template: HexToDecimal
  Description: convert hex string to decimal number
@@ -1010,15 +429,478 @@ Unless required by applicable law or agreed to in writing, software distributed 
 	</xsl:template>
 	<!--
 ==========================================================================
- Template: ScaleValue
- Description: apply PoTM and presentation multipliers
+ Template: IntervalBlock
+ Description: Present IntervalBlock attributes
 ========================================================================== -->
+	<xsl:template name="IntervalBlock">
+		<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:IntervalBlock">
+			<xsl:sort select="./espi:interval/espi:start" data-type="number" order="ascending"/>
+			<xsl:variable name="DSTStartUnix">
+				<xsl:call-template name="GetDSTEventDateUnixTime">
+					<xsl:with-param name="unixCurrDate" select="espi:interval/espi:start[1]"/>
+					<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:variable name="DSTEndUnix">
+				<xsl:call-template name="GetDSTEventDateUnixTime">
+					<xsl:with-param name="unixCurrDate" select="espi:interval/espi:start[1]"/>
+					<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
+			<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
+			<xsl:if test="$GL_DEBUG_TIME=1">
+				<xsl:text> DST:START: 
+					</xsl:text>
+				<xsl:value-of select="$DSTStartUnix"/>
+				<xsl:text> DST:End: 
+					</xsl:text>
+				<xsl:value-of select="$DSTEndUnix"/>
+				<xsl:text> Tz: </xsl:text>
+				<xsl:value-of select="$TZ"/>
+			</xsl:if>
+			<br/>
+			<table class="GBDataTable" width="100%">
+				<thead>
+					<tr>
+						<th>
+							<xsl:for-each select="espi:interval">
+								<xsl:text>Data for period starting: </xsl:text>
+								<xsl:for-each select="espi:start">
+									<!-- The following javascript is used when plotting -->
+									<!-- <script type="text/javascript">
+										compStartDay('<xsl:call-template name="Date"/>');
+									</script> -->
+									<xsl:call-template name="Date">
+										<xsl:with-param name="TZ" select="$TZ"/>
+										<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+										<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+										<xsl:with-param name="dstOffset" select="$dstOffset"/>
+									</xsl:call-template>
+								</xsl:for-each>
+								<xsl:for-each select="espi:duration">
+									<xsl:text> for </xsl:text>
+									<span>
+										<xsl:if test="round((. div(3600)) div(24)) = ((. div(3600)) div(24))">
+											<xsl:value-of select="((. div(3600)) div(24))"/>
+											<xsl:if test="((. div(3600)) div(24))>1">
+												<xsl:text> days</xsl:text>
+											</xsl:if>
+											<xsl:if test="((. div(3600)) div(24))=1">
+												<xsl:text> day</xsl:text>
+											</xsl:if>
+										</xsl:if>
+										<xsl:if test="round((. div(3600)) div(24)) != ((. div(3600)) div(24))">
+											<xsl:value-of select=". div(3600)"/>
+											<xsl:if test=". div(3600)>1">
+												<xsl:text> hours</xsl:text>
+											</xsl:if>
+											<xsl:if test=". div(3600)=1">
+												<xsl:text> hour</xsl:text>
+											</xsl:if>
+										</xsl:if>
+										<!--<xsl:value-of select=". div(3600)"/>-->
+									</span>
+									<!--<xsl:text> hours</xsl:text>-->
+								</xsl:for-each>
+							</xsl:for-each>
+							<br/>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<table class="GBInnerDataTable" width="100%">
+								<thead>
+									<tr>
+										<th>
+											<xsl:text>Energy consumption time period</xsl:text>
+										</th>
+										<th>
+											<xsl:text>Usage</xsl:text>
+											<br/>
+											<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ReadingType">
+												<span>
+													<xsl:text>(</xsl:text>
+												</span>
+												<xsl:for-each select="espi:uom">
+													<xsl:call-template name="UOM"/>
+												</xsl:for-each>
+												<span>
+													<xsl:text>)</xsl:text>
+												</span>
+											</xsl:for-each>
+										</th>
+										<!-- see if cost exists -->
+										<xsl:if test="count(espi:IntervalReading/espi:cost)>0">
+											<th>
+												<xsl:text>Cost</xsl:text>
+												<br/>
+												<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
+													<span>
+														<xsl:text>(</xsl:text>
+													</span>
+													<xsl:call-template name="Currency"/>
+													<span>
+														<xsl:text>)</xsl:text>
+													</span>
+												</xsl:for-each>
+											</th>
+										</xsl:if>
+										<th>
+											<xsl:text>Events occurred</xsl:text>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<xsl:variable name="valuePoTM" select="$XML/atom:feed/atom:entry/atom:content/espi:ReadingType/espi:powerOfTenMultiplier"/>
+									<xsl:variable name="valueMultiplier">
+										<xsl:choose>
+											<xsl:when test="$valuePoTM=0">1</xsl:when>
+											<!--  0 = None -->
+											<xsl:when test="$valuePoTM=1">10</xsl:when>
+											<!--  1 = deca=x10 -->
+											<xsl:when test="$valuePoTM=2">100</xsl:when>
+											<!--  2 = hecto=x100 -->
+											<xsl:when test="$valuePoTM=3">1000</xsl:when>
+											<!--  3 = kilo=x1000 -->
+											<xsl:when test="$valuePoTM=6">1000000</xsl:when>
+											<!--  6 = Mega=x106 -->
+											<xsl:when test="$valuePoTM=9">1000000000</xsl:when>
+											<!--  9 = Giga=x109 -->
+											<xsl:when test="$valuePoTM=-3">0.001</xsl:when>
+											<!--  -3 = mili=x10-3 -->
+											<xsl:when test="$valuePoTM=-6">0.000001</xsl:when>
+											<!--  -6 = micro=x10-3 -->
+											<xsl:otherwise>1</xsl:otherwise>
+										</xsl:choose>
+									</xsl:variable>
+									<!-- always display graph in kWh -->
+									<xsl:for-each select="espi:IntervalReading">
+										<xsl:sort select="./espi:timePeriod/espi:start" data-type="number" order="ascending"/>
+										<xsl:variable name="PlotYVal" select="espi:value * $valueMultiplier"/>
+										<!-- The following javascript is used when plotting -->
+										<!-- <script type="text/javascript">compAddValueAndDate('<xsl:value-of select="$PlotYVal"/>','<xsl:for-each select="espi:timePeriod">
+												<xsl:for-each select="espi:start">
+													<xsl:call-template name="Date"/>
+												</xsl:for-each>
+											</xsl:for-each>','<xsl:for-each select="espi:cost">
+												<xsl:value-of select="format-number( . div(100000),&quot;0.00&quot;)"/>
+											</xsl:for-each>');</script> -->
+										<tr>
+											<td>
+												<xsl:for-each select="espi:timePeriod">
+													<xsl:for-each select="espi:start">
+														<!--<xsl:call-template name="Date"/>-->
+														<xsl:call-template name="Date">
+															<xsl:with-param name="TZ" select="$TZ"/>
+															<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+															<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+															<xsl:with-param name="dstOffset" select="$dstOffset"/>
+														</xsl:call-template>
+													</xsl:for-each>
+													<span>
+														<xsl:text>to </xsl:text>
+													</span>
+													<xsl:call-template name="ConvStartPlusDuration">
+														<xsl:with-param name="vStart" select="espi:start"/>
+														<xsl:with-param name="vDuration" select="espi:duration"/>
+														<xsl:with-param name="TZ" select="$TZ"/>
+														<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+														<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+														<xsl:with-param name="dstOffset" select="$dstOffset"/>
+													</xsl:call-template>
+												</xsl:for-each>
+												<xsl:text>&#160;</xsl:text>
+											</td>
+											<td align="right">
+												<xsl:call-template name="ScaleValue">
+													<xsl:with-param name="Value" select="espi:value"/>
+													<xsl:with-param name="valuePoTM" select="$XML/atom:feed/atom:entry/atom:content/espi:ReadingType/espi:powerOfTenMultiplier"/>
+												</xsl:call-template>
+											</td>
+											<xsl:if test="count(espi:cost)>0">
+												<td align="right">
+													<xsl:for-each select="espi:cost">
+														<xsl:value-of select="format-number( . div(100000),&quot;#,###,##0.00&quot;)"/>
+													</xsl:for-each>
+												</td>
+											</xsl:if>
+											<td>
+												<span>
+													<xsl:text>&#160; </xsl:text>
+												</span>
+												<xsl:for-each select="espi:ReadingQuality">
+													<xsl:for-each select="espi:quality">
+														<xsl:choose>
+															<xsl:when test=". = &quot;&quot;">
+																<span>
+																	<xsl:text>None </xsl:text>
+																</span>
+															</xsl:when>
+															<xsl:when test=". != &quot;&quot;">
+																<xsl:apply-templates/>
+															</xsl:when>
+														</xsl:choose>
+													</xsl:for-each>
+												</xsl:for-each>
+											</td>
+										</tr>
+									</xsl:for-each>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</xsl:for-each>
+	</xsl:template>
+	<!--
+==========================================================================
+ Template: ReadingType
+ Description: Present ReadingType attributes
+========================================================================== -->
+	<xsl:template name="ReadingType">
+		<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ReadingType">
+			<br/>
+			<xsl:value-of select="../../atom:title"/>
+			<br/>
+			<br/>
+			<xsl:for-each select="espi:accumulationBehaviour">
+				<xsl:text>Accumulation behaviour: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:commodity">
+				<xsl:text>Commodity: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:dataQualifier">
+				<xsl:text>Data qualifier: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:flowDirection">
+				<xsl:text>Flow direction: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:intervalLength">
+				<xsl:text>Interval length: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:kind">
+				<xsl:text>Kind: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:phase">
+				<xsl:text>Phase: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:powerOfTenMultiplier">
+				<xsl:text>Power of ten multiplier: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:timeAttribute">
+				<xsl:text>Time attribute: </xsl:text>
+				<xsl:apply-templates/>
+			</xsl:for-each>
+			<br/>
+			<xsl:text>UOM: </xsl:text>
+			<xsl:for-each select="espi:uom">
+				<xsl:call-template name="UOM"/>
+			</xsl:for-each>
+			<br/>
+		</xsl:for-each>
+	</xsl:template>
+	<!--
+==========================================================================
+ Template: ElectricPowerUsage
+ Description: Present ElectricPowerUsage attributes
+========================================================================== -->
+	<xsl:template name="ElectricPowerUsage">
+		<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ElectricPowerUsageSummary">
+			<span>
+				<xsl:text>* Note: Quality of this summary and information is &quot;</xsl:text>
+			</span>
+			<xsl:if test="espi:qualityOfReading">
+				<xsl:for-each select="espi:qualityOfReading">
+					<xsl:choose>
+						<xsl:when test=". = 14">
+							<span>
+								<xsl:text>raw: data that has not gone through the validation, editing and estimation process</xsl:text>
+							</span>
+						</xsl:when>
+						<xsl:when test=". != 14">
+							<span>
+								<xsl:text>unknown</xsl:text>
+							</span>
+						</xsl:when>
+					</xsl:choose>
+				</xsl:for-each>
+			</xsl:if>
+			<xsl:if test="not(espi:qualityOfReading)">
+				<xsl:text>not specified</xsl:text>
+			</xsl:if>
+			<span>
+				<xsl:text>&quot;</xsl:text>
+			</span>
+			<br/>
+			<br/>
+			<xsl:text>Current billing period as of: </xsl:text>
+			<xsl:for-each select="espi:statusTimeStamp">
+				<xsl:variable name="DSTStartUnix">
+					<xsl:call-template name="GetDSTEventDateUnixTime">
+						<xsl:with-param name="unixCurrDate" select="."/>
+						<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="DSTEndUnix">
+					<xsl:call-template name="GetDSTEventDateUnixTime">
+						<xsl:with-param name="unixCurrDate" select="."/>
+						<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
+				<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
+				<xsl:call-template name="Date">
+					<xsl:with-param name="TZ" select="$TZ"/>
+					<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+					<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+					<xsl:with-param name="dstOffset" select="$dstOffset"/>
+				</xsl:call-template>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:currency">
+				<xsl:text>Currency: </xsl:text>
+				<xsl:call-template name="Currency"/>
+				<xsl:text> (note: all costs presented are rounded to the nearest penny)</xsl:text>
+				<br/>
+			</xsl:for-each>
+			<xsl:for-each select="espi:billToDate">
+				<xsl:text>Cost of usage(</xsl:text>
+				<xsl:for-each select="../espi:currency">
+					<xsl:call-template name="Currency"/>
+				</xsl:for-each>
+				<xsl:text>): </xsl:text>
+				<xsl:value-of select="format-number( . div(100000),&apos;#,###,##0.00&apos;)"/>
+				<br/>
+			</xsl:for-each>
+			<xsl:text>Consumption</xsl:text>
+			<xsl:for-each select="espi:currentBillingPeriodOverAllConsumption">
+				<xsl:text>(</xsl:text>
+				<xsl:for-each select="espi:uom">
+					<xsl:call-template name="UOM"/>
+				</xsl:for-each>
+				<xsl:text>) </xsl:text>
+				<span>
+					<xsl:text>:</xsl:text>
+				</span>
+				<xsl:call-template name="ScaleValue">
+					<xsl:with-param name="Value" select="espi:value"/>
+					<xsl:with-param name="valuePoTM" select="espi:powerOfTenMultiplier"/>
+				</xsl:call-template>
+			</xsl:for-each>
+			<xsl:for-each select="espi:currentBillingPeriodOverAllConsumption"/>
+			<br/>
+			<br/>
+			<xsl:for-each select="espi:billingPeriod">
+				<xsl:variable name="vStart" select="round(espi:start)"/>
+				<xsl:text>Last billing period:</xsl:text>
+				<span>
+					<xsl:text>&#160;</xsl:text>
+				</span>
+				<xsl:for-each select="espi:start">
+					<xsl:variable name="DSTStartUnix">
+						<xsl:call-template name="GetDSTEventDateUnixTime">
+							<xsl:with-param name="unixCurrDate" select="."/>
+							<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
+						</xsl:call-template>
+					</xsl:variable>
+					<xsl:variable name="DSTEndUnix">
+						<xsl:call-template name="GetDSTEventDateUnixTime">
+							<xsl:with-param name="unixCurrDate" select="."/>
+							<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
+						</xsl:call-template>
+					</xsl:variable>
+					<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
+					<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
+					<xsl:call-template name="Date">
+						<xsl:with-param name="TZ" select="$TZ"/>
+						<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+						<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+						<xsl:with-param name="dstOffset" select="$dstOffset"/>
+					</xsl:call-template>
+				</xsl:for-each>
+				<span>
+					<xsl:text>&#160;</xsl:text>
+				</span>
+				<xsl:text>to </xsl:text>
+			</xsl:for-each>
+			<xsl:for-each select="espi:billingPeriod">
+				<xsl:variable name="DSTStartUnix">
+					<xsl:call-template name="GetDSTEventDateUnixTime">
+						<xsl:with-param name="unixCurrDate" select="espi:start"/>
+						<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstStartRule"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="DSTEndUnix">
+					<xsl:call-template name="GetDSTEventDateUnixTime">
+						<xsl:with-param name="unixCurrDate" select="espi:start"/>
+						<xsl:with-param name="HexDSTRule" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstEndRule"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="TZ" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:tzOffset"/>
+				<xsl:variable name="dstOffset" select="$XML/atom:feed/atom:entry/atom:content/espi:LocalTimeParameters/espi:dstOffset"/>
+				<xsl:call-template name="ConvStartPlusDuration">
+					<xsl:with-param name="vStart" select="espi:start"/>
+					<xsl:with-param name="vDuration" select="espi:duration"/>
+					<xsl:with-param name="TZ" select="$TZ"/>
+					<xsl:with-param name="dateDSTStartUnix" select="$DSTStartUnix"/>
+					<xsl:with-param name="dateDSTEndUnix" select="$DSTEndUnix"/>
+					<xsl:with-param name="dstOffset" select="$dstOffset"/>
+				</xsl:call-template>
+			</xsl:for-each>
+			<br/>
+			<xsl:for-each select="espi:billLastPeriod">
+				<xsl:text>Bill last period(</xsl:text>
+				<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
+					<xsl:call-template name="Currency"/>
+				</xsl:for-each>
+				<xsl:text>): </xsl:text>
+				<xsl:value-of select="format-number( . div(100000),&quot;#,###,##0.00&quot;)"/>
+				<br/>
+			</xsl:for-each>
+			<xsl:for-each select="espi:billLastPeriod">
+				<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
+					<xsl:text>Cost of usage last billing period (</xsl:text>
+					<xsl:call-template name="Currency"/>
+					<xsl:text>):&#160; </xsl:text>
+				</xsl:for-each>
+				<xsl:value-of select="format-number((../espi:billLastPeriod - ../espi:costAdditionalLastPeriod)div(100000),&quot;#,###,##0.00&quot;)"/>
+				<br/>
+			</xsl:for-each>
+			<xsl:for-each select="espi:costAdditionalLastPeriod">
+				<xsl:text>Cost additional last period (taxes and other fixed charges) (</xsl:text>
+				<xsl:for-each select="$XML/atom:feed/atom:entry/atom:content/espi:ElectricPowerUsageSummary/espi:currency">
+					<xsl:call-template name="Currency"/>
+				</xsl:for-each>
+				<xsl:text>): </xsl:text>
+				<xsl:value-of select="format-number( . div(100000),&apos;#,###,##0.00&apos;)"/>
+				<br/>
+			</xsl:for-each>
+		</xsl:for-each>
+		<br/>
+	</xsl:template>
 	<xsl:template name="ScaleValue">
 		<xsl:param name="Value"/>
 		<xsl:param name="valuePoTM"/>
-		<xsl:param name="ServiceKind"/>
-		
-
 		<xsl:variable name="valueMultiplier">
 			<xsl:choose>
 				<xsl:when test="$valuePoTM=0">1</xsl:when>
@@ -1042,15 +924,9 @@ Unless required by applicable law or agreed to in writing, software distributed 
 		</xsl:variable>
 		<xsl:variable name="currentPresentationMultiplierKind">
 			<xsl:choose>
-				<xsl:when test="$ServiceKind=0">
-					<xsl:value-of select="$gl_PresentationMultiplierElectricy"/>
-				</xsl:when>
-				<xsl:when test="$ServiceKind=1">
-					<xsl:value-of select="$gl_PresentationMultiplierTherms"/>
-				</xsl:when>
-				<xsl:when test="$ServiceKind=2">
-					<xsl:value-of select="$gl_PresentationMultiplierWater"/>
-				</xsl:when>
+				<xsl:when test="$gl_ServiceKind=0"><xsl:value-of select="$gl_PresentationMultiplierElectricy"/></xsl:when>
+				<xsl:when test="$gl_ServiceKind=1"><xsl:value-of select="$gl_PresentationMultiplierTherms"/></xsl:when>
+				<xsl:when test="$gl_ServiceKind=2"><xsl:value-of select="$gl_PresentationMultiplierWater"/></xsl:when>
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:variable name="presentationMultiplier">
@@ -1151,56 +1027,6 @@ Unless required by applicable law or agreed to in writing, software distributed 
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-	
-	<xsl:template name="UOMForPlot">
-		<xsl:choose>
-			<xsl:when test=". = 72">
-				<xsl:variable name="DisplayUnits">
-					<xsl:call-template name="GetPowerOf10String">
-						<xsl:with-param name="po10" select="$gl_PresentationMultiplierElectricy"/>
-					</xsl:call-template>
-				</xsl:variable>
-				
-				<xsl:value-of select="$DisplayUnits"/>
-				<xsl:text>watt-hours</xsl:text>
-			</xsl:when>
-			<xsl:when test=". = 132">
-				<xsl:variable name="DisplayUnits">
-					<xsl:call-template name="GetPowerOf10String">
-						<xsl:with-param name="po10" select="gl_PresentationMultiplierGas"/>
-					</xsl:call-template>
-				</xsl:variable>
-				
-				<xsl:value-of select="$DisplayUnits"/>
-				<xsl:text>BTU</xsl:text>
-			</xsl:when>
-			<xsl:when test=". = 128">
-				<xsl:variable name="DisplayUnits">
-					<xsl:call-template name="GetPowerOf10String">
-						<xsl:with-param name="po10" select="gl_PresentationMultiplierWater"/>
-					</xsl:call-template>
-				</xsl:variable>
-				
-				<xsl:value-of select="$DisplayUnits"/>
-				<xsl:text>USG</xsl:text>
-			</xsl:when>
-			<!-- Therms -->
-			<xsl:when test=". = 169">
-				<xsl:variable name="DisplayUnits">
-					<xsl:call-template name="GetPowerOf10String">
-						<xsl:with-param name="po10" select="gl_PresentationMultiplierTherms"/>
-					</xsl:call-template>
-				</xsl:variable>
-				
-				<xsl:value-of select="$DisplayUnits"/>
-				<xsl:text>Therms</xsl:text>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>Unknown</xsl:text>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-	
 	<xsl:template name="Currency">
 		<xsl:choose>
 			<xsl:when test=". = 840">
@@ -1351,10 +1177,10 @@ Unless required by applicable law or agreed to in writing, software distributed 
 		<xsl:variable name="TimeCompA">
 			<xsl:choose>
 				<xsl:when test="$TZ != 0">
-					<xsl:value-of select="$vStart + $TZ + $vDuration"/>
+					<xsl:value-of select="$vStart + $TZ"/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:value-of select="$vStart + $vDuration"/>
+					<xsl:value-of select="$vStart"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
@@ -1377,7 +1203,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 		</xsl:variable>
 		<xsl:variable name="strTemp">
 			<xsl:call-template name="convert-unix-to-date-time">
-				<xsl:with-param name="dtTmp" select="$TimeCompB"/>
+				<xsl:with-param name="dtTmp" select="$TimeCompB + $vDuration"/>
 			</xsl:call-template>
 		</xsl:variable>
 		<xsl:value-of select="concat(substring-before($strTemp , 'T'), ' ', substring-after( $strTemp , 'T'))"/>

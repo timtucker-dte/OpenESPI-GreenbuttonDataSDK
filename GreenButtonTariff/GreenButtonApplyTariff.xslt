@@ -369,8 +369,24 @@ JavaScript code for interval cost computations
 ========================================================================== 
 -->	
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:param name="pTariffFileName"/>
+	
+	<!-- if no tariff file name provided use default -->
+	<xsl:variable name="TariffFileName">
+		<xsl:choose>
+			<xsl:when test="$pTariffFileName=''">
+				<!-- default tariff file -->
+				<xsl:text>D:/_project/Enernex/Source/GreenButtonTariff/TariffSample.xml</xsl:text>
+				<!--<xsl:text>D:/_project/Enernex/Source/GreenButtonTariff/data/TariffSampleTEST_FIXED_TARIFF.xml</xsl:text>-->
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$pTariffFileName"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	
 	<!-- process nodes -->
-	<xsl:template match="/">	
+	<xsl:template match="/">
 		<xsl:text>&#13;</xsl:text>
 		<xsl:text disable-output-escaping="yes">&lt;?xml-stylesheet type="text/xsl" href="GreenButtonDataStyleSheet.xslt"?&gt;</xsl:text>
 		<xsl:text>&#13;</xsl:text>
@@ -386,16 +402,9 @@ JavaScript code for interval cost computations
 				<xsl:copy-of select="atom:updated"/>
 				<xsl:copy-of select="atom:link"/>
 				<xsl:for-each select="atom:entry/atom:content/espi:UsagePoint">
-				
-					<xsl:variable name="TariffFileName">
-						<xsl:value-of select="espi:ServiceDeliveryPoint/espi:tariffProfile"/>
-					</xsl:variable>					
-				
 					<xsl:variable name="UsagePointHref" select="ancestor::atom:entry/atom:link[@rel = 'self']/@href"/>
 					<xsl:for-each select="/atom:feed/atom:entry/atom:content/espi:ElectricPowerUsageSummary[ancestor::atom:entry/atom:link[@rel ='up' and @href=$UsagePointHref]]">
-						<xsl:call-template name="InitializeBillingInformation">
-								<xsl:with-param name="TariffFileName" select="$TariffFileName"/>
-						</xsl:call-template>
+						<xsl:call-template name="InitializeBillingInformation"/>
 					</xsl:for-each>
 					<!-- emit usage point -->
 					<xsl:copy-of select="ancestor::atom:entry"/>
@@ -478,7 +487,6 @@ JavaScript code for interval cost computations
 ========================================================================== 
 -->
 	<xsl:template name="InitializeBillingInformation">
-		<xsl:param name="TariffFileName"/>
 		<xsl:variable name="billingPeriodDuration" select="espi:billingPeriod/espi:duration"/>
 		<xsl:variable name="billingPeriodStart" select="espi:billingPeriod/espi:start"/>
 		<xsl:variable name="billingPeriodTimeStamp" select="espi:currentBillingPeriodOverAllConsumption/espi:timeStamp"/>
