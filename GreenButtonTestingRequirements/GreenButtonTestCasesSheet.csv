@@ -906,232 +906,90 @@ HTTPS,REQ.21.6.2,Communication,PROTO002,FB_13,Positive,Protocol,Test,Both,Verify
 ,,,TC018,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,,
 ,,,TC019,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,,
 ,,,TC020,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Third Party implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,,
-"Authorized GET access to atom:entry, ApplicationInformation with registration_access_token",REQ.21.6.2,Communication,FND001,FB_03,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:entry with ApplicationInformation as the source  using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+Authorized GET access to ApplicationInformation entry,REQ.21.6.2,Communication,FND001,FB_03,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:entry with ApplicationInformation as the source using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token
-ApplicationInformationId","1. Client sends GET request for atomentry type resource i.e. .../DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of response (TBD)
-3. Verify contents of recevied ApplicationInformation",GET https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationID},Test success or test failure report,Response received and response contents verified,,,,TBD: Don to provide AppInfo required fields/values,,,,,
-"Forbidden PUT, POST, DELETE access to atom:entry, ApplicationInformation with registration_access_token",REQ.21.6.2,Communication,FND002,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to PUT, POST, DELETE using registration_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-registration_access_token
-ApplicationInformationId","1. Client sends PUT request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of negative response
-3. Client sends POST request
-4. Verifiy receipt of negative response
-5. Client sends DELETE request
-6. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationID},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to atom:entry, ApplicationInformation  with access_token",REQ.21.6.2,Communication,FND003,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to GET, PUT, POST, DELETE using access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+ApplicationInformationId","1. Client sends GET request for atomentry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
+2. Verifiy receipt of positive response 200 - OK
+3. Verify contents of recevied ApplicationInformation specifically:
+ApplicationInformation must contain the following fields:  
+
+dataCustodianId,dataCustodianApplicationStatus,thirdPartyNotifyUri,authorizationServerAuthorizationEndpoint,authorizationServerTokenEndpoint,dataCustodianBulkRequestURI,dataCustodianResourceEndpoint,thirdPartyScopeSelectionScreenURI,thirdPartyUserPortalScreenURI,client_secret,client_name,client_uri,client_id,software_id,software_version,client_id_issued_at,client_secret_expires_at,token_endpoint_auth_method,scope,grant_types,response_types,registration_client_uri,registration_access_token,dataCustodianScopeSelectionScreen
+
+and
+
+dataCustodianApplicationStatus must contain a value of 1,2,3 or 4
+token_endpoint_auth_method must contain the value client_secret_basic
+grant_types must contain a value of authorization_code, refresh_token or client_credentials
+if grant_types=client_credentials then redirect_uri should not be present or should contain a null value. Otherwise redirect_uri must be present.
+",,,,,,,,,,,,
+Forbidden GET access to ApplicationInformation entry,REQ.21.6.2,Communication,FND002,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to GET using  client_access_token, access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token
+ApplicationInformationId","1. Client sends GET requests  for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId} using  client_access_token, access_token, empty access token
+2. Verifiy receipt of negative response 403 - Forbidden for each GET request",,,,,,,,,,,,
+Authorized GET access to Authorization feed,REQ.21.6.2,Communication,FND003,FB_03,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token
+list of authorizations granted and count","1. Client sends GET request for atom:feed type resource i.e. {dataCustodianResourceEndpoint}/Authorization
+2. Verify receipt of positive response 200 - OK
+3. Verify response contents (TBD)",,,,,,,test harness can assume there is a collection including the one for the client_access_token and one for each authorization granted. Depending agreement with DCs (based on the one slide which suggests what information should be shared as set up for the harness) tester should expect a number of responses. Each one should be schema valid and contain all the required fields and values. (Don to supply),,,,,
+Forbidden GET access to Authorization feed,REQ.21.6.2,Communication,FND004,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:feed, Authorization in response to GET using registration_access_token, access_token,  empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token","1. Client sends GET requests for atom:feed type resource i.e. {dataCustodianResourceEndpoint}/Authorization using registration_access_token, access_token,  empty access token
+2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+Authorized GET access to Authorization entry,REQ.21.6.2,Communication,FND005,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for entries with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token
+AuthorizationId","1. Client sends GET request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId}
+2. Verifiy receipt of response 200 - OK
+3. Verify contents of recevied Authorization specifically:
+Authorization entry must contain the following fields:
+
+authorizedPeriod,publishedPeriod,access_token,expiresAt,grant_type,refresh_token,scope,token_type,resourceURI,authorizationURI
+
+and
+
+if status is present it contains a value of 0, 1 or 2
+grant_type contains a value of authorization_code
+",,,,,,,,,,,,
+Forbidden GET access to Authorization entry,REQ.21.6.2,Communication,FND006,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to GET using registration_token,  access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token
+AuthorizationId","1. Client sends GET requests for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId} using registration_token,  access_token, empty access token
+2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+Authorized GET access to Batch/Subscription entry,REQ.21.6.2,Communication,FND007,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for Batch/Subscription resource using access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 access_token
-ApplicationInformationId","1. Client sends GET request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationID},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to atom:entry, ApplicationInformation  with client_access_token",REQ.21.6.2,Communication,FND004,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to GET, PUT, POST, DELETE using client_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+SubscriptionId","1. Client sends GET request for {dataCustodianResourceEndpoint}/Batch/Subscription/{SubscriptionId}
+2. Verify receipt of positive response 200 - OK
+3. Verify response contains a feed with at least 1 UsagePoint",,,,,,,,,,,,
+Forbidden GET access to Batch/Subscription entry,REQ.21.6.2,Communication,FND008,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to Batch/Subscription in response to GET using  client_access_token, registration_access_token,  access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
-ApplicationInformationId","1. Client sends GET request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationID},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Unauthorized GET, PUT, POST, DELETE access to atom:entry, ApplicationInformation  with empty access token",REQ.21.6.2,Communication,FND005,FB_03,Negative,Fundamental,Test,Server,"Verify unauthorized access to atom:entry, ApplicationInformation in response to GET, PUT, POST, DELETE using empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-ApplicationInformationId","1. Client sends GET request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationID},Test success or test failure report,401 - Unauthorized,,,,,,,,,
-"Authorized GET access to atom:feed, Authorization with client_access_token",REQ.21.6.2,Communication,FND006,FB_03,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token
-list of authorizations granted and count","1. Client sends GET request for atom:feed type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization
-2. Verify receipt of positive response
-3. Verify response contents (TBD)",GET https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization,Test success or test failure report,Response received and response contents verified,,,,test harness can assume there is a collection including the one for the client_access_token and one for each authorization granted. Depending agreement with DCs (based on the one slide which suggests what information should be shared as set up for the harness) tester should expect a number of responses. Each one should be schema valid and contain all the required fields and values. (Don to supply),,,,,
-"Forbidden PUT, POST, DELETE access to atom feed, Authorizations using client_access_token",REQ.21.6.2,Communication,FND007,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:feed, Authorization in response to PUT, POST, DELETE using client_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token","1. Client sends PUT request for atom:feed type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends POST request
-4. Verifiy receipt of negative response
-5. Client sends DELETE request
-6. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to atom feed, Authorizations using access_token",REQ.21.6.2,Communication,FND008,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:feed, Authorization in response to GET, PUT, POST, DELETE using access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-access_token","1. Client sends GET request for atom:feed type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to atom feed, Authorizations using registration_access_token",REQ.21.6.2,Communication,FND009,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:feed, Authorization in response to GET, PUT, POST, DELETE using registration_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-registration_access_token","1. Client sends GET request for atom:feed type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Unauthorized GET, PUT, POST, DELETE access to atom feed, Authorizations using empty access token",REQ.21.6.2,Communication,FND010,FB_03,Negative,Fundamental,Test,Server,"Verify unauthorized access to atom:feed, Authorization in response to GET, PUT, POST, DELETE using empty access token",Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: ,"1. Client sends GET request for atom:feed type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,401 - Unauthorized,,,,,,,,,
-"Authorized GET access to atom:entry, Authorization with client_access_token",REQ.21.6.2,Communication,FND011,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for entries with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token
-AuthorizationId","1. Client sends GET request for atomentry type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of response
-3. Verify contents of recevied Authorization (TBD)",GET https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,Response received and response contents verified,,,,"
- TBD: Don to supply Authorization required information for validation",,,,,
-"Forbidden PUT, POST, DELETE access to atom:entry, Authorization with client_access_token",REQ.21.6.2,Communication,FND012,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to PUT, POST, DELETE using client_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token
-AuthorizationId","1. Client sends PUT request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends POST request
-4. Verifiy receipt of negative response
-5. Client sends DELETE request
-6. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to atom:entry, Authorization  with access_token",REQ.21.6.2,Communication,FND013,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to GET, PUT, POST, DELETE using access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-access_token
-AuthorizationId","1. Client sends GET request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to atom:entry, Authorization  with registration_access_token",REQ.21.6.2,Communication,FND014,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to GET, PUT, POST, DELETE using registration_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-registration_access_token
-AuthorizationId","1. Client sends GET request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Unauthorized GET, PUT, POST, DELETE access to atom:entry, Authorization  with empty access token",REQ.21.6.2,Communication,FND015,FB_03,Negative,Fundamental,Test,Server,"Verify unauthorized access to atom:entry, Authorization in response to GET, PUT, POST, DELETE using empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-AuthorizationId","1. Client sends GET request for atom:entry type resource i.e. .../DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Authorization/{AuthorizationId},Test success or test failure report,401 - Unauthorized,,,,,,,,,
-Authorized GET atom:entry Batch/Subscription access using access_token,REQ.21.6.2,Communication,FND016,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for Batch/Subscription resource using access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-access_token
-SubscriptionId","1. Client sends GET request for ../DataCustodian/espi/1_1/resource/Batch/Subscription
-2. Verify receipt of response
-3. Verify response contains a feed with at least 1 UsagePoint",GET https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,Response received and response contents verified,,,,,,,,,
-"Forbidden PUT, POST, DELETE access to Batch/Subscription with access_token",REQ.21.6.2,Communication,FND017,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to Batch/Subscription in response to PUT, POST, DELETE using access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-access_token
-SubscriptionId","1. Client sends PUT request for atom:entry type resource i.e.../DataCustodian/espi/1_1/resource/Batch/Subscription/{SubscriptionId}
-2. Verifiy receipt of negative response
-3. Client sends POST request
-4. Verifiy receipt of negative response
-5. Client sends DELETE request
-6. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to Batch/Subscription  with client_access_token",REQ.21.6.2,Communication,FND018,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to Batch/Subscription in response to GET, PUT, POST, DELETE using client_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token
-SubscriptionId","1. Client sends GET request for atom:entry type resource i.e. ../DataCustodian/espi/1_1/resource/Batch/Subscription/{SubscriptionId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to Batch/Subscription  with registration_access_token",REQ.21.6.2,Communication,FND019,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to Batch/Subscription in response to GET, PUT, POST, DELETE using registration_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-registration_access_token
-SubscriptionId","1. Client sends GET request for atom:entry type resource i.e. ../DataCustodian/espi/1_1/resource/Batch/Subscription/{SubscriptionId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Unauthorized GET, PUT, POST, DELETE access to Batch/Subscription with empty access token",REQ.21.6.2,Communication,FND020,FB_03,Negative,Fundamental,Test,Server,"Verify unauthorized access to Batch/Subscription in response to GET, PUT, POST, DELETE using empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-SubscriptionId
-","1. Client sends GET request for atom:entry type resource i.e. ../DataCustodian/espi/1_1/resource/Batch/Subscription/{SubscriptionId}
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,401 - Unauthorized,,,,,,,,,
-Authorized GET ReadServiceStatus access using client_access_token,REQ.21.6.2,Communication,FND021,FB_03,Positive,Fundamental,Test,Server,Verify GET behaviour for ReadServiceStatus resource using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token","1. Client sends GET request for ../DataCustodian/espi/1_1/resource/ReadServiceStatus
-2. Verify receipt of response
-3. Verify contents of ReadServiceStatus response entry",GET https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ReadServiceStatus,Test success or test failure report,Response received and response contents verified,,,,,,,,,
-"Forbidden PUT, POST, DELETE access to ReadServiceStatus with client_access_token",REQ.21.6.2,Communication,FND022,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to ReadServiceStatus in response to PUT, POST, DELETE using client_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-client_access_token","1. Client sends PUT request for atom:entry type resource i.e. ../DataCustodian/espi/1_1/resource/ReadServiceStatus
-2. Verifiy receipt of negative response
-3. Client sends POST request
-4. Verifiy receipt of negative response
-5. Client sends DELETE request
-6. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to ReadServiceStatuss  with access_token",REQ.21.6.2,Communication,FND023,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to ReadServiceStatus in response to GET, PUT, POST, DELETE using access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-access_token","1. Client sends GET request for atom:entry type resource i.e.  ../DataCustodian/espi/1_1/resource/ReadServiceStatus
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Forbidden GET, PUT, POST, DELETE access to ReadServiceStatus  with registration_access_token",REQ.21.6.2,Communication,FND024,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to ReadServiceStatus in response to GET, PUT, POST, DELETE using registration_access_token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-registration_access_token","1. Client sends GET request for atom:entry type resource i.e.  ../DataCustodian/espi/1_1/resource/ReadServiceStatus
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,403 - Forbidden,,,,,,,,,
-"Unauthorized GET, PUT, POST, DELETE access to ReadServiceStatus with empty access token",REQ.21.6.2,Communication,FND025,FB_03,Negative,Fundamental,Test,Server,"Verify unauthorized access to ReadServiceStatus in response to GET, PUT, POST, DELETE using empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
-","1. Client sends GET request for atom:entry type resource i.e.  ../DataCustodian/espi/1_1/resource/ReadServiceStatus
-2. Verifiy receipt of negative response
-3. Client sends PUT request
-4. Verifiy receipt of negative response
-5. Client sends POST request
-6. Verifiy receipt of negative response
-7. Client sends DELETE
-8. Verifiy receipt of negative response",PUT https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Subscription,Test success or test failure report,401 - Unauthorized,,,,,,,,,
-Notification Push/POST by DataCustodian of ApplicationInformation,REQ.21.6.2,Communication,PSH_001,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of ApplicationInformation by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+SubscriptionId","1. Client sends GET requests for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Batch/Subscription/{SubscriptionId} using  client_access_token, registration_access_token,  access token
+2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+Authorized GET access to ReadServiceStatus,REQ.21.6.2,Communication,FND009,FB_03,Positive,Fundamental,Test,Server,Verify GET behaviour for ReadServiceStatus resource using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token","1. Client sends GET request for {dataCustodianResourceEndpoint}/ReadServiceStatus
+2. Verify receipt of response 200 - OK
+3. Verify contents of ReadServiceStatus response entry",,,,,,,,,,,,
+Forbidden GET access to ReadServiceStatus,REQ.21.6.2,Communication,FND010,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to ReadServiceStatus in response to GET using access_token,  registration_access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+access_token","1. Client sends GET requests for atom:entry type resource i.e.  {dataCustodianResourceEndpoint}/ReadServiceStatus using access_token,  registration_access_token, empty access token
+2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+Notification Push/POST to ThirdParty of ApplicationInformation,REQ.21.6.2,Communication,PSH_001,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of ApplicationInformation by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token","1. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Retreived data specified by the notification using either REST GET or SFTP get (depending on notification contents- could be either) -if REST GET use registration_access_token
-5 Verify ApplicationInformation contents - schema validation only",DataCustodian issues POST to https://testApplication(i.e. SoapUI)/ThirdParty/espi/1_1/Notification,Test success or test failure report,Notification received and contents verified,,,,,,,,,
-Notification Push/POST by DataCustodian of Authorization,REQ.21.6.2,Communication,PSH_002,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Authorization by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+5 Verify ApplicationInformation contents - schema validation only",,,,,,,,,,,,
+Notification Push/POST to ThirdParty of Authorization,REQ.21.6.2,Communication,PSH_002,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Authorization by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token","1. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Retreived data specified by the notification using either REST GET or SFTP get (depending on notification contents- could be either). if REST GET use client_access_token
-5 Verify Authorization contents - schema validation only.",DataCustodian issues POST to https://testApplication(i.e. SoapUI)/ThirdParty/espi/1_1/Notification,Test success or test failure report,Notification received and contents verified,,,,,,,,,
-Notification Push/POST by DataCustodian of Subscription,REQ.21.6.2,Communication,PSH_003,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Subscription by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+5 Verify Authorization contents - schema validation only.",,,,,,,,,,,,
+Notification Push/POST to ThirdParty of Subscription,REQ.21.6.2,Communication,PSH_003,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Subscription by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 access_token","1. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Retreived data specified by the notification using either REST GET or SFTP get (depending on notification contents- could be either). If REST GET use access_token
-5 Verify Subscription contents i.e. schema validation only",DataCustodian issues POST to https://testApplication(i.e. SoapUI)/ThirdParty/espi/1_1/Notification,Test success or test failure report,Notification received and contents verified,,,,,,,,,
-DC Notification to TP failure mode,REQ.21.6.2,Communication,PSH_004,FB_39,Negative,Fundamental,Test,Server,Verify by demonstration that notifcation to TP failure is detected by DC,Third Party test harness has been configured and registered/authorized by the DC under test,"1. Place TP/test application off-line
+5 Verify Subscription contents i.e. schema validation only",,,,,,,,,,,,
+DataCustodian detection of Notification Push/POST failure,REQ.21.6.2,Communication,PSH_004,FB_39,Negative,Fundamental,Test,Server,Verify by demonstration that notifcation to TP failure is detected by DC,Third Party test harness has been configured and registered/authorized by the DC under test,"1. Place TP/test application off-line
 2. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
-3. Verify by demonstration that the DC detects notification failure",,Test success or test failure report,Detection of notification failure,,,,,,,,,
-SFTP for BULK,REQ.21.6.2,Communication,SFTP_001,FB_34,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data by DataCustodian and data transfer using SFTP,"Third Party has been authorized and configured
+3. Verify by demonstration that the DC detects notification failure",,,,,,,,,,,,
+SFTP for BULK notification,REQ.21.6.2,Communication,SFTP_001,FB_34,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data by DataCustodian and data transfer using SFTP,"Third Party has been authorized and configured
 Pre configured Authorizations
 Authorizations need bulk scope","1. Trigger DataCustodian to initiate a bulk notification i.e. sftp://{dataCustodianResourceEndpoint}/Batch/Bulk/{BulkID} (TBD: manual or automatic)
 2. Verify Notfication is received
@@ -1141,10 +999,8 @@ Authorizations need bulk scope","1. Trigger DataCustodian to initiate a bulk not
 Pass schema
 Must contain 1 feed with one of more entry(s)
 Verify there is a valid authorization for each entry and the scope of each authorization for each entry has BR=BulkId
-Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",sftp://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID},Test success or test failure report,Notification received and contents verified,,,,"Is notification URI a pointer to a folder or a pointer to a file?
-SFTP GETALL _ could retrieve a set of files from a folder or
-SFTP GET _ single file",,,,,
-REST for BULK retrieve data using client_access_token,REQ.21.6.2,Communication,RBK_001,FB_35,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data by DataCustodian and data transfer using REST GET,"Third Party has been authorized and configured
+Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",,,,,,,,,,,,
+REST for BULK notification - authorized GET access,REQ.21.6.2,Communication,RBK_001,FB_35,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data by DataCustodian and data transfer using REST GET with client_access_token,"Third Party has been authorized and configured
 Pre configured Authorizations
 Authorizations need bulk scope
 client_access_token","1. Trigger DataCustodian to initiate a bulk notification i.e. https://{dataCustodianResourceEndpoint}/Batch/Bulk/{BulkID} (TBD: manual or automatic)
@@ -1156,38 +1012,47 @@ client_access_token","1. Trigger DataCustodian to initiate a bulk notification i
 Pass schema
 Must contain 1 feed with one of more entry(s)
 Verify there is a valid authorization for each entry and the scope of each authorization for each entry has BR=BulkId
-Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID},Test success or test failure report,Notification received and contents verified,,,,,,,,,
-"REST for BULK Forbidden PUT, POST, DELETE access with client_access_token",REQ.21.6.2,Communication,RBK_002,FB_35,Negative,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data and fobidden access using client_access_token,"Third Party has been authorized and configured
-Pre configured Authorizations
-Authorizations need bulk scope
-client_access_token","1. Trigger DataCustodian to initiate a bulk notification i.e. https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID} (TBD: manual or automatic)
-2. Verify Notfication is received
-3. Verify well-formed Notification
-4. Attempt PUT, POST, DELETE to resource specified by the notification using client_access_token
-5. Verify Forbidden response",https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID},Test success or test failure report,Notification received and contents verified,,,,,,,,,
-"REST for BULK Forbidden PUT, POST, DELETE access with access_token",REQ.21.6.2,Communication,RBK_003,FB_35,Negative,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data and fobidden access using access_token,"Third Party has been authorized and configured
-Pre configured Authorizations
-Authorizations need bulk scope
-access_token","1. Trigger DataCustodian to initiate a bulk notification i.e. https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID} (TBD: manual or automatic)
-2. Verify Notfication is received
-3. Verify well-formed Notification
-4. Attempt GET, PUT, POST, DELETE to resource specified by the notification using access_token
-5. Verify Forbidden response",https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID},Test success or test failure report,Notification received and contents verified,,,,,,,,,
-"REST for BULK Forbidden PUT, POST, DELETE access with registration_access_token",REQ.21.6.2,Communication,RBK_004,FB_35,Negative,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data and fobidden access using registration_access_token,"Third Party has been authorized and configured
+Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",,,,,,,,,,,,
+REST for BULK notification - Forbidden GET access,REQ.21.6.2,Communication,RBK_002,FB_35,Negative,Fundamental,Test,Server,"Verify Thirdparty notification of Bulk data and fobidden access using access_token, registration_access_token, empty access token","Third Party has been authorized and configured
 Pre configured Authorizations
 Authorizations need bulk scope
 client_access_token","1. Trigger DataCustodian to initiate a bulk notification i.e. https://{dataCustodianResourceEndpoint}/Batch/Bulk/{BulkID} (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
-4. Attempt GET, PUT, POST, DELETE to resource specified by the notification using registration_access_token
-5. Verify Forbidden response",https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID},Test success or test failure report,Notification received and contents verified,,,,,,,,,
-"REST for BULK Unauthorized GET, PUT, POST, DELETE access with empty access token",REQ.21.6.2,Communication,RBK_005,FB_35,Negative,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data and unauthorized access using empty access token,"Third Party has been authorized and configured
-Pre configured Authorizations
-Authorizations need bulk scope","1. Trigger DataCustodian to initiate a bulk notification i.e. https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID} (TBD: manual or automatic)
-2. Verify Notfication is received
-3. Verify well-formed Notification
-4. Attempt GET, PUT, POST, DELETE to resource specified by the notification using empty access token
-5. Verify Forbidden response",https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID},Test success or test failure report,Notification received and contents verified,,,,,,,,,
-Partial update of data,REQ.21.6.2,Communication,,FB_19,,Fundamental,Test,Server,TBD. Is this requirement for upload role and not core data custodian,,,,,,,,,Is this requirement for upload role and not core data custodian,,,,,
-Query Parameters,REQ.21.6.2,Communication,,FB_37,,Fundamental,Test,Server,"support published_min, published_max",,,,,,,,,TBD,,,,,
-Offline RetailCustomer Authorization,,,,FB_40,,,,Server,"This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.","Manual creation of ApplicationInformation, Authorization(s)",,,,,,,,"TBD: This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.",,,,,
+4. Attempt GET to resource specified by the notification using access_token, registration_access_token, empty access token
+5. Verify 403 - Forbidden response to each request",,,,,,,,,,,,
+Authorized PUT access to ApplicationInformation entry,REQ.21.6.2,Communication,MGT_001,FB_41,Positive,Fundamental,Test,Server,Verify positive PUT behavior for atom:entry with ApplicationInformation as the source  using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+registration_access_token
+ApplicationInformationId","1. Client sends GET request for atomentry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
+2. Verifiy receipt of positive response 200 - OK with ApplicationInformation entry
+3. Use contents of GET response as body of PUT request - issue PUT to DC
+4. Confirm positive response - 200 - OK",,,,,,,,,,,,
+Authorized DELETE access to ApplicationInformation entry,REQ.21.6.2,Communication,MGT_002,FB_41,Positive,Fundamental,Test,Server,Verify positive DELETE behavior for atom:entry with ApplicationInformation as the source  using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+registration_access_token
+ApplicationInformationId","1. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
+2. Verifiy receipt of positive response 200 - OK",,,,,,,,,,,,
+"Forbidden PUT, DELETE access to ApplicationInformation entry",REQ.21.6.2,Communication,MGA_001,FB_44,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to PUT, DELETE using client_access_token, access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+registration_access_token
+ApplicationInformationId","1. Client sends PUT request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId} using client_access_token, access_token, empty access token
+2. For each response verifiy receipt of negative response 403 - Forbidden
+3. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId} using client_access_token, access_token, empty access token
+4. For each response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+Authorized PUT access to Authorization entry,REQ.21.6.2,Communication,MGA_002,FB_44,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token
+list of authorizations granted and count","1. Client sends GET request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId}
+2. Verifiy receipt of positive response 200 - OK and Authorization entry in the body
+3. Issue PUT with content of GET response as content of PUT
+4. Verify receipt of positive response - 200 - OK",,,,,,,,,,,,
+Authorized DELETE access to Authorization entry,REQ.21.6.2,Communication,MGA_003,FB_44,Positive,Fundamental,Test,Server,Verify positive DELETE behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+client_access_token
+list of authorizations granted and count","1. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId}
+2. Verifiy receipt of positive response 200 - OK",,,,,,,,,,,,
+"Forbidden  PUT, DELETE access to Authorization entry",REQ.21.6.2,Communication,MGA_004,FB_44,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to  PUT, DELETE using registration_access_token, access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+registration_access_token
+AuthorizationId","1. Client sends PUT request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId} using registration_access_token, access_token, empty access token
+2. For each response verifiy receipt of negative response 403 - Forbidden
+3. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId} using registration_access_token, access_token, empty access token
+4. For each response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+Partial update of data,REQ.21.6.2,Communication,PRT_001,FB_19,TBD,TBD,TBD,TBD,TBD. Is this requirement for upload role and not core data custodian,,,,,,,,,TBD: Is this requirement for upload role and not core data custodian,,,,,
+Query Parameters,REQ.21.6.2,Communication,QRY_001,FB_37,TBD,TBD,TBD,TBD,"support published_min, published_max",,,,,,,,,TBD,,,,,
+Offline RetailCustomer Authorization,REQ.21.6.2,Communication,OFA_001,FB_40,TBD,TBD,TBD,TBD,"This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.","Manual creation of ApplicationInformation, Authorization(s)",,,,,,,,"TBD: This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.",,,,,
