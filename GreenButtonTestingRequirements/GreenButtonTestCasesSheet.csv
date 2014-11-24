@@ -880,7 +880,7 @@ Refresh Token,,Authorization,OA062,FB_14,Negative,Protocol,Test,Server,Verify Da
 Refresh Token,,Authorization,OA063,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" element that was NOT issued to the requesting Third Party Application",,,,,,,,,,,,X,X,
 Refresh Token,,Authorization,OA064,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" element that is expired",,,,,,,,,,,,X,X,
 Refresh Token,,Authorization,OA065,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""scope"" element that does NOT match the ""scope"" element value used to obtain the original Access Token.",,,,,,,,,,,,X,X,
-Request / Reply,REQ.21.4,Communication,ON001,FB_03,,Online,Test,,,,,,,,,,,,,,X,,
+Request / Reply,REQ.21.4,Communication,ON001,FB_99,,Online,Test,,,,,,,,,,,,,,X,,
 HTTP,REQ.21.6.2,Communication,PROTO001,FB_01,Positive,Protocol,Test,Both,Verify implementation of HTTP.,,"1.  Log in as an eligible user.
 2.  Navigate to web portal Green Button Download My Data screen.
 3. Verify that screen is shown
