@@ -23,46 +23,46 @@ Correct data ranges,,,CDPTP008,FB_20,Positive,Format,Analysis,Client,Check that 
 Valid links,,,CDPTP009,FB_20,Positive,Format,Test,Client,Check that client application correctly processes links that point to contained entries.,,"Load a fully valid XML instance into the client application, verify that the data is accessible, associations between objects are correct, and no errors are generated.",,,,,,,,,,,,
 Present required components,,,CDPTP010,FB_20,Positive,Format,Analysis,Client,Check that client application correctly process timestamps ,,"Load a fully valid XML instance into the client application, verify that the data is accessible, timestamps are correct, and no errors are generated.",,,,,,,,,,,,
 Unique UUIDs,,,CDPTP011,FB_20,Positive,,Test,Client,Check client ability to handle multiple usage points,,,,,,,,,,,,,,
-Configure Third Party,,,CONF001,FB_13,Positive,Security,Demonstration,Both,Verify ability to authorize and configure a third party,,"1. Third party provides application information to data custodian, either manually or using ",,,,,,,,,,,,
+Configure Third Party,,,CONF001,FB_13,Positive,Security,Demonstration,Both,Verify ability to authorize and configure a third party,,"1. Third party provides application information to data custodian, either manually or using ",,,,,,,,,,X,,
 Verify Data Custodian Purchase of Standard,,,CPYRT001,FB_01,Positive,Information,Inspection,Both,Verify the implementer has purchased the NAESB ESPI standard.,,"1.  Obtain the current ""NAESB Copyright Policy and Companies with Access to NAESB Standard at http://www.naesb.org/pdf2/copyright.pdf. 
 2.  Locate implementer's name on the North American Energy Standards Board's (NAESB) ""Companies with Access to NAESB Standards"" report.
-3.  Verify the ""Retail Version(s)"" column of the report's ""Standard Products"" section contains evidence of implementer having purchased the NAESB ESPI 1.0 Standard [column includes  the ""2.0"" version | ""Final Action (ESPI): 2011 Retail API 8c/R10008"" | ""REQ.21 (ESPI""].",,,"Implementer's purchase of NAESB ESPI Standard is witnessed and verified using the NAESB ""Companies with Access to NAESB Standards"" report by tester.",,"Implementer's name does not appear on the NAESB ""Companies with Access to NAESB Standards"" report or if it appears the ""Retail Version(s)"" column of the ""Standard Products"" section does not indicate the implementer has purchased the NAESB ESPI Standard.",,,,X,X,,
+3.  Verify the ""Retail Version(s)"" column of the report's ""Standard Products"" section contains evidence of implementer having purchased the NAESB ESPI 1.0 Standard [column includes  the ""2.0"" version | ""Final Action (ESPI): 2011 Retail API 8c/R10008"" | ""REQ.21 (ESPI""].",,,"Implementer's purchase of NAESB ESPI Standard is witnessed and verified using the NAESB ""Companies with Access to NAESB Standards"" report by tester.",,"Implementer's name does not appear on the NAESB ""Companies with Access to NAESB Standards"" report or if it appears the ""Retail Version(s)"" column of the ""Standard Products"" section does not indicate the implementer has purchased the NAESB ESPI Standard.",,,,X,,,
 Verify Third Party Purchase of Standard,,,CPYRT002,FB_20,Positive,,Inspection,Both,Verify the implementer has purchased the NAESB ESPI standard.,,"1.  Locate implementer's name on the North American Energy Standards Board's (NAESB) ""Companies with Access to NAESB Standards"" report.
-2.  Verify the ""Retail Version(s)"" column of the report's ""Standard Products"" section contains evidence of implementer having purchased the NAESB ESPI 1.0 Standard [column contains ""1.0-2.0"" | ""Final Action (ESPI): 2011 Retail API 8c/R10008"" | ""REQ.21 (ESPI""]",,,"Implementer's purchase of NAESB ESPI Standard is witnessed and verified using the NAESB ""Companies with Access to NAESB Standards"" report by tester.",,"Implementer's name does not appear on the NAESB ""Companies with Access to NAESB Standards"" report or if it appears the ""Retail Version(s)"" column of the ""Standard Products"" section does not indicate the implementer has purchased the NAESB ESPI Standard.",,,,,X,,
+2.  Verify the ""Retail Version(s)"" column of the report's ""Standard Products"" section contains evidence of implementer having purchased the NAESB ESPI 1.0 Standard [column contains ""1.0-2.0"" | ""Final Action (ESPI): 2011 Retail API 8c/R10008"" | ""REQ.21 (ESPI""]",,,"Implementer's purchase of NAESB ESPI Standard is witnessed and verified using the NAESB ""Companies with Access to NAESB Standards"" report by tester.",,"Implementer's name does not appear on the NAESB ""Companies with Access to NAESB Standards"" report or if it appears the ""Retail Version(s)"" column of the ""Standard Products"" section does not indicate the implementer has purchased the NAESB ESPI Standard.",,,,,,,
 feed,REQ.21.4,,D000,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/
-TEST:atom:feed",1hrLP_32DaysM.xml,,,,RemoveEntry:atom:feed,,,X,X,X,,
+TEST:atom:feed",1hrLP_32DaysM.xml,,,,RemoveEntry:atom:feed,,,X,X,,,
 feed id,REQ.21.4,,D001,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed
-TEST:atom:id",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:id,,,X,X,X,,
+TEST:atom:id",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:id,,,X,X,,,
 feed title,REQ.21.4,,D002,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed
-TEST:atom:title",1hrLP_32Days.xml,Name of the dataset (human readable),,,RemoveEntry:atom:feed/atom:title,,,X,X,X,,
+TEST:atom:title",1hrLP_32Days.xml,Name of the dataset (human readable),,,RemoveEntry:atom:feed/atom:title,,,X,X,,,
 feed updated,REQ.21.4,,D003,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed
-TEST:atom:updated",1hrLP_32Days.xml,Date / time of request,,,RemoveEntry:atom:feed/atom:updated,,,X,X,X,,
+TEST:atom:updated",1hrLP_32Days.xml,Date / time of request,,,RemoveEntry:atom:feed/atom:updated,,,X,X,,,
 entry id's (URNs),REQ.21.4,,D004,FB_01,Positive,Data Element,Test,Both,verify the uniqueness ,,"CONTEXT:/atom:feed/atom:entry
-TEST:count(/atom:feed/atom:entry[atom:id = current()/atom:id])>0",1hrLP_32Days.xml,,,,Duplicate:atom:feed/atom:entry[1],,,X,X,X,,
+TEST:count(/atom:feed/atom:entry[atom:id = current()/atom:id])>0",1hrLP_32Days.xml,,,,Duplicate:atom:feed/atom:entry[1],,,X,X,,,
 UsagePoint status,REQ.21.4,,D005,FB_99,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint] 
 TEST:atom:content/espi:UsagePoint/espi:status",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:entry/atom:content/espi:UsagePoint/espi:status,,,,X,,,
 UsagePoint,REQ.21.4,,D006,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed
-TEST:atom:entry[*/espi:UsagePoint] ",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint],,,X,X,X,,
+TEST:atom:entry[*/espi:UsagePoint] ",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint],,,X,X,,,
 UsagePoint related LocalTimeParameters,REQ.21.4,,D007,FB_01,Positive,Data Element,Test,Both,verify that UsagePoint points to at most one LocalTimeParameters,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:count(/atom:feed/atom:entry[*/espi:LocalTimeParameters]/atom:link[@rel='self' and @href=current()/atom:link[@rel='related']/@href])=1",1hrLP_32Days.xml,,,,Duplicate:espi:LocalTimeParameters[1],,,X,X,X,,
+TEST:count(/atom:feed/atom:entry[*/espi:LocalTimeParameters]/atom:link[@rel='self' and @href=current()/atom:link[@rel='related']/@href])=1",1hrLP_32Days.xml,,,,Duplicate:espi:LocalTimeParameters[1],,,X,X,,,
 UsagePoint ServiceCategory,REQ.21.4,,D008,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint] 
-TEST:atom:content/espi:UsagePoint/espi:ServiceCategory/espi:kind",1hrLP_32Days.xml,0 = electricity,,,RemoveEntry:atom:feed/atom:entry/atom:content/espi:UsagePoint/espi:ServiceCategory/espi:kind,,,X,X,X,,
+TEST:atom:content/espi:UsagePoint/espi:ServiceCategory/espi:kind",1hrLP_32Days.xml,0 = electricity,,,RemoveEntry:atom:feed/atom:entry/atom:content/espi:UsagePoint/espi:ServiceCategory/espi:kind,,,X,X,,,
 UsagePoint published,REQ.21.4,,D009,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:published",1hrLP_32Days.xml,UsagePoint.createDate,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:published,,,X,X,X,,
+TEST:atom:published",1hrLP_32Days.xml,UsagePoint.createDate,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:published,,,X,X,,,
 UsagePoint updated,REQ.21.4,,D010,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:updated",1hrLP_32Days.xml,UsagePoint.modifyDate,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:updated,,,X,X,X,,
+TEST:atom:updated",1hrLP_32Days.xml,UsagePoint.modifyDate,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:updated,,,X,X,,,
 UsagePoint id,REQ.21.4,,D011,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:id",1hrLP_32Days.xml,UUID(UsagePoint),,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:id,,,X,X,X,,
+TEST:atom:id",1hrLP_32Days.xml,UUID(UsagePoint),,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:id,,,X,X,,,
 UsagePoint title,REQ.21.4,,D012,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:title",1hrLP_32Days.xml,Name of the usage point (human readable),,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:title,,,X,X,X,,
+TEST:atom:title",1hrLP_32Days.xml,Name of the usage point (human readable),,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:title,,,X,X,,,
 UsagePoint self link,REQ.21.4,,D013,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:link[@rel='self']/@href",1hrLP_32Days.xml,"HREF(""UsagePoint"",UsagePoint)",,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:link[@rel='self'],,,X,X,X,,
+TEST:atom:link[@rel='self']/@href",1hrLP_32Days.xml,"HREF(""UsagePoint"",UsagePoint)",,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:link[@rel='self'],,,X,X,,,
 UsagePoint self link,REQ.21.4,,D014,FB_01,Positive,Data Element,Test,Both,verify that link is unique,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:count(/atom:feed/atom:entry[*/espi:UsagePoint]/atom:link[@rel='self' and @href=current()/atom:link[@rel='self']/@href])=1",1hrLP_32Days.xml,,,,Duplicate:espi:UsagePoint[1],,,X,X,X,,
+TEST:count(/atom:feed/atom:entry[*/espi:UsagePoint]/atom:link[@rel='self' and @href=current()/atom:link[@rel='self']/@href])=1",1hrLP_32Days.xml,,,,Duplicate:espi:UsagePoint[1],,,X,X,,,
 UsagePoint up link,REQ.21.4,,D015,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:link[@rel='up']/@href",1hrLP_32Days.xml,"HREF(""UsagePointList"",CustomerId)",,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:link[@rel='up'],,,X,X,X,,
+TEST:atom:link[@rel='up']/@href",1hrLP_32Days.xml,"HREF(""UsagePointList"",CustomerId)",,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:link[@rel='up'],,,X,X,,,
 UsagePoint related MeterReadingList,REQ.21.4,,D016,FB_01,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint]
-TEST:atom:link[@rel='related']/@href",1hrLP_32Days.xml,"HREF(""MeterReadings"",UsagePoint)",,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:link[@rel='related'],,,X,X,X,,
+TEST:atom:link[@rel='related']/@href",1hrLP_32Days.xml,"HREF(""MeterReadings"",UsagePoint)",,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:link[@rel='related'],,,X,X,,,
 UsagePoint roleFlags,REQ.21.4,,D017,FB_99,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:UsagePoint] 
 TEST:atom:content/espi:UsagePoint/espi:roleFlags",1hrLP_32Days.xml,12 = revenue quality / premises aggregation point,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:UsagePoint]/atom:content/espi:UsagePoint/espi:roleFlags,,,,X,,,
 MeterReading id,REQ.21.4,,D018,FB_04,Positive,Data Element,Test,Both,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:MeterReading]
@@ -296,7 +296,7 @@ TEST:atom:content/espi:ElectricPowerQualitySummary/espi:summaryInterval/espi:dur
 LocalTimeParameters self link,REQ.21.4,,D135,FB_01,Positive,Data Element,Test,Both,verify that each LocalTimeParameter points to at least one UsagePoint,,"CONTEXT:/atom:feed/atom:entry[*/espi:LocalTimeParameters]
 TEST:count(/atom:feed/atom:entry[*/espi:UsagePoint]/atom:link[@rel='related' and @href=current()/atom:link[@rel='self']/@href])>0",1hrLP_32Days.xml,,,,RemoveEntry:atom:entry[atom:content/espi:UsagePoint],,,X,X,,,
 LocalTimeParameters,REQ.21.4,,D136,FB_01,Positive,Data Element,Test,,verify the presence of a valid value,,"CONTEXT:/atom:feed
-TEST:atom:entry[*/espi:LocalTimeParameters] ",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:LocalTimeParameters],,,X,X,X,,
+TEST:atom:entry[*/espi:LocalTimeParameters] ",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:LocalTimeParameters],,,X,X,,,
 LocalTimeParameters title,REQ.21.4,,D137,FB_01,Positive,Data Element,Test,,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:LocalTimeParameters]
 TEST:atom:title",1hrLP_32Days.xml,,,,RemoveEntry:atom:feed/atom:entry[atom:content/espi:LocalTimeParameters]/atom:title,,,X,X,,,
 LocalTimeParameters id,REQ.21.4,,D138,FB_01,Positive,Data Element,Test,,verify the presence of a valid value,,"CONTEXT:/atom:feed/atom:entry[*/espi:LocalTimeParameters]
@@ -509,13 +509,13 @@ Host: espi.datacustodian.com
 405 - Method Not Allowed
 ",,,,,,,,,,
 Authorization Endpoint Verification,,Authorization,OA001,FB_14,Positive,User Interface,Inspection,Server,Verify server provides an OAuth Authorization Endpoint,,"1. Verify Data Custodian implements an OAuth 2.0 Authorization Endpoint (i.e., /oauth/authorize) and its URI is provided to 
-     Third Parties during registration process",,,,,,,,,,,X,
+     Third Parties during registration process",,,,,,,,,,X,X,
 Token Endpoint Verification,,Authorization,OA002,FB_14,Positive,User Interface,Inspection,Server,Verify server provides an OAuth Token Endpoint,,"1. Verify Data Custodian implements an OAuth 2.0 Token Endpoint (i.e., /oauth/token) and its URI is provided to Third Parties
-     during registration process",,,,,,,,,,,X,
+     during registration process",,,,,,,,,,X,X,
 Redirect Endpoint Verification,,Authorization,OA003,FB_14,Positive,User Interface,Inspection,Client,Verify client provides an OAuth Redirection Endpoint,,"1. Verify Third Party implements a Redirection Endpoint (i.e., /espi/1_1/OAuthCallBack) and its URI is provided to Data Custodian
      during registration process",,,,,,,,,,X,,
-Third Party ID issued verification,,Authorization,OA004,FB_14,Positive,User Interface,Inspection,Server,Verify Data Custodian provides Third Party with an OAuth Client ID,,1. Verify Data Custodian provides Third Party with an OAuth client ID during registration process,,,,,,,,,,,X,
-Third Party Secret issued verification,,Authorization,OA005,FB_14,Positive,User Interface,Inspection,Server,Verify Data Custodian provides Third Party with an OAuth Secret,Third Party has been authorized (registered) and configured,1. Verify Data Custodian provides client with a Third Party Secret during registration process,,,,,,,,,,,X,
+Third Party ID issued verification,,Authorization,OA004,FB_14,Positive,User Interface,Inspection,Server,Verify Data Custodian provides Third Party with an OAuth Client ID,,1. Verify Data Custodian provides Third Party with an OAuth client ID during registration process,,,,,,,,,,X,X,
+Third Party Secret issued verification,,Authorization,OA005,FB_14,Positive,User Interface,Inspection,Server,Verify Data Custodian provides Third Party with an OAuth Secret,Third Party has been authorized (registered) and configured,1. Verify Data Custodian provides client with a Third Party Secret during registration process,,,,,,,,,,X,X,
 Properly Formatted Authorization Code Request,,Authorization,OA006,FB_14,Positive,Format,Inspection,Client,Verify Third Party issues a validly formatted OAuth Authorization Code Request,Third Party has been authorized (registered) and configured,"1. Third Party issues an OAuth 2.0 Authorization Request
 2. Verify Authorization Request is sent to the Data Custodian's Authorization Endpoint
 3. Verify all mandatory authorization request fields appear in the query component of the authorization request using the
@@ -533,34 +533,34 @@ Properly Formatted Authorization Code Request,,Authorization,OA006,FB_14,Positiv
 4. Verify the error response contains a ""state"" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" 
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (No ""client_id"" element)",,Authorization,OA008,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""client_id"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request without a ""client_id="" element to Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
 3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (No ""redirect_uri"" element)",,Authorization,OA009,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""redirect_uri"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request without a ""redirect_uri="" element to Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
 3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error"" element of ""invalid_request""
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
  5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-      element of the Authorization Code Request",,,,,,,,,,,,
+      element of the Authorization Code Request",,,,,,,,,,X,,
 "Malformed Authorization Code Request (No ""scope"" element)",,Authorization,OA010,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""scope"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with NO ""scope="" element to Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
 3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_scope""
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" 
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (No ""state"" element)",,Authorization,OA011,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""state"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with NO ""state="" element to Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
 3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
 4. Verify the error response does NOT contain a ""state="" element
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" 
-     element of the Authorization Code Request",,,,,,,,,,,,
+     element of the Authorization Code Request",,,,,,,,,,X,,
 "Malformed Authorization Code Request (Multiple ""response_code"" elements)",,Authorization,OA012,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""response_type"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""response_code="" parameters to Data Custodian under
      test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -568,7 +568,7 @@ Properly Formatted Authorization Code Request,,Authorization,OA006,FB_14,Positiv
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (Multiple ""client_id"" elements)",,Authorization,OA013,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""client_id"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""client_id="" elements to Data Custodian under
      test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -576,14 +576,14 @@ Properly Formatted Authorization Code Request,,Authorization,OA006,FB_14,Positiv
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (Multiple ""scope"" elements)",,Authorization,OA014,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""scope"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""scope="" elements to Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
 3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (Multiple ""redirect_uri"" elements)",,Authorization,OA015,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""redirect_uri"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""redirection_uri="" elements to Data Custodian under
      test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -591,14 +591,14 @@ Properly Formatted Authorization Code Request,,Authorization,OA006,FB_14,Positiv
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (Multiple ""state"" elements)",,Authorization,OA016,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""state"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""state="" elements to Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
 3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
 4. Verify the error response contains a ""state="" element and the value in the error response matches one of the state
      value sent in the Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 Malformed Authorization Code Request (Invalid element),,Authorization,OA017,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Authorization Code Request containing an INVALID parameter,Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with an ""espi_certification="" element to Data Custodian under
      test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -606,7 +606,7 @@ Malformed Authorization Code Request (Invalid element),,Authorization,OA017,FB_1
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Malformed Authorization Code Request (Invalid ""response_code"" element)",,Authorization,OA018,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""Response Code"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""request_type="" element value of ""NAESB"" to Data Custodian
      under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -614,7 +614,7 @@ Malformed Authorization Code Request (Invalid element),,Authorization,OA017,FB_1
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Authorization Code Request (Invalid ""client_id"" element)",,Authorization,OA019,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""client_id"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""client_id="" element  value of ""ABCD"" to Data Custodian
      under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -623,7 +623,7 @@ Malformed Authorization Code Request (Invalid element),,Authorization,OA017,FB_1
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Authorization Code Request (Invalid ""redirect_uri"" element)",,Authorization,OA020,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""redirect_uri"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""redirect_uri="" element value of ""InvalidRedirectURI"" to
      Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -631,7 +631,7 @@ Malformed Authorization Code Request (Invalid element),,Authorization,OA017,FB_1
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 "Authorization Code Request (Invalid ""scope"" element)",,Authorization,OA021,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""scope"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""scope="" element value of ""InvalidScopeElement"" to
      Data Custodian under test
 2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
@@ -639,7 +639,7 @@ Malformed Authorization Code Request (Invalid element),,Authorization,OA017,FB_1
 4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
      Authorization Code Request
 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-      element of the Authorization Code Request",,,,,,,   <Note: May need various forms of Invalid SCOPE Parameter Values ????>,,,,X,
+      element of the Authorization Code Request",,,,,,,   <Note: May need various forms of Invalid SCOPE Parameter Values ????>,,,X,X,
 Authorization Code Request (Retail Customer FAILS authentication),,Authorization,OA022,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly authenticates Retail Customer while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually FAIL Retail Customer Authentication
@@ -648,7 +648,7 @@ Authorization Code Request (Retail Customer FAILS authentication),,Authorization
 6. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
      Authorization Code Request
 7. Verify the Data Custodian redirects the Test Software to the Redirection Endpoint specified in the ""redirection_uri""
-     element of the Authorization Code Request",,,,,,,,,,,X,
+     element of the Authorization Code Request",,,,,,,,,,X,X,
 Authorization Code Request (Retail Customer Passes Authentication and DENIES access),,Authorization,OA023,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly handles a Retail Customer who fails to pass the authentication testing while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -658,7 +658,7 @@ Authorization Code Request (Retail Customer Passes Authentication and DENIES acc
 7. Verify the error response contains a ""state="" element and the value in the error response matches the value received in the
      Authorization Code Request
 8. Verify the Data Custodian REDIRECTS the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" element
-     of the Authorization Code Request                       ",,,,,,,,,,,X,
+     of the Authorization Code Request                       ",,,,,,,,,,X,X,
 Authorization Code Request (Retail Customer Authenticates and APPROVES access),,Authorization,OA024,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian properly obtains the Retail Customer's authorization for the Third Party to access their data while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -674,7 +674,7 @@ Authorization Code Request (Retail Customer Authenticates and APPROVES access),,
      ""expires_in""
      ""scope""
      ""resourceURI""
-     ""authorizationURI""",,,,,,,,,,,X,
+     ""authorizationURI""",,,,,,,,,,X,X,
 Authorization Code Request (Ignore invalid Authorization Code Response elements),,Authorization,OA025,FB_14,Positive,Protocol,Test,Client,Verify Third Party ignores any unrecognized response parameters in the Authorization Code Response,Third Party has been authorized (registered) and configured,"1. Third Party issues a validly formatted OAuth 2.0 Authorization Request to Test Software
 2. Test Software issues a valid Authorization Code Request Response with a ""&gigo=GarbageInGarbageOut"" response parameter
 3. Verify the Third Party ignores the ""&gigo=GarbageInGarbageOut"" parameter in the Authorization Code Response                       ",,,"10.0 Verify the Third Party ignores the ""&gigo=GarbageInGarbageOut"" parameter in the Authorization Code Response",,,,,,,X,,
@@ -693,7 +693,7 @@ Access Token Request Authorization Header Acceptance,,Authorization,OA027,FB_14,
 5. Test Software issues a validly formatted OAuth 2.0 Authorization Code Grant Access Token Request 
      with ""grant_type=authorization_code"" with an Authorization header containing a valid HTTP BASIC 
      Authorization value
-6.  Verify the Data Custodian issues an HTTP Status Code 200 (OK)",,,,,,,,,,,X,
+6.  Verify the Data Custodian issues an HTTP Status Code 200 (OK)",,,,,,,,,,X,X,
 Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request with an INVALID HTTP BASIC Authorization header,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -703,7 +703,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
      BASIC Authorization value
 6. Verify the Data Custodian issues an HTTP Status code 401 (Unauthorized)
 7. Verify the Data Custodian response contains a ""WWW-Authenticate"" response header
-8. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_client""",,,,,,,,,,,X,
+8. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_client""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (No ""grant_type"" element)",,Authorization,OA029,FB_14,Positive,Protocol,Test,Server,"Verify Data Custodian accepts a validly formatted Access Token Request containing an authorization_code (""code="" parameter) issued to the ""client_id"" in the Access Token Request",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -714,7 +714,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (No ""code"" element)",,Authorization,OA030,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian accepts an Access Token Request containing an authorization_code (""code="" parameter) issued to the ""client_id"" in the Access Token Request",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -725,7 +725,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (No ""redirect_uri"" element)",,Authorization,OA031,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with NO ""grant_type"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -736,7 +736,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 3. Verify the Data Custodian response is Content-Type = (application/json)
 7. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-8. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+8. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (Multiple ""grant_type"" elements",,Authorization,OA032,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with NO ""code"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -747,7 +747,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (Multiple ""code"" elements)",,Authorization,OA033,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with NO ""redirect_uri"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -758,7 +758,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (Multiple ""redirect_uri"" elements)",,Authorization,OA034,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with NO ""client_id"" parameter",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -769,7 +769,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Malformed Authorization Code Grant Access Token Request (Contains ""client_id"" element)",,Authorization,OA035,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""grant_type"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -780,7 +780,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""redirect_uri"" element doess not match the ""redirect_uri"" element in the Authorization Code Request)",,Authorization,OA036,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""code"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -791,7 +791,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""code"" element contains an authorization code issued to another client)",,Authorization,OA037,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""redirect_uri"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -802,7 +802,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""code"" element contains an invalid authorization code)",,Authorization,OA038,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""client_id"" parameters",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -812,7 +812,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""code"" element contains a valid authorization code issued 15 minutes prior)",,Authorization,OA039,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request containing a ""client_id="" parameter and a valid HTTP BASIC authorization header",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -823,7 +823,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""code"" element contains a valid authorization code issued 10 minutes prior)",,Authorization,OA040,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request containing an authorization_code (""code="" parameter) NOT issued to the ""client_id"" in the Access Token Request",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -834,7 +834,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""code"" element contains a valid authorization code issued 5 minutes prior)",,Authorization,OA041,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request containing an INVALID authorization_code (""code="" parameter)",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -845,7 +845,7 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
 "Invalid Authorization Code Grant Access Token Request (""code"" element contains a valid authorization code issued 1 minute prior)",,Authorization,OA042,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request not containing a ""redirect_uri"" parameter ",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
 2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
 3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
@@ -856,60 +856,60 @@ Access Token Request Authorization Header Rejection,,Authorization,OA028,FB_14,N
 7. Verify the Data Custodian response is Content-Type = (application/json)
 8. Verify the Data Custodian response JSON structure contains the following Member Key:
      ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,,X,
-Access Token (grant_type=authorization_code),,Authorization,OA043,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request containing a ""redirect_uri"" parameter if the ""redirect_uri"" does NOT match the ""redirect_uri"" parameter contained in the original Authorization Request parameter",,,,,,,,,,,,,X,
-Access Token (grant_type=authorization_code),,Authorization,OA044,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request containing a previously used authorization_code,,,,,,,,,,,,,X,
-Access Token (grant_type=authorization_code),,Authorization,OA045,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request containing an expired authorization_code,,,,,,,,,,,,,X,
-Access Token (grant_type=authorization_code),,Authorization,OA046,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian issued authorization_code values expire within 10 minutes of being issued,,,,,,,,,,,,,X,
-Access Token (grant_type=authorization_code),,Authorization,OA047,FB_14,Positive,Format,Test,Server,"Verify Data Custodian issued Access Token Response (grant_type=authorization_code) contains: access_token, token_type, expires_in, refresh_token, scope, resourceURI, and authorizationURI ",,,,,,,,,,,,,X,
+9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
+Access Token (grant_type=authorization_code),,Authorization,OA043,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request containing a ""redirect_uri"" parameter if the ""redirect_uri"" does NOT match the ""redirect_uri"" parameter contained in the original Authorization Request parameter",,,,,,,,,,,,X,X,
+Access Token (grant_type=authorization_code),,Authorization,OA044,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request containing a previously used authorization_code,,,,,,,,,,,,X,X,
+Access Token (grant_type=authorization_code),,Authorization,OA045,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request containing an expired authorization_code,,,,,,,,,,,,X,X,
+Access Token (grant_type=authorization_code),,Authorization,OA046,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian issued authorization_code values expire within 10 minutes of being issued,,,,,,,,,,,,X,X,
+Access Token (grant_type=authorization_code),,Authorization,OA047,FB_14,Positive,Format,Test,Server,"Verify Data Custodian issued Access Token Response (grant_type=authorization_code) contains: access_token, token_type, expires_in, refresh_token, scope, resourceURI, and authorizationURI ",,,,,,,,,,,,X,X,
 Access Token (grant_type=authorization_code),,Authorization,OA048,FB_14,Positive,Protocol,Test,Client,Verify Third Party successfully processes a properly formatted Access Token Response,,,,,,,,,,,,X,,
 Access Token (grant_type=client_credentials),,Authorization,OA049,FB_14,Positive,Format,Test,Client,Verify Third Party Issues a validly formatted Access Token Request (grant_type=client_credentials),,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749]                                                                                                                                             2. Verify Access Token Request is sent to the Data Custodian's Token Endpoint                                                                                                                                                                                3. Verify the access token request utilizes the BASIC Authentication technique [RFC6749]                                                                                                                      4. Verify the ""grant_type"" element is the only element and its value is ""client_credentials""                                                                                                                                                                                                                                                                                                     ",,,,,,,,,,X,,
-Access Token (grant_type=client_credentials),,Authorization,OA050,FB_14,Positive,Format,Test,Server,Verify Data Custodian issues a properly formatted Access Token Response (grant_type=client _credentials),,"1. Verify Access Token Response does NOT contain a ""refresh_token"" value",,,,,,,,,,,X,
-Access Token (grant_type=client_credentials),,Authorization,OA051,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""grant_type"" parameters",Third Party has been authorized (registered) and configured,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749] with multiple ""grant_type"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Access Token (grant_type=client_credentials),,Authorization,OA052,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""scope"" elements",Third Party has been authorized (registered) and configured,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749] with multiple ""scope"" elements                                                                                                           2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Access Token (grant_type=client_credentials),,Authorization,OA053,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with an INVALID ""scope"" parameter",Third Party has been authorized (registered) and configured,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749] with a ""scope"" element value of ""InvalidScopeElement""                                                                                                                                                                                       2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_scope""",,,,,,,<Note: May need various forms of Invalid SCOPE Parameter Values ????>,,,,X,
+Access Token (grant_type=client_credentials),,Authorization,OA050,FB_14,Positive,Format,Test,Server,Verify Data Custodian issues a properly formatted Access Token Response (grant_type=client _credentials),,"1. Verify Access Token Response does NOT contain a ""refresh_token"" value",,,,,,,,,,X,X,
+Access Token (grant_type=client_credentials),,Authorization,OA051,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""grant_type"" parameters",Third Party has been authorized (registered) and configured,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749] with multiple ""grant_type"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Access Token (grant_type=client_credentials),,Authorization,OA052,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with multiple ""scope"" elements",Third Party has been authorized (registered) and configured,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749] with multiple ""scope"" elements                                                                                                           2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Access Token (grant_type=client_credentials),,Authorization,OA053,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Access Token Request with an INVALID ""scope"" parameter",Third Party has been authorized (registered) and configured,"1. Client issues an OAuth 2.0 Access Token Request [RFC6749] with a ""scope"" element value of ""InvalidScopeElement""                                                                                                                                                                                       2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_scope""",,,,,,,<Note: May need various forms of Invalid SCOPE Parameter Values ????>,,,X,X,
 Access Token (grant_type=client_credentials),,Authorization,OA054,FB_14,Positive,Protocol,Test,Client,Verify Third Party successfully processes a properly formatted Access Token Response,,,,,,,,,,,,X,,
 Refresh Token,,Authorization,OA055,FB_14,Positive,Format,Test,Client,Verify Third Party Issues a validly formatted Refresh Token Request ,,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749]                                                                                                                   2. Verify Refresh Token Request is sent to the Data Custodian's Token Endpoint                                                                                                                                                                                3. Verify the Refresh Token Request utilizes the BASIC Authentication technique [RFC6749]                                                                                                                      4. Verify the ""grant_type"" element is the only element and its value is ""refresh_token""                                                                                                                  5. Verify the Refresh Token Request contains a ""refresh_token"" parameter                                                                                                                                                                                                                                                                                                ",,,,,,,,,,X,,
-Refresh Token,,Authorization,OA056,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""grant_type"" parameter","1. Client issues an OAuth 2.0 Access Token Request [RFC6749] without a ""code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request""","1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] without a ""grant_type"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Refresh Token,,Authorization,OA057,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""refresh_token"" parameter",,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] without a ""refresh_code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Refresh Token,,Authorization,OA058,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple  ""grant_type"" parameters","1. Client issues an OAuth 2.0 Access Token Request [RFC6749] without a ""code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request""","1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] with multiple ""grant_type"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Refresh Token,,Authorization,OA059,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""refresh_token"" parameters",,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] with multiple ""refresh_code"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Refresh Token,,Authorization,OA060,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""scope"" parameters",,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] with multiple ""scope"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,,X,
-Refresh Token,,Authorization,OA061,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly authenticates and accepts a Refresh Token Request with a valid HTTP BASIC Authorization header,,,,,,,,,,,,,X,
-Refresh Token,,Authorization,OA062,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a Refresh Token Request with a INVALID HTTP BASIC Authorization header,,,,,,,,,,,,,X,
-Refresh Token,,Authorization,OA063,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" element that was NOT issued to the requesting Third Party Application",,,,,,,,,,,,,X,
-Refresh Token,,Authorization,OA064,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" element that is expired",,,,,,,,,,,,,X,
-Refresh Token,,Authorization,OA065,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""scope"" element that does NOT match the ""scope"" element value used to obtain the original Access Token.",,,,,,,,,,,,,X,
-Request / Reply,REQ.21.4,Communication,ON001,FB_03,,Online,Test,,,,,,,,,,,,,,,,
+Refresh Token,,Authorization,OA056,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""grant_type"" parameter","1. Client issues an OAuth 2.0 Access Token Request [RFC6749] without a ""code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request""","1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] without a ""grant_type"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA057,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""refresh_token"" parameter",,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] without a ""refresh_code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA058,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple  ""grant_type"" parameters","1. Client issues an OAuth 2.0 Access Token Request [RFC6749] without a ""code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request""","1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] with multiple ""grant_type"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA059,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""refresh_token"" parameters",,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] with multiple ""refresh_code"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA060,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""scope"" parameters",,"1. Client issues an OAuth 2.0 Refresh Token Request [RFC6749] with multiple ""scope"" elements                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request"" ",,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA061,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly authenticates and accepts a Refresh Token Request with a valid HTTP BASIC Authorization header,,,,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA062,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a Refresh Token Request with a INVALID HTTP BASIC Authorization header,,,,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA063,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" element that was NOT issued to the requesting Third Party Application",,,,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA064,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" element that is expired",,,,,,,,,,,,X,X,
+Refresh Token,,Authorization,OA065,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""scope"" element that does NOT match the ""scope"" element value used to obtain the original Access Token.",,,,,,,,,,,,X,X,
+Request / Reply,REQ.21.4,Communication,ON001,FB_03,,Online,Test,,,,,,,,,,,,,,X,,
 HTTP,REQ.21.6.2,Communication,PROTO001,FB_01,Positive,Protocol,Test,Both,Verify implementation of HTTP.,,"1.  Log in as an eligible user.
 2.  Navigate to web portal Green Button Download My Data screen.
 3. Verify that screen is shown
 4.  Verify webpage URL utilizes HTTP Protocol _ inspect browser for http://.",,,Web portal interface utilizes HTTP Protocol.,,,,,,X,,,
-HTTPS,REQ.21.6.2,Communication,PROTO002,FB_13,Positive,Protocol,Test,Both,Verify implementation of HTTPS,,"For requests that may contain private data, ensure that HTTPS is used, and that HTTP requests are not supported",,,,,,,,,,,,
-,,,TC001,FB_13,Positive,Security,Test,Server,Test software shall issue a service request over an SSL session and shall verify that the response HTTP header contains the following fields and information _ fields TBD,,,,,,,,,,,,,,
-,,,TC002,FB_13,Positive,Security,Test,Server,Verify that REST request headers include _ fields TBD,,,,,,,,,,,,,,
-,,,TC003,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian implements TLS 1.2.,,,,,,,,,,,,,,
-,,,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
-,,,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,,,,,,,,,,,,,
-,,,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,,,,,,,,,,,,,
-,,,TC007,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Third Party the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
-,,,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,,,
-,,,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,,,
-,,,TC010,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,,
-,,,TC011,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,,
-,,,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,,
-,,,TC013,FB_13,Positive,Security,Test,Server,Verify that the Third Party implements TLS 1.1 or higher.,,,,,,,,,,,,,,
-,,,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
-,,,TC015,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Data Custodian the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
-,,,TC016,FB_13,Positive,Security,Test,Server,Verify that the Third Party maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,,,
-,,,TC017,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Third Party RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,,,
-,,,TC018,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,,
-,,,TC019,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,,
-,,,TC020,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Third Party implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,,
+HTTPS,REQ.21.6.2,Communication,PROTO002,FB_13,Positive,Protocol,Test,Both,Verify implementation of HTTPS,,"For requests that may contain private data, ensure that HTTPS is used, and that HTTP requests are not supported",,,,,,,,,,X,,
+Use of SSL,,,TC001,FB_13,Positive,Security,Test,Server,Test software shall issue a service request over an SSL session and shall verify that the response HTTP header contains the following fields and information _ fields TBD,,,,,,,,,,,,X,,
+Secure REST request header,,,TC002,FB_13,Positive,Security,Test,Server,Verify that REST request headers include _ fields TBD,,,,,,,,,,,,X,,
+Data Custodian implements TLS 1.2,,,TC003,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian implements TLS 1.2.,,,,,,,,,,,,X,,
+Negotiate highest level of TLS,,,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,X,,
+Reject TLS_RSA_WITH_NULL_SHA cipher suite,,,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,,,,,,,,,,,X,,
+Accept TLS_RSA_WITH_AES_128_CBC_SHA cipher suite,,,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,,,,,,,,,,,X,,
+Negotiate highest level of cipher suite,,,TC007,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Third Party the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,X,,
+Quality of Certificate,,,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,X,,
+Root of trust,,,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,X,,
+Tokens and IDs have no PII,,,TC010,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,X,,
+Tokens and IDs have at least 48bits,,,TC011,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,X,,
+FIPS 140-2 support,,,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,X,,
+Third Party implements TLS 1.1 or higher,,,TC013,FB_99,Positive,Security,Test,Server,Verify that the Third Party implements TLS 1.1 or higher.,,,,,,,,,,,,,,
+Third Party negotiates highest level of TLS,,,TC014,FB_99,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
+Third Party negotiates highest level of TLS,,,TC015,FB_99,Positive,Security,Test,Server,Verify that when communicating with a Data Custodian the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
+Quality of Certificate,,,TC016,FB_99,Positive,Security,Test,Server,Verify that the Third Party maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,,,
+Root of trust,,,TC017,FB_99,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Third Party RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,,,
+Tokens and IDs have no PII,,,TC018,FB_99,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,,
+Tokens and IDs have at least 48bits,,,TC019,FB_99,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,,
+FIPS 140-2 support,,,TC020,FB_99,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Third Party implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,,
 Authorized GET access to ApplicationInformation entry,REQ.21.6.2,Communication,FND001,FB_03,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:entry with ApplicationInformation as the source using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token
 ApplicationInformationId","1. Client sends GET request for atomentry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of positive response 200 - OK
+2. verify receipt of positive response 200 - OK
 3. Verify contents of recevied ApplicationInformation specifically:
 ApplicationInformation must contain the following fields:  
 
@@ -921,23 +921,23 @@ dataCustodianApplicationStatus must contain a value of 1,2,3 or 4
 token_endpoint_auth_method must contain the value client_secret_basic
 grant_types must contain a value of authorization_code, refresh_token or client_credentials
 if grant_types=client_credentials then redirect_uri should not be present or should contain a null value. Otherwise redirect_uri must be present.
-",,,,,,,,,,,,
+",,,,,,,,,,X,,
 Forbidden GET access to ApplicationInformation entry,REQ.21.6.2,Communication,FND002,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to GET using  client_access_token, access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 ApplicationInformationId","1. Client sends GET requests  for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId} using  client_access_token, access_token, empty access token
-2. Verifiy receipt of negative response 403 - Forbidden for each GET request",,,,,,,,,,,,
+2. verify receipt of negative response 403 - Forbidden for each GET request",,,,,,,,,,X,,
 Authorized GET access to Authorization feed,REQ.21.6.2,Communication,FND003,FB_03,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 list of authorizations granted and count","1. Client sends GET request for atom:feed type resource i.e. {dataCustodianResourceEndpoint}/Authorization
 2. Verify receipt of positive response 200 - OK
-3. Verify response contents (TBD)",,,,,,,test harness can assume there is a collection including the one for the client_access_token and one for each authorization granted. Depending agreement with DCs (based on the one slide which suggests what information should be shared as set up for the harness) tester should expect a number of responses. Each one should be schema valid and contain all the required fields and values. (Don to supply),,,,,
+3. Verify response contents (TBD)",,,,,,,test harness can assume there is a collection including the one for the client_access_token and one for each authorization granted. Depending agreement with DCs (based on the one slide which suggests what information should be shared as set up for the harness) tester should expect a number of responses. Each one should be schema valid and contain all the required fields and values. (Don to supply),,,X,,
 Forbidden GET access to Authorization feed,REQ.21.6.2,Communication,FND004,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:feed, Authorization in response to GET using registration_access_token, access_token,  empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token","1. Client sends GET requests for atom:feed type resource i.e. {dataCustodianResourceEndpoint}/Authorization using registration_access_token, access_token,  empty access token
-2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+2. For each GET response verify receipt of negative response 403 - Forbidden",,,,,,,,,,X,,
 Authorized GET access to Authorization entry,REQ.21.6.2,Communication,FND005,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for entries with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 AuthorizationId","1. Client sends GET request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId}
-2. Verifiy receipt of response 200 - OK
+2. verify receipt of response 200 - OK
 3. Verify contents of recevied Authorization specifically:
 Authorization entry must contain the following fields:
 
@@ -947,48 +947,48 @@ and
 
 if status is present it contains a value of 0, 1 or 2
 grant_type contains a value of authorization_code
-",,,,,,,,,,,,
+",,,,,,,,,,X,,
 Forbidden GET access to Authorization entry,REQ.21.6.2,Communication,FND006,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to GET using registration_token,  access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 AuthorizationId","1. Client sends GET requests for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId} using registration_token,  access_token, empty access token
-2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+2. For each GET response verify receipt of negative response 403 - Forbidden",,,,,,,,,,X,,
 Authorized GET access to Batch/Subscription entry,REQ.21.6.2,Communication,FND007,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for Batch/Subscription resource using access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 access_token
 SubscriptionId","1. Client sends GET request for {dataCustodianResourceEndpoint}/Batch/Subscription/{SubscriptionId}
 2. Verify receipt of positive response 200 - OK
-3. Verify response contains a feed with at least 1 UsagePoint",,,,,,,,,,,,
+3. Verify response contains a feed with at least 1 UsagePoint",,,,,,,,,,X,,
 Forbidden GET access to Batch/Subscription entry,REQ.21.6.2,Communication,FND008,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to Batch/Subscription in response to GET using  client_access_token, registration_access_token,  access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 SubscriptionId","1. Client sends GET requests for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Batch/Subscription/{SubscriptionId} using  client_access_token, registration_access_token,  access token
-2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+2. For each GET response verify receipt of negative response 403 - Forbidden",,,,,,,,,,X,,
 Authorized GET access to ReadServiceStatus,REQ.21.6.2,Communication,FND009,FB_03,Positive,Fundamental,Test,Server,Verify GET behaviour for ReadServiceStatus resource using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token","1. Client sends GET request for {dataCustodianResourceEndpoint}/ReadServiceStatus
 2. Verify receipt of response 200 - OK
-3. Verify contents of ReadServiceStatus response entry",,,,,,,,,,,,
+3. Verify contents of ReadServiceStatus response entry",,,,,,,,,,X,,
 Forbidden GET access to ReadServiceStatus,REQ.21.6.2,Communication,FND010,FB_03,Negative,Fundamental,Test,Server,"Verify forbidden access to ReadServiceStatus in response to GET using access_token,  registration_access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 access_token","1. Client sends GET requests for atom:entry type resource i.e.  {dataCustodianResourceEndpoint}/ReadServiceStatus using access_token,  registration_access_token, empty access token
-2. For each GET response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+2. For each GET response verify receipt of negative response 403 - Forbidden",,,,,,,,,,X,,
 Notification Push/POST to ThirdParty of ApplicationInformation,REQ.21.6.2,Communication,PSH_001,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of ApplicationInformation by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token","1. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Retreived data specified by the notification using either REST GET or SFTP get (depending on notification contents- could be either) -if REST GET use registration_access_token
-5 Verify ApplicationInformation contents - schema validation only",,,,,,,,,,,,
+5 Verify ApplicationInformation contents - schema validation only",,,,,,,,,,X,,
 Notification Push/POST to ThirdParty of Authorization,REQ.21.6.2,Communication,PSH_002,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Authorization by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token","1. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Retreived data specified by the notification using either REST GET or SFTP get (depending on notification contents- could be either). if REST GET use client_access_token
-5 Verify Authorization contents - schema validation only.",,,,,,,,,,,,
+5 Verify Authorization contents - schema validation only.",,,,,,,,,,X,,
 Notification Push/POST to ThirdParty of Subscription,REQ.21.6.2,Communication,PSH_003,FB_39,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Subscription by DataCustodian,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 access_token","1. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Retreived data specified by the notification using either REST GET or SFTP get (depending on notification contents- could be either). If REST GET use access_token
-5 Verify Subscription contents i.e. schema validation only",,,,,,,,,,,,
+5 Verify Subscription contents i.e. schema validation only",,,,,,,,,,X,,
 DataCustodian detection of Notification Push/POST failure,REQ.21.6.2,Communication,PSH_004,FB_39,Negative,Fundamental,Test,Server,Verify by demonstration that notifcation to TP failure is detected by DC,Third Party test harness has been configured and registered/authorized by the DC under test,"1. Place TP/test application off-line
 2. Trigger DataCustodian to initiate a notificatiion (TBD: manual or automatic)
-3. Verify by demonstration that the DC detects notification failure",,,,,,,,,,,,
+3. Verify by demonstration that the DC detects notification failure",,,,,,,,,,X,,
 SFTP for BULK notification,REQ.21.6.2,Communication,SFTP_001,FB_34,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data by DataCustodian and data transfer using SFTP,"Third Party has been authorized and configured
 Pre configured Authorizations
 Authorizations need bulk scope","1. Trigger DataCustodian to initiate a bulk notification i.e. sftp://{dataCustodianResourceEndpoint}/Batch/Bulk/{BulkID} (TBD: manual or automatic)
@@ -999,7 +999,7 @@ Authorizations need bulk scope","1. Trigger DataCustodian to initiate a bulk not
 Pass schema
 Must contain 1 feed with one of more entry(s)
 Verify there is a valid authorization for each entry and the scope of each authorization for each entry has BR=BulkId
-Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",,,,,,,,,,,,
+Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",,,,,,,,,,X,,
 REST for BULK notification - authorized GET access,REQ.21.6.2,Communication,RBK_001,FB_35,Positive,Fundamental,Test,Server,Verify Thirdparty notification of Bulk data by DataCustodian and data transfer using REST GET with client_access_token,"Third Party has been authorized and configured
 Pre configured Authorizations
 Authorizations need bulk scope
@@ -1012,7 +1012,7 @@ client_access_token","1. Trigger DataCustodian to initiate a bulk notification i
 Pass schema
 Must contain 1 feed with one of more entry(s)
 Verify there is a valid authorization for each entry and the scope of each authorization for each entry has BR=BulkId
-Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",,,,,,,,,,,,
+Utilize Authorization feed to obtain a list of authorizations to check against. use required token: C",,,,,,,,,,X,,
 REST for BULK notification - Forbidden GET access,REQ.21.6.2,Communication,RBK_002,FB_35,Negative,Fundamental,Test,Server,"Verify Thirdparty notification of Bulk data and fobidden access using access_token, registration_access_token, empty access token","Third Party has been authorized and configured
 Pre configured Authorizations
 Authorizations need bulk scope
@@ -1020,39 +1020,39 @@ client_access_token","1. Trigger DataCustodian to initiate a bulk notification i
 2. Verify Notfication is received
 3. Verify well-formed Notification
 4. Attempt GET to resource specified by the notification using access_token, registration_access_token, empty access token
-5. Verify 403 - Forbidden response to each request",,,,,,,,,,,,
+5. Verify 403 - Forbidden response to each request",,,,,,,,,,X,,
 Authorized PUT access to ApplicationInformation entry,REQ.21.6.2,Communication,MGT_001,FB_41,Positive,Fundamental,Test,Server,Verify positive PUT behavior for atom:entry with ApplicationInformation as the source  using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token
 ApplicationInformationId","1. Client sends GET request for atomentry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of positive response 200 - OK with ApplicationInformation entry
+2. verify receipt of positive response 200 - OK with ApplicationInformation entry
 3. Use contents of GET response as body of PUT request - issue PUT to DC
-4. Confirm positive response - 200 - OK",,,,,,,,,,,,
+4. Confirm positive response - 200 - OK",,,,,,,,,,X,,
 Authorized DELETE access to ApplicationInformation entry,REQ.21.6.2,Communication,MGT_002,FB_41,Positive,Fundamental,Test,Server,Verify positive DELETE behavior for atom:entry with ApplicationInformation as the source  using registration_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token
 ApplicationInformationId","1. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
-2. Verifiy receipt of positive response 200 - OK",,,,,,,,,,,,
+2. verify receipt of positive response 200 - OK",,,,,,,,,,X,,
 "Forbidden PUT, DELETE access to ApplicationInformation entry",REQ.21.6.2,Communication,MGA_001,FB_44,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, ApplicationInformation in response to PUT, DELETE using client_access_token, access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token
 ApplicationInformationId","1. Client sends PUT request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId} using client_access_token, access_token, empty access token
-2. For each response verifiy receipt of negative response 403 - Forbidden
+2. For each response verify receipt of negative response 403 - Forbidden
 3. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId} using client_access_token, access_token, empty access token
-4. For each response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+4. For each response verify receipt of negative response 403 - Forbidden",,,,,,,,,,X,,
 Authorized PUT access to Authorization entry,REQ.21.6.2,Communication,MGA_002,FB_44,Positive,Fundamental,Test,Server,Verify positive GET behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 list of authorizations granted and count","1. Client sends GET request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId}
-2. Verifiy receipt of positive response 200 - OK and Authorization entry in the body
+2. verify receipt of positive response 200 - OK and Authorization entry in the body
 3. Issue PUT with content of GET response as content of PUT
-4. Verify receipt of positive response - 200 - OK",,,,,,,,,,,,
+4. Verify receipt of positive response - 200 - OK",,,,,,,,,,X,,
 Authorized DELETE access to Authorization entry,REQ.21.6.2,Communication,MGA_003,FB_44,Positive,Fundamental,Test,Server,Verify positive DELETE behavior for atom:feed with Authorization as the source using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token
 list of authorizations granted and count","1. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId}
-2. Verifiy receipt of positive response 200 - OK",,,,,,,,,,,,
+2. verify receipt of positive response 200 - OK",,,,,,,,,,X,,
 "Forbidden  PUT, DELETE access to Authorization entry",REQ.21.6.2,Communication,MGA_004,FB_44,Negative,Fundamental,Test,Server,"Verify forbidden access to atom:entry, Authorization in response to  PUT, DELETE using registration_access_token, access_token, empty access token","Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 registration_access_token
 AuthorizationId","1. Client sends PUT request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId} using registration_access_token, access_token, empty access token
-2. For each response verifiy receipt of negative response 403 - Forbidden
+2. For each response verify receipt of negative response 403 - Forbidden
 3. Client sends DELETE request for atom:entry type resource i.e. {dataCustodianResourceEndpoint}/Authorization/{AuthorizationId} using registration_access_token, access_token, empty access token
-4. For each response verifiy receipt of negative response 403 - Forbidden",,,,,,,,,,,,
+4. For each response verify receipt of negative response 403 - Forbidden",,,,,,,,,,X,,
 Partial update of data,REQ.21.6.2,Communication,PRT_001,FB_19,TBD,TBD,TBD,TBD,TBD. Is this requirement for upload role and not core data custodian,,,,,,,,,TBD: Is this requirement for upload role and not core data custodian,,,,,
-Query Parameters,REQ.21.6.2,Communication,QRY_001,FB_37,TBD,TBD,TBD,TBD,"support published_min, published_max",,,,,,,,,TBD,,,,,
-Offline RetailCustomer Authorization,REQ.21.6.2,Communication,OFA_001,FB_40,TBD,TBD,TBD,TBD,"This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.","Manual creation of ApplicationInformation, Authorization(s)",,,,,,,,"TBD: This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.",,,,,
+Query Parameters,REQ.21.6.2,Communication,QRY_001,FB_37,TBD,TBD,TBD,TBD,"support published_min, published_max",,,,,,,,,TBD,,,X,,
+Offline RetailCustomer Authorization,REQ.21.6.2,Communication,OFA_001,FB_40,TBD,TBD,TBD,TBD,"This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.","Manual creation of ApplicationInformation, Authorization(s)",,,,,,,,"TBD: This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.",,,X,,
