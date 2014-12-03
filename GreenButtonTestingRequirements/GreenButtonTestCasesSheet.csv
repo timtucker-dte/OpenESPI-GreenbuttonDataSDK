@@ -1121,14 +1121,25 @@ Invalid Access Token Request (GET RESTful ReadServiceStats request does NOT cont
      ""error""
 5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
 Request / Reply,REQ.21.4,Communication,ON001,FB_99,,Online,Test,,,,,,,,,,,,,,X,,
-Use of SSL,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains the following fields and information _ fields TBD,,,,,,,,,,,,X,,
+Use of SSL,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains fields indicating use of SSL transport,,"1. Test software isses a GET request to: {HomePageURLEndpoint}/DataCustodian
+2. Verify that the response HTTP header contains the following information: 'Set-Cookie: JSESSIONID=' and 'Secure;'",,,,,,,,,,X,,
 Secure REST request header,,Security,TC002,FB_13,Positive,Security,Test,Server,Verify Data Custodian under test REST request headers include _ fields TBD,,,,,,,,,,,,X,,
-Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,,,,,,,,,,,X,,
-Negotiate highest level of TLS,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,X,,
-Reject TLS_RSA_WITH_NULL_SHA cipher suite,,Security,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,,,,,,,,,,,X,,
-Accept TLS_RSA_WITH_AES_128_CBC_SHA cipher suite,,Security,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,,,,,,,,,,,X,,
+Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL indicates that TLS 1.2 is implmented though a successful result of 'Protocol  : TLSv1.2'",,,,,,,,,,X,,
+Negotiate highest level of TLS,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS mutually supported.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
+3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
+5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+6. Verify that OpenSSL reports a successful TLS 1 negotiation
+",,,,,,,,,,X,,
+Reject TLS_RSA_WITH_NULL_SHA cipher suite,,Security,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,"1. Using OpenSSL the test harness issues a client mode connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort} using the cipher suite 'NULL-SHA'
+2. Verify that OpenSSL reports that the NULL-SHA connection request was not accepted",,,,,,,,,,X,,
+Accept TLS_RSA_WITH_AES_128_CBC_SHA cipher suite,,Security,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,"1. Using OpenSSL the test harness issues a client mode connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort} using the cipher suite 'AES128-SHA'
+2. Verify that OpenSSL reports that the connection request was accepted with cipher 'AES128-SHA'",,,,,,,,,,X,,
 Negotiate highest level of cipher suite,,Security,TC007,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Third Party the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,X,,
-Quality of Certificate,,Security,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,X,,
+Quality of Certificate,,Security,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,"1. Using OpenSSL the test harness issues a client mode connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports that the connection request was accepted and reports 'Server public key is 2048 bit'",,,,,,,,,,X,,
 Root of trust,,Security,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,X,,
 Tokens and IDs have no PII,,Security,TC010,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,X,,
 Tokens and IDs have at least 48bits,,Security,TC011,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,X,,
