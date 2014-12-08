@@ -1159,8 +1159,8 @@ Root of trust,,,TCT05,FB_45,Positive,Security,Test,Server,Test software or manua
 Tokens and IDs have no PII,,,TCT06,FB_45,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,X,
 Tokens and IDs have at least 48bits,,,TCT07,FB_45,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,X,
 FIPS 140-2 support,,,TCT08,FB_45,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Third Party implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,X,
-Initial test configuration,REQ.21.6.2,Initial configuration,FND001,FB_03,Positive,Fundamental,Test,Server,Initial configuation of the DataCustiodian under test and provide test harness with prerequisite information,,"The ThirdParty tester requires the following initial information be provided.
-Verify this information has been received and that SoaUP has been configured with this information.
+Initial test configuration,REQ.21.6.2,Initial configuration,FND001,FB_03,Positive,Fundamental,Test,Server,Initial configuation of the DataCustiodian under test and provide test harness with prerequisite information,,"The ThirdParty tester requires the following initial information be provided as part of the application for certification and readiness for testing.
+Verify this information has been received and that SoapUI has been configured with this information.
 
 dataCustodianId=""data_custodian""
 federalEIN=""123456""
@@ -1205,17 +1205,17 @@ and
 if status is present it contains a value of 0, 1 or 2
 grant_type contains a value of authorization_code
 ",,,,,,,,,,X,,
-Authorized GET access to Batch/Subscription entry,REQ.21.6.2,Communication,FND005,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for Batch/Subscription resource using access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
+Authorized GET access to Batch/Subscription feed,REQ.21.6.2,Communication,FND005,FB_03,Positive,Fundamental,Test,Server,Verify GET behavior for Batch/Subscription resource using access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 access_token
 SubscriptionId","1. Client sends GET request for {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
 2. Verify positive response 200 - OK and presence or DC scope selection URI
 3. Extract from App info the DC scope selection URI
 4. Script will bring up browser to DC URI
-5. Direct Utility to log on on behalf of a retail customer
+5. Direct Utility to log on on behalf of a test retail customer
 6. Go through authorization steps - authorize at least one usage point
-7. Test harness will receive authorization URI and resource URI (Batch/Subscription)
+7. Test harness will receive authorization URI and resource URI (Batch/Subscription/{SubscriptionId)
 8. Retrieve authorization and extract access token and scope
-9. Client sends GET request for uri provided in step 5 using access token provided in step 8  GET {dataCustodianResourceEndpoint}/Batch/Subscription/{SubscriptionId}
+9. Client sends GET request for authorization.uri and access token provided in step 8
 10. Verify receipt of positive response 200 - OK
 11. Validate response according to schema
 12. Verify response contains a feed with at least 1 UsagePoint
