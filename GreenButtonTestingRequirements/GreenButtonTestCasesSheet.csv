@@ -1122,11 +1122,11 @@ Invalid Access Token Request (GET RESTful ReadServiceStats request does NOT cont
 5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
 Secure REST  header,,Security,TC002,FB_14,Positive,Security,Test,Server,Verify Data Custodian under test REST presonse headers include fields TBD,,,,,,,,,,,,X,,
 Request / Reply,REQ.21.4,Communication,ON001,FB_99,,Online,Test,,,,,,,,,,,,,,,,
-Use of SSL,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains fields indicating use of SSL transport,,"1. Test software isses a GET request to: {HomePageURLEndpoint}/DataCustodian
+Use of HTTPS,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains field indicating establishment of a secure session.,,"1. Test software isses a GET request to: {HomePageURLEndpoint}/DataCustodian
 2. Verify that the response HTTP header contains the following information: 'Set-Cookie: JSESSIONID=' and 'Secure;'",,,,,,,,,,X,,
 Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL indicates that TLS 1.2 is implmented though a successful result of 'Protocol  : TLSv1.2'",,,,,,,,,,X,,
-Negotiate highest level of TLS,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS mutually supported.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+Negotiate highest level of TLS using DataCustodianScopeSelectionScreen,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {DataCustodianScopeSelectionScreen}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
 3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
@@ -1151,6 +1151,20 @@ Tokens and IDs have at least 48bits,,Security,TC011,FB_13,Positive,Security,Test
 2. The test harness will present the test operator with the contents of the response messages
 3. The test harness will query the test operator to confirm that  Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.",,,,,,,,,,X,,
 FIPS 140-2 support,,Security,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,1. The test harness will query the test operator to review DC documentation and to confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,X,,
+Negotiate highest level of TLS using dataCustodianResourceEndpoint,,Security,TC013,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {dataCustodianResourceEndpoint}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
+3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
+5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+6. Verify that OpenSSL reports a successful TLS 1 negotiation
+",,,,,,,,,,X,,
+Negotiate highest level of TLS using authorizationServerUri,,Security,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {authorizationServerUri}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
+3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
+5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+6. Verify that OpenSSL reports a successful TLS 1 negotiation
+",,,,,,,,,,X,,
 Third Party implements TLS 1.1 or higher,,,TCT01,FB_45,Positive,Security,Test,Server,Verify that the Third Party implements TLS 1.1 or higher.,,,,,,,,,,,,,X,
 Third Party negotiates highest level of TLS,,,TCT02,FB_45,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,X,
 Third Party negotiates highest level of TLS,,,TCT03,FB_45,Positive,Security,Test,Server,Verify that when communicating with a Data Custodian the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,X,
@@ -1209,18 +1223,22 @@ Authorized GET access to Batch/Subscription feed,REQ.21.6.2,Communication,FND005
 access_token
 SubscriptionId","1. Client sends GET request for {dataCustodianResourceEndpoint}/ApplicationInformation/{ApplicationInformationId}
 2. Verify positive response 200 - OK and presence or DC scope selection URI
-3. Extract from App info the DC scope selection URI
+3. Extract from ApplicationInformation the DC scope selection URI
 4. Script will bring up browser to DC URI
 5. Direct Utility to log on on behalf of a test retail customer
-6. Go through authorization steps - authorize at least one usage point
-7. Test harness will receive authorization URI and resource URI (Batch/Subscription/{SubscriptionId)
-8. Retrieve authorization and extract access token and scope
-9. Client sends GET request for authorization.uri and access token provided in step 8
-10. Verify receipt of positive response 200 - OK
-11. Validate response according to schema
-12. Verify response contains a feed with at least 1 UsagePoint
-13. Run all FB XSLT tests based on authorization.scope (from step 6)
-14. Produce test results passes and failures - pop-up dialog(TBD)",,,,,,,,,,X,,
+6. User goes through DC steps manually to perform an authorization
+7. DC redirects browser to ThirdParty site
+8. Harness catches browser redirect URI
+9. Harness will select first scope specified
+10. Harness issues OAuth REST call 
+11. Test harness will receive authorization URI and resource URI (Batch/Subscription/{SubscriptionId)
+12. Retrieve authorization and extract access token and scope
+13. Client sends GET request for authorization.uri and access token provided in step 8
+14. Verify receipt of positive response 200 - OK
+15. Validate response according to schema
+16. Verify response contains a feed with at leas0t 1 UsagePoint
+17. Run all FB XSLT tests based on authorization.scope (from step 6)
+18. Produce test results passes and failures",,,,,,,,,,X,,
 Authorized GET access to ReadServiceStatus,REQ.21.6.2,Communication,FND006,FB_03,Positive,Fundamental,Test,Server,Verify GET behaviour for ReadServiceStatus resource using client_access_token,"Third Party test harness has been configured and registered/authorized by the DC under test with the following required information: 
 client_access_token","1. Client sends GET request for {dataCustodianResourceEndpoint}/ReadServiceStatus
 2. Verify receipt of response 200 - OK
