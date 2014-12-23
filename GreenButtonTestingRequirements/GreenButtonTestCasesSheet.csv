@@ -527,154 +527,30 @@ Properly Formatted Authorization Code Request,,Authorization,OAT002,FB_46,Positi
 7. Verify the ""scope"" element is present and its values are semi-colon separated and meet the Scope Parameter Definitions
      defined by the Authorization document
 8. Verify the ""state"" element is present in the authorization request",,,,,,,,,,X,,
-"Malformed Authorization Code Request (No ""response_code"" field-value pair)",,Authorization,OAD005,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""response_code"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request without a ""response_code="" element to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state"" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" 
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (No ""client_id"" field-value pair)",,Authorization,OAD006,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""client_id"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request without a ""client_id="" element to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (No ""redirect_uri"" field-value pair",,Authorization,OAD007,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""redirect_uri"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request without a ""redirect_uri="" element to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error"" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
- 5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-      element of the Authorization Code Request",,,,,,,,,,X,,
-"Malformed Authorization Code Request (No ""scope"" field-value pair)",,Authorization,OAD008,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""scope"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with NO ""scope="" element to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_scope""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" 
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (No ""state"" field-value pair)",,Authorization,OAD009,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with NO ""state"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with NO ""state="" element to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response does NOT contain a ""state="" element
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" 
-     element of the Authorization Code Request",,,,,,,,,,X,,
-"Malformed Authorization Code Request (Multiple ""response_code"" field-value pairs)",,Authorization,OAD010,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""response_type"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""response_code="" parameters to Data Custodian under
-     test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (Multiple ""client_id"" field-value pairs)",,Authorization,OAD011,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""client_id"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""client_id="" elements to Data Custodian under
-     test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (Multiple ""scope"" field-value pairs)",,Authorization,OAD012,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""scope"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""scope="" elements to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (Multiple ""redirect_uri"" field-value pairs)",,Authorization,OAD013,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""redirect_uri"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""redirection_uri="" elements to Data Custodian under
-     test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (Multiple ""state"" field-value pairs)",,Authorization,OAD014,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request containing multiple ""state"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with multiple ""state="" elements to Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches one of the state
-     value sent in the Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-Malformed Authorization Code Request (Invalid field-value pair),,Authorization,OAD015,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Authorization Code Request containing an INVALID field-value pair,Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with an ""espi_certification="" element to Data Custodian under
-     test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Malformed Authorization Code Request (Invalid ""response_code"" field-value pair)",,Authorization,OAD016,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""Response Code"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""request_type="" element value of ""NAESB"" to Data Custodian
-     under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the 
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Authorization Code Request (Invalid ""client_id"" field-value pair)",,Authorization,OAD017,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""client_id"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""client_id="" element  value of ""ABCD"" to Data Custodian
-     under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-     ******  Verify proper ""error"" element contents ******
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Authorization Code Request (Invalid ""redirect_uri"" field-value pair)",,Authorization,OAD018,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""redirect_uri"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""redirect_uri="" element value of ""InvalidRedirectURI"" to
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-"Authorization Code Request (Invalid ""scope"" field-value pair)",,Authorization,OAD019,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Request with an INVALID ""scope"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software issues an OAuth 2.0 Authorization Request with a ""scope="" element value of ""InvalidScopeElement"" to
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status code 400 (Bad Request)
-3. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_request""
-4. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
-     Authorization Code Request
-5. Verify the Data Custodian does NOT redirect the Test Software to the Redirection Endpoint specified in the ""redirection_uri=""
-      element of the Authorization Code Request",,,,,,,   <Note: May need various forms of Invalid SCOPE Parameter Values ????>,,,X,X,
-Authorization Code Request (Retail Customer FAILS authentication),,Authorization,OAD020,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly authenticates Retail Customer while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually FAIL Retail Customer Authentication
-4. Verify the Data Custodian issues an HTTP Status code 401 (Unauthorized)
-5. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""access_denied""
-6. Verify the error response contains a ""state="" element and the value in the error response matches the value sent in the
-     Authorization Code Request
-7. Verify the Data Custodian redirects the Test Software to the Redirection Endpoint specified in the ""redirection_uri""
-     element of the Authorization Code Request",,,,,,,,,,X,X,
-Authorization Code Request (Retail Customer Passes Authentication and DENIES access),,Authorization,OAD021,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly handles a Retail Customer who fails to pass the authentication testing while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually deny the Third Party access to their data
-5. Verify the Data Custodian issues an HTTP Status code 302 (Redirect)
-6. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""access_denied""
-7. Verify the error response contains a ""state="" element and the value in the error response matches the value received in the
-     Authorization Code Request
-8. Verify the Data Custodian REDIRECTS the Test Software to the Redirection Endpoint specified in the ""redirection_uri="" element
-     of the Authorization Code Request                       ",,,,,,,,,,X,X,
-Authorization Code Request (Retail Customer Authenticates and APPROVES access),,Authorization,OAD022,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian properly obtains the Retail Customer's authorization for the Third Party to access their data while processing a valid Authorization Code Request and returns a valid JSON structure,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues a validly formatted OAuth 2.0 Authorization Code Grant Access Token Request to Data
-     Custodian under test
-5. Verify the Data Custodian issues an HTTP Status Code 200 (OK)
-6. Verify the Data Custodian response is Content-Type = (application/json)
-7. Verify the Data Custodian response JSON structure contains the following Member Keys and that all have data:
-     ""access_token""
-     ""token_type""
-     ""refresh_token""
-     ""expires_in""
-     ""scope""
-     ""resourceURI""
-     ""authorizationURI""",,,,,,,,,,X,X,
+Malformed Authorization Code Requests,,Authorization,OAD005,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects malformed OAuth Authorization Request,,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
+2.   Verify Data Custodian Scope Selection URI is present
+3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+4.   SoapUI Dialog box appears to be completed after step 8
+5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+6.   Data Custodian testee navigates required website steps including Login and Scope selection
+7.   Test Harness tester resumes control
+8.   Test Harness tester copies Session cookie from Firefox (right-click, select View Page Info, select Security tab, select View Cookies, copy JSESSIONID cookie Content: data)
+9.   Test Harness tester paste Session cookie into SoapUI dialog and select OK
+10. SoapUI Dialog box appears to be completed after step 11
+11. Test Harness tester selects the first listed Scope string and selects SUBMIT
+12. Test Harness tester selects OK on SoapUI Dialog
+13. Verify Data Custodian rejects malformed OAuth Authorization Requests with -- No response_type field-value pair, No client_id field-value pair, No redirect_uri field-value pair, No scope field-value pair, No state field-value pair, Multiple response_type field-value pairs, Multiple client_id field-value pairs, Multiple redirect_uri field-value pairs, Multiple scope field-value pairs, Multiple state field-value pairs, Invalid field-value pair, Invalid response_type field-value pair, Invalid client_id field-value pair, Invalid redirect_uri field-value pair, Invalid scope field-value pair",,,,,,,,,,X,,
+Authorization Code Request (Retail Customer Passes Authentication and DENIES access),,Authorization,OAD006,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly handles a Retail Customer who DENIES access while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
+2.   Verify Data Custodian Scope Selection URI is present
+3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+4.   SoapUI Dialog box appears to be completed after step 9
+5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+6.   Data Custodian testee navigates required website steps including Login and Scope selection
+7.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
+8.   Data Custodian testee DENIES access
+9.   Test Harness tester resumes control
+10. Test Harness tester selects OK on SoapUI Dialog
+",,,,,,,,,,X,X,
 Authorization Code Request (Ignore invalid Authorization Code Response elements),,Authorization,OAT003,FB_46,Positive,Protocol,Test,Client,Verify Third Party ignores any unrecognized response parameters in the Authorization Code Response,Third Party has been authorized (registered) and configured,"1. Third Party issues a validly formatted OAuth 2.0 Authorization Request to Test Software
 2. Test Software issues a valid Authorization Code Request Response with a ""&gigo=GarbageInGarbageOut"" response parameter
 3. Verify the Third Party ignores the ""&gigo=GarbageInGarbageOut"" parameter in the Authorization Code Response                       ",,,"10.0 Verify the Third Party ignores the ""&gigo=GarbageInGarbageOut"" parameter in the Authorization Code Response",,,,,,,X,,
@@ -686,202 +562,31 @@ Properly Formatted Authorizaiton Code Access Token Request,,Authorization,OAT004
 6. Verify the access token request contains a ""redirection_uri="" element 
 7. Verify the access token request does NOT contain a ""client_id="" element
                                           ",,,,,,,,,,X,,
-Access Token Request Authorization Header Acceptance,,Authorization,OAD023,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian properly authenticates and accepts an Access Token Request with a valid HTTP BASIC Authorization header,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues a validly formatted OAuth 2.0 Authorization Code Grant Access Token Request 
-     with ""grant_type=authorization_code"" with an Authorization header containing a valid HTTP BASIC 
-     Authorization value
-6.  Verify the Data Custodian issues an HTTP Status Code 200 (OK)",,,,,,,,,,X,X,
-Access Token Request Authorization Header Rejection,,Authorization,OAD024,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request with an INVALID HTTP BASIC Authorization header,Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues a validly formatted OAuth 2.0 Authorization Code Grant Access Token Request 
-     with ""grant_type=authorization_code"" with an Authorization header containing an invalid HTTP 
-     BASIC Authorization value
-6. Verify the Data Custodian issues an HTTP Status code 401 (Unauthorized)
-7. Verify the Data Custodian response contains a ""WWW-Authenticate"" response header
-8. Verify the Data Custodian issues an Authorization Code Request Error Response with an ""error="" element of ""invalid_client""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (No ""grant_type"" field-value pair)",,Authorization,OAD025,FB_14,Positive,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request with NO ""grant_type"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test software issues an OAuth 2.0 Authorization Code Grant Access Token Request without a ""grant_type"" element to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (No ""code"" field-value pair)",,Authorization,OAD026,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request with NO ""code"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test software issues an OAuth 2.0 Authorization Code Grant Access Token Request without a ""code"" element to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (No ""redirect_uri"" field-value pair)",,Authorization,OAD027,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request with NO ""redirect_uri"" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test software issues an OAuth 2.0 Authorization Code Grant Access Token Request without a ""redirect_uri"" element to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-7. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-8. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (Multiple ""grant_type"" field-value pairs)",,Authorization,OAD028,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request with multiple ""grant_type"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test software issues an OAuth 2.0 Authorization Code Grant Access Token Request with multiple ""grant_type"" elements to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (Multiple ""code"" field-value pairs)",,Authorization,OAD029,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request with multiple ""code"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test software issues an OAuth 2.0 Authorization Code Grant Access Token Request with multiple ""code"" elements to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (Multiple ""redirect_uri"" field-value pairs)",,Authorization,OAD030,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request with multiple ""redirect_uri"" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test software issues an OAuth 2.0 Authorization Code Grant Access Token Request with multiple ""redirect_uri"" elements to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Authorization Code Grant Access Token Request (Contains  HTTP BASIC Authorization header and ""client_id"" field-value pair)",,Authorization,OAD031,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request containing a ""client_id="" field-value pair and a valid HTTP BASIC authorization header",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with a ""client_id"" element to the 
-     Data Custodian under test
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""redirect_uri"" field-value pair doess not match the ""redirect_uri"" field-value pair in the Authorization Code Request)",,Authorization,OAD032,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request containing a ""redirect_uri"" field-value pair if the ""redirect_uri"" does NOT match the ""redirect_uri"" field-value pair contained in the original Authorization Request parameter",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with a ""redirect_uri"" element value that does
-     not match the ""redirect_uri"" element contained in the previously issued OAuth 2.0 Authorization Request
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_grant""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains an authorization code issued to another client)",,Authorization,OAD033,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request containing an authorization_code (""code="" field-value pair) NOT issued to the ""client_id"" in the Access Token Request",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with a ""code"" element value that was
-     issued to another Third Party application
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_grant""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains an invalid authorization code)",,Authorization,OAD034,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request containing an INVALID authorization_code (""code="" field-value pair)",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with an invalid ""code"" element value
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains a valid authorization code issued 15 minutes prior)",,Authorization,OAD035,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request using an ""expired"" ""code="" field-value pair",Third Party has been authorized (registered) and configured,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software waits 15 minutes before it issues an OAuth 2.0 Authorization Code Grant Access Token request with 
-     ""code"" element value returned to the Test Software's Redirection EndPoint
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains a valid authorization code issued 10 minutes prior)",,Authorization,OAD036,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request using an ""expired"" ""code="" field-value pair",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software waits 10 minutes before it issues an OAuth 2.0 Authorization Code Grant Access Token request with 
-     ""code"" element value returned to the Test Software's Redirection EndPoint
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains a valid authorization code issued 5 minutes prior)",,Authorization,OAD037,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request using an ""expired"" ""code="" field-value pair",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software waits 5 minutes before it issues an OAuth 2.0 Authorization Code Grant Access Token request with 
-     ""code"" element value returned to the Test Software's Redirection EndPoint
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains a valid authorization code issued 1 minute prior)",,Authorization,OAD038,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request using an ""expired"" ""code="" field-value pair",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software waits 1 minute before it issues an OAuth 2.0 Authorization Code Grant Access Token request with 
-     ""code"" element value returned to the Test Software's Redirection EndPoint
-6. Verify the Data Custodian isses an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_request""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains a previously used authorization code)",,Authorization,OAD039,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Authorization Code Access Token Request containing a previously used authorization_code,,"1.   Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2.   Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3.   Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4.   Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5.   Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with ""code"" element value 
-       returned to the Test Software's Redirection EndPoint
-6.   Verify the Data Custodian isses an HTTP Status Code 200 (OK)
-7.   Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with the same ""code=""
-       element value returned to the Test Software's Redirection Endpoint
-8.   Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-9.   Verify the Data Custodian response is Content-Type = (application/json)
-10. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-11. Verify the Data Custodian response JSON structure ""error"" key contains ""Invalid_grant""",,,,,,,,,,X,X,
-"Invalid Authorization Code Grant Access Token Request (Application Information record ""grant_type"" field-value pair contains ""client_credentials"")",,Authorization,OAD040,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects an Authorization Code Access Token Request NOT contained in the Application Information structure ""grant_types"" field",,"1. Test Software allows Data Custodian under test to manually ensure Retail Customer is Signed Off
-2. Test Software issues a validly formatted OAuth 2.0 Authorization Request to Data Custodian under test
-3. Test Software allows Data Custodian under test to manually perform successful Retail Customer authentication
-4. Test Software allows Data Custodian under test to manually approve the Third Party access to data
-5. Test Software issues an OAuth 2.0 Authorization Code Grant Access Token request with ""code"" element value 
-     returned to the Test Software's Redirection EndPoint
-6. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-7. Verify the Data Custodian response is Content-Type = (application/json)
-8. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-9. Verify the Data Custodian response JSON structure ""error"" key contains ""unsupported_grant_type""",,,,,,,,,,X,X,
+Access Token Request Authorization Header Rejection and malformed OAuth Authorization Code Access Token Request,,Authorization,OAD007,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request with an INVALID HTTP BASIC Authorization header or a malformed Authorization Code Access Token Request,,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
+2.   Verify Data Custodian Scope Selection URI is present
+3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+4.   SoapUI Dialog box appears to be completed after step 9
+5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+6.   Data Custodian testee navigates required website steps including Login and Scope selection
+7.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
+8.   Data Custodian testee APPROVES access
+9.   Test Harness tester resumes control
+10. Test Harness tester selects OK on SoapUI Dialog
+11. Verify Data Custodian rejects OAuth Authorization Code Token Request with -- Invalid HTTP Authorization Header, No grant_type field-value pair, No code field-value pair, No redirect_uri field-value pair, Multiple grant_type field-value pairs,  Multiple code  field-value pairs, Multiple redirect_uri field-value pairs,  HTTP Basic Authorization Header and client_id field_value pair, redirect_uri field-value pair that does NOT match redirect_uri field-value pair sent in the OAuth Authorization Code Request,  Contains a code field-value pair issued to another Third Party application, code field-pair contains an invalid authorization code, code field-pair contans an authorization code value issued 6 minutes prior (verifies authorization code has a 5 minute life span),  an ApplicationInformation record contains a grant_type value of ""client_credentials""",,,,,,,,,,X,,
+Successful Access Token Request,,Authorization,OAD008,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian successfully issues an Authorization Code Access Token,,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
+2.   Verify Data Custodian Scope Selection URI is present
+3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+4.   SoapUI Dialog box appears to be completed after step 9
+5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+6.   Data Custodian testee navigates required website steps including Login and Scope selection
+7.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
+8.   Data Custodian testee APPROVES access
+9.   Test Harness tester resumes control
+10. Test Harness tester selects OK on SoapUI Dialog
+11. Verify the response JSON structure contains the following Member Keys and that all have data-- ""access_token"",  ""token_type"",  ""expires_in"", ""refresh_token"", ""scope"", ""resourceURI"", ""authorizationURI"" 
+",,,,,,,,,,X,,
+"Invalid Authorization Code Grant Access Token Request (""code"" field-value pair contains a previously used authorization code)",,Authorization,OAD009,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Authorization Code Access Token Request containing a previously used authorization_code,,"1.   Test Harness issues an OAuth Authorization Code request with a previously used code field-value pair
+2.   Verify response query does NOT contain an authorization_code field-value",,,,,,,,,,X,X,
 Authorization Code Grant Access Token Request response is successfully processed,,Authorization,OAT005,FB_46,Positive,Protocol,Test,Client,Verify Third Party successfully processes a properly formatted Access Token Response,,"1. Third Party under test issues a validly formatted OAuth 2.0 Authorization Request to the Test Software
 2.  Test Software issues a valid response to the URL contained in the ""redirect_uri="" element of the OAuth 2.0 Authorization Request
 3.  Third Party under test issues a validly formatted OAuth 2.0 Authorization Code Grant Access Token request
@@ -895,59 +600,11 @@ Properly Formatted Client Credentials Access Token Request,,Authorization,OAT006
 5. Verify the access token request contains a ""scope="" element
 
                                           ",,,,,,,,,,X,,
-"Malformed Client Credentials Grant Access Token Request (No ""grant_type="" field-value pair)",,Authorization,OAD041,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Client Credentials Access Token Request with NO ""grant_type="" field-value pair",,"1. Test software issues an OAuth 2.0 Client Credentials Grant Access Token Request without a ""grant_type"" element to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Client Credentials Grant Access Token Request (No ""scope="" field-value pair)",,Authorization,OAD042,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Client Credentials Access Token Request with NO ""scope="" field-value pair",Third Party has been authorized (registered) and configured,"1. Test software issues an OAuth 2.0 Client Credentials Grant Access Token Request without a ""scope"" element to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Client Credentials Grant Access Token Request (Multiple ""grant_type="" field-value pairs)",,Authorization,OAD043,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Client Credentials Access Token Request with multiple ""grant_type="" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test software issues an OAuth 2.0 Client Credentials Grant Access Token Request without multiple  ""grant_type"" parameters to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Client Credentials Grant Access Token Request (Multiple ""scope="" field-value pairs)",,Authorization,OAD044,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Client Credentials Access Token Request with multiple ""scope="" field-value pairs",Third Party has been authorized (registered) and configured,"1. Test software issues an OAuth 2.0 Client Credentials Grant Access Token Request without multiple ""scope="" parameters to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,<Note: May need various forms of Invalid SCOPE Parameter Values ????>,,,X,X,
-"Malformed Client Credentials Grant Access Token Request (contents of ""scope="" field-value pair does not match contents of Application Information structure ""scope"" field)",,,OAD045,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Client Credentials Access Token Request with a ""scope="" field-value pair that does not match contents of the Application Information ""scope"" field",,"1. Test Sofware issues an OAuth 2.0 Client Credentials Grant Access Token Request with a ""scope="" parameter value of
-     ""InvalidScopeElement""
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_scope""",,,,,,,,,,X,,
-"Invalid Client Credentials Grant Access Token Request (Application Information record ""grant_type"" field contains ""authorization_code, refresh_token"")",,,OAD046,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Client Credentials Access Token Request NOT contained in the Application Information structure ""grant_types"" field",,"1. Test software issues an OAuth 2.0 Client Credentials Grant Access Token Request to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""unsupported_grant_type""",,,,,,,,,,X,,
-Valid JSON structure returned during Data Custodian Client Credentials Grant Access Token Request processing,,,OAD047,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian responds with a valid Client Credentials Access Token Request JSON response,,"1. Test software issues an OAuth 2.0 Client Credentials Grant Access Token Request to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 200 (OK)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Keys and that all have data:
-     ""access_token""
-     ""token_type""
-     ""expires_in""
-     ""scope""
-     ""resourceURI""
-     ""authorizationURI""
-5. Verify the Data Custodian JSON structure does NOT contain the following Member Key:
-     ""refresh_token""",,,,,,,,,,X,,
+Malformed Client Credentials Grant Access Token Request,,Authorization,OAD010,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a malformed Client Credentials Access Token Request,,"1.   Test Harness issues an malformed OAuth Client Credentials Access Token request with -- No grant_type field-value pair, No scope field-value pair, Multiple grant_type field-value pairs, Multiple scope field-value pairs, scope field-value pair that does NOT match ApplicationInformation ""scope"" field
+2.   Verify status code is NOT 200",,,,,,,,,,X,,
+Valid JSON structure returned during Data Custodian Client Credentials Grant Access Token Request processing,,Authorization,OAD011,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian responds with a valid Client Credentials Access Token Request JSON response,,"1.   Test Harness issues a valid OAuth Client Credentials Grant Access Token Request to the Data Custodian under test
+2.   Verify the response JSON structure contains the following Member Keys and that all have data -- ""access_token"", ""token_type"", ""expires_in"", ""scope"", ""resourceURI"", ""authorizationURI""
+3.   Verify the response JSON structure does NOT contain the following Member Key -- ""refresh_token""",,,,,,,,,,X,,
 Client Credentials Grant Access Token Request response is successfully processed,,Authorization,OAT007,FB_46,Positive,Protocol,Test,Client,Verify Third Party successfully processes a properly formatted Client Credentials Grant Access Token Response,,"1.  Third Party under test issues a validly formatted OAuth 2.0 Client Credentials Grant Access Token request
 2.  Test Software isses a valid response with a Content-Type = application/JSON value
 3.  Verify Third Party under test properly handles the response
@@ -958,169 +615,36 @@ Properly Formatted Refresh Token Request,,Authorization,OAT008,FB_46,Positive,Fo
 4. Verify the access token request contains a  ""grant_type="" element value containing ""refresh_token""
 5. Verify the access token request contains a ""refresh_token="" paramter
 5. Verify the access token request contains a ""scope="" parameter",,,,,,,,,,X,,
-"Malformed Refresh Token Request (No ""grant_type="" field-value pair)",,Authorization,OAD048,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""grant_type="" field-value pair","1. Client issues an OAuth 2.0 Access Token Request [RFC6749] without a ""code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request""","1. Test software issues an OAuth 2.0 Refresh Token Request without a ""grant_type"" element to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Refresh Token Request (No ""refresh_token="" field-value pair)",,Authorization,OAD049,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""refresh_token="" field-value pair",,"1. Test software issues an OAuth 2.0 Refresh Token Request without a ""refresh_token="" parameter to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Refresh Token Request (No ""scope="" field-value pair)",,,OAD050,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with NO ""scope="" field-value pair",,"1. Test software issues an OAuth 2.0 Refresh Token Request without a ""scope="" parameter to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,,
-"Malformed Refresh Token Request (Multiple ""grant_type="" field-value pairs)",,Authorization,OAD051,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""grant_type="" field-value pairs","1. Client issues an OAuth 2.0 Access Token Request [RFC6749] without a ""code"" element                                                                                                            2. Verify the server issues an Access Token Request Error Response with an ""error"" element of ""invalid_request""","1. Test software issues an OAuth 2.0 Refresh Token Request with multiple ""grant_type"" parameters to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Refresh Token Request (Multiple ""refresh_token="" field-value pairs)",,Authorization,OAD052,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""refresh_token="" field-value pairs",,"1. Test software issues an OAuth 2.0 Refresh Token Request with multiple ""refresh_token="" parameters to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Malformed Refresh Token Request (Multiple ""scope="" field-value pairs)",,Authorization,OAD053,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request with multiple ""scope="" field-value pairs",,"1. Test software issues an OAuth 2.0 Refresh Token Request with multiple ""scope="" parameters to the 
-     Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_request""",,,,,,,,,,X,X,
-"Invalid Refresh Token Request (Contents of ""refresh_token="" field-value pair was issued to a different Third Party)",,Authorization,OAD054,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" field-value pair that was NOT issued to the requesting Third Party Application",,"1. Test software issues an OAuth 2.0 Refresh Token Request with a ""refresh_token"" element issued
-     to another Third Party application to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_grant""",,,,,,,,,,X,X,
-"Invalid Refresh Token Request (Contents of ""scope="" field-value pair does not match ""scope="" used in original access token request)",,Authorization,AOD055,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""scope"" field-value pair that does NOT match the ""scope"" field-value pair value used to obtain the original Access Token.",,"1. Test software issues an OAuth 2.0 Refresh Token Request with a ""scope="" element that does
-     NOT match the ""scope="" element used when the ""refresh_token"" was issued to the Data 
-     Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_scope""",,,,,,,,,,X,X,
-"Invalid Refresh Token Request (Value found in ""refresh_token="" field-value pair has expired)",,Authorization,AOD056,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a Refresh Token Request containing a ""refresh_token"" field-value pair that is expired",,"1. Test software issues an OAuth 2.0 Refresh Token Request with an expired Refresh Token 
-     to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 400 (Bad Request)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_grant""",,,,,,,,,,X,X,
-Invalid Access Token Request (Access Token contained in the Authorization Header was NOT issued to the requesting Third Party.,,Authorization,AOD057,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a request containing an Access Token that was NOT issued to the requesting Third Party,,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""LocalTimeParameters"" resource
-     with an access token issued to another Third Party application to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,X,
-Invalid Access Token Request (Access Token contained in the Authorization Header has expired),,Authorization,AOD058,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a request containing an Access Token that has expired,,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""LocalTimeParameters"" resource
-     with an expired access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,X,
-"Invalid Access Token Request (GET RESTful AppplicationInformation request contains ""client_access_token"")",,,AOD059,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the ApplicationInformation resource that contains a ""client_access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""ApplicationInformation"" resource
-     with a client access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful AppplicationInformation request contains ""access_token"")",,,AOD060,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the ApplicationInformation resource that contains an ""access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""ApplicationInformation"" resource
-     with an access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-Invalid Access Token Request (GET RESTful AppplicationInformation request does NOT contain an Authorization Header),,,AOD061,FB_14 ,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a GET RESTful request for the ApplicationInformation resource that does NOT contain an Authorization Header,,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""ApplicationInformation"" resource
-     with NO Authorization Header to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful Authorization request contains ""registration_access_token"")",,,AOD062,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the Authorization resource that contains a ""registration_access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""Authorization"" resource
-     with a registration access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful Authorization request contains ""access_token"")",,,AOD063,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the Authorization resource that contains an ""access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""Authorization"" resource
-     with an access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-Invalid Access Token Request (GET RESTful Authorization request does NOT contain an Authorization Header),,,AOD064,FB_14 ,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a GET RESTful request for the Authorization resource that does NOT contain an Authorization Header,,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""Authorization"" resource
-     with NO Authorization Header to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful Batch/Subscription request contains ""registration_access_token"")",,,AOD065,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the Batch/Subscription resource that contains a ""registration_access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""Batch/Subscription"" resource
-     with a registration access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful Batch/Subscription request contains ""client_access_token"")",,,AOD066,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the Batch/Subscription resource that contains a ""client_access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""Batch/Subscription"" resource
-     with a client access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-Invalid Access Token Request (GET RESTful Batch/Subscription request does NOT contain an Authorization Header),,,AOD067,FB_14 ,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a GET RESTful request for the Batch/Subscription resource that does NOT contain an Authorization Header,,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""Batch/Subscription"" resource
-     with NO Authorization Header to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful ReadServiceStats request contains ""registration_access_token"")",,,AOD068,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the ReadServiceStatus resource that contains a ""registration_access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""ReadServiceStatus"" resource
-     with a registration access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-"Invalid Access Token Request (GET RESTful ReadServiceStats request contains ""access_token"")",,,AOD069,FB_14 ,Negative,Protocol,Test,Server,"Verify Data Custodian under test rejects a GET RESTful request for the ReadServiceStatus resource that contains an ""access_token""",,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""ReadServiceStatus"" resource
-     with an access token to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-Invalid Access Token Request (GET RESTful ReadServiceStats request does NOT contain an Authorization Header),,,AOD070,FB_14 ,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a GET RESTful request for the ReadServiceStatus resource that does NOT contain an Authorization Header,,"1. Test software issues an OAuth 2.0 GET RESTful request for the ""ReadServiceStatus"" resource
-     with NO Authorization Header to the Data Custodian under test
-2. Verify the Data Custodian issues an HTTP Status Code 401 (Unauthorized)
-3. Verify the Data Custodian response is Content-Type = (application/json)
-4. Verify the Data Custodian response JSON structure contains the following Member Key:
-     ""error""
-5. Verify the Data Custodian response JSON structure ""error"" key contains ""invalid_token""",,,,,,,,,,X,,
-Secure REST  header,,Security,TC002,FB_14,Positive,Security,Test,Server,Verify Data Custodian under test REST presonse headers include fields TBD,,,,,,,,,,,,X,,
+Malformed Refresh Token Request,,Authorization,OAD012,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a malformed Refresh Token Access Token Request,,"1.   Test Harness issues an malformed OAuth Refresh Access Token request with -- No grant_type field-value pair, No refresh_token field-value pair, No scope field-value pair, Multiple grant_type field-value pairs, Multiple refresh-token field-value pairs, Multiple scope field-value pairs, refresh_token field-value pair that was issued to another Third Party, scope field-value pair that does NOT match the scope field-value pair contained in the original access token request, refresh_token field-value pair has expired
+2.    Verify status code is NOT 200
+",,,,,,,,,,X,,
+Invalid Access Token Request (Access Token contained in the Authorization Header has expired),,Authorization,OAD013,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a request containing an Access Token that has expired,,"1.   Test Harness issues a valid GET RESTful request to a Data Custodian resource with -- an expired ""access token""
+2.   Verify status code is 403",,,,,,,,,,X,X,
+Invalid Access Token Requests for ApplicationInformation,,Authorization,OAD014,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for ApplicationInformation resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""client_access_token"", ""access_token""
+2.   Verify status code is 403
+3.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- No access token
+4.   Verify status code is 401",,,,,,,,,,X,,
+Invalid Access Token Requests for Authorization entry,,Authorization,OAD015,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Authorization entry resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET Authorization by ID request with an incorrect Access Token -- ""registration_access_token"", ""access_token""
+2.   Verify status code is 403
+3.   Test Harness issues a valid GET Authorization by ID request with an incorrect Access Token -- No access token
+4.   Verify status code is 401",,,,,,,,,,X,,
+Invalid Access Token Requests for Authorization feed,,Authorization,OAD016,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Authorization feed resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET Authorization feed request with an incorrect Access Token -- ""registration_access_token"", ""access_token""
+2.   Verify status code is 403
+3.   Test Harness issues a valid GET Authorization feed request with an incorrect Access Token -- No access token
+4.   Verify status code is 401",,,,,,,,,,X,,
+"Invalid Access Token Request (Get RESTful Batch/Subscription request contains ""registration_access_token"")",,Authorization,OAD017,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Batch/Subscription resource that contains an incorrect ""access token""",,"1.   Retrieve resourceURI from Authorization for registration access token
+2.   Test Harness issues a valid GET Batch/Subscription request with an incorrect Access Token -- ""registration_access_token""
+3.   Verify status code is 403
+4.   Retrieve resourceURI from Authorization for client access token
+5.   Test Harness issues a valid GET Batch/Subscription request with an incorrect Access Token -- ""client_access_token""
+6.   Verify status code is 403
+7.   Test Harness issues a valid GET Batch/Subscription request with an incorrect Access Token --  No access token
+8.   Verify status code is 401",,,,,,,,,,X,,
+"Invalid Access Token Request (Get RESTful ReadServiceStats request contains ""registration_access_token"")",,Authorization,OAD018,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for ServiceStatus resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ServiceStatus request with an incorrect Access Token -- ""registration_access_token"",""access_token""
+2.   Verify status code is 403
+3.   Test Harness issues a valid GET ServiceStatus request with an incorrect Access Token --  No access token
+4.    Verify status code is 401",,,,,,,,,,X,,
+Secure REST  header,,Security,TC002,FB_13,Positive,Security,Test,Server,Verify Data Custodian under test REST presonse headers include fields TBD,,,,,,,,,,,,X,,
 Request / Reply,REQ.21.4,Communication,ON001,FB_99,,Online,Test,,,,,,,,,,,,,,,,
 Use of HTTPS,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains field indicating establishment of a secure session.,,"1. Test software isses a GET request to: {HomePageURLEndpoint}/DataCustodian
 2. Verify that the response HTTP header contains the following information: 'Set-Cookie: JSESSIONID=' and 'Secure;'",,,,,,,,,,X,,
@@ -1331,3 +855,28 @@ AuthorizationId","1. Client sends PUT request for atom:entry type resource i.e. 
 Partial update of data,REQ.21.6.2,Communication,PRT_001,FB_19,TBD,TBD,TBD,TBD,TBD. Is this requirement for upload role and not core data custodian,,,,,,,,,TBD: Is this requirement for upload role and not core data custodian,,,,,
 Query Parameters,REQ.21.6.2,Communication,QRY_001,FB_37,TBD,TBD,TBD,TBD,"support published_min, published_max",,,,,,,,,TBD,,,X,,
 Offline RetailCustomer Authorization,REQ.21.6.2,Communication,OFA_001,FB_40,TBD,TBD,TBD,TBD,"This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.","Manual creation of ApplicationInformation, Authorization(s)",,,,,,,,"TBD: This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.",,,X,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,TC001,FB_13,Positive,Security,Test,Server,Test software shall issue a service request over an SSL session and shall verify that the response HTTP header contains the following fields and information – fields TBD,,,,,,,,,,,,,,
+,,,TC002,FB_13,Positive,Security,Test,Server,Verify that REST request headers include – fields TBD,,,,,,,,,,,,,,
+,,,TC003,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian implements TLS 1.2.,,,,,,,,,,,,,,
+,,,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
+,,,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,,,,,,,,,,,,,
+,,,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,,,,,,,,,,,,,
+,,,TC007,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Third Party the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
+,,,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,,,
+,,,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,,,
+,,,TC010,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,,
+,,,TC011,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,,
+,,,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,,
+,,,TC013,FB_13,Positive,Security,Test,Server,Verify that the Third Party implements TLS 1.1 or higher.,,,,,,,,,,,,,,
+,,,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
+,,,TC015,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Data Custodian the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
+,,,TC016,FB_13,Positive,Security,Test,Server,Verify that the Third Party maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,,,,,,,,,,,,,
+,,,TC017,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Third Party RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,,,,,,,,,,,,,
+,,,TC018,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,,,,,,,,,,,,,
+,,,TC019,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Third Party consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,,,,,,,,,,,,,
+,,,TC020,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Third Party implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,,,,,
+Valid refresh_token request,,Authorization,OAD019,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian successfully process a refresh_token request,,"1.   Test Harness issues a valid OAuth Refresh  Access Token Request to the Data Custodian under test
+2.   Verify the response JSON structure contains the following Member Keys and that all have data -- ""access_token"", ""token_type"", ""expires_in"", ""scope"", ""resourceURI"", ""authorizationURI"", ""refresh_token""",,,,,,,,,,X,,
