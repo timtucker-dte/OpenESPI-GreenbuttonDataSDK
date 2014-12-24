@@ -644,13 +644,14 @@ Invalid Access Token Requests for Authorization feed,,Authorization,OAD016,FB_14
 2.   Verify status code is 403
 3.   Test Harness issues a valid GET ServiceStatus request with an incorrect Access Token --  No access token
 4.    Verify status code is 401",,,,,,,,,,X,,,
-Secure REST  header,,Security,TC002,FB_13,Positive,Security,Test,Server,Verify Data Custodian under test REST presonse headers include fields TBD,,,,,,,,,,,,X,,,
+Secure REST response header,,Security,TC002,FB_13,Positive,Security,Test,Server,Verify Data Custodian under test REST presonse headers include fields TBD,,"1. Perform request of ApplicationInformation
+2. Verify that REST header includes Authorization=Bearer <access token>",,,,,,,,,,X,,,
 Request / Reply,REQ.21.4,Communication,ON001,FB_99,,Online,Test,,,,,,,,,,,,,,,,,
 Use of HTTPS,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains field indicating establishment of a secure session.,,"1. Test software isses a GET request to: {HomePageURLEndpoint}/DataCustodian
 2. Verify that the response HTTP header contains the following information: 'Set-Cookie: JSESSIONID=' and 'Secure;'",,,,,,,,,,X,,,
 Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL indicates that TLS 1.2 is implmented though a successful result of 'Protocol  : TLSv1.2'",,,,,,,,,,X,,,
-Negotiate highest level of TLS using DataCustodianScopeSelectionScreen,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {DataCustodianScopeSelectionScreen}:${config.DataCustodianSSLPort}
+Negotiate highest level of TLS with browser,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {DataCustodianScopeSelectionScreen}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
 3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
@@ -674,15 +675,15 @@ Tokens and IDs have no PII,,Security,TC010,FB_13,Positive,Security,Test,Server,T
 Tokens and IDs have at least 48bits,,Security,TC011,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.,,"1. The test harness will issue REST GET requests for ApplicationInformation{ID}, UsagePoint{ID}
 2. The test harness will present the test operator with the contents of the response messages
 3. The test harness will query the test operator to confirm that  Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.",,,,,,,,,,X,,,
-FIPS 140-2 support,,Security,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,1. The test harness will query the test operator to review DC documentation and to confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,,,,,,,,,X,,,
-Negotiate highest level of TLS using dataCustodianResourceEndpoint,,Security,TC013,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {dataCustodianResourceEndpoint}:${config.DataCustodianSSLPort}
+FIPS 140-2 support,,Security,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,1. The test harness will query the test operator to review DC documentation and to confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website http://csrc.nist.gov/groups/STM/cmvp/validation.html.,,,,,,,,,,X,,,
+Negotiate highest level of TLS using resourceServer,,Security,TC013,FB_13,Positive,Security,Test,Server,Verify that when communicating with a resourceServer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {dataCustodianResourceEndpoint}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
 3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
 5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 6. Verify that OpenSSL reports a successful TLS 1 negotiation
 ",,,,,,,,,,X,,,
-Negotiate highest level of TLS using authorizationServerUri,,Security,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {authorizationServerUri}:${config.DataCustodianSSLPort}
+Negotiate highest level of TLS using authorizationServer,,Security,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a authorizationServer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {authorizationServerUri}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
 3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
