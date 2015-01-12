@@ -644,7 +644,7 @@ Use of HTTPS,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data
 Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to authorizationServer
 2. Verify that OpenSSL indicates that TLS 1.2 is implmented though a successful result of 'Protocol  : TLSv1.2'
 3. Repeat test using resourceServer",,,,,,,,,,X,,
-Negotiate highest level of TLS with browser,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to authorizationServer obtained from ApplicationInformation
+Negotiate highest level of TLS ,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to authorizationServer obtained from ApplicationInformation
 2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
 3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to authorizationServer obtained from ApplicationInformation
 4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
@@ -663,9 +663,10 @@ Quality of Certificate,,Security,TC008,FB_13,Positive,Security,Test,Server,Verif
 2. Verify that OpenSSL reports that the connection request was accepted and reports 'Server public key is 2048 bit'
 3. Verify that certificate is unexpired and unrevoked
 4. Verify that certificate uses RSA algorithm",,,,,,,,,,X,,
-Root of trust,,Security,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
-2. OpenSSL certificate report will be presented to the test operator along with references to ETSI and WebTrust
-3. The operator will confirm that the RSA retificate as issues by an appropriate CA
+Root of trust,,Security,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to authorizationServer
+2. OpenSSL certificate issuer report will be presented to the test operator along with references to ETSI and WebTrust
+3. The operator will confirm that the retificate was issued by a CA recognized by ESTI or WebTrust
+4. Repeat for resourceServer
 ",,,,,,,,,,X,,
 Tokens and IDs have no PII,,Security,TC010,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,"1. The test harness will issue REST GET requests for ApplicationInformation{ID}, UsagePoint{ID}
 2. The test harness will present the test operator with the contents of the response messages
@@ -674,20 +675,6 @@ Tokens and IDs have at least 48bits,,Security,TC011,FB_13,Positive,Security,Test
 2. The test harness will present the test operator with the contents of the response messages
 3. The test harness will query the test operator to confirm that  Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.",,,,,,,,,,X,,
 FIPS 140-2 support,,Security,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,1. The test harness will query the test operator to review DC documentation and to confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website http://csrc.nist.gov/groups/STM/cmvp/validation.html.,,,,,,,,,,X,,
-Negotiate highest level of TLS using resourceServer,,Security,TC013,FB_13,Positive,Security,Test,Server,Verify that when communicating with a resourceServer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {dataCustodianResourceEndpoint}:${config.DataCustodianSSLPort}
-2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
-3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
-4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
-5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
-6. Verify that OpenSSL reports a successful TLS 1 negotiation
-",,,,,,,,,,X,,
-Negotiate highest level of TLS using authorizationServer,,Security,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a authorizationServer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {authorizationServerUri}:${config.DataCustodianSSLPort}
-2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
-3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
-4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
-5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
-6. Verify that OpenSSL reports a successful TLS 1 negotiation
-",,,,,,,,,,X,,
 Third Party implements TLS 1.1 or higher,,,TCT01,FB_45,Positive,Security,Test,Server,Verify that the Third Party implements TLS 1.1 or higher.,,,,,,,,,,,,,X,
 Third Party negotiates highest level of TLS,,,TCT02,FB_45,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,X,
 Third Party negotiates highest level of TLS,,,TCT03,FB_45,Positive,Security,Test,Server,Verify that when communicating with a Data Custodian the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,X,
