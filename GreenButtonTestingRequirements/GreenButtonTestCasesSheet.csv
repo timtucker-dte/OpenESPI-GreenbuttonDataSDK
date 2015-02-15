@@ -1,4 +1,5 @@
 Test Name,Section #,Section Name,Test ID,Function Block,Test Type,Category,Method,IUT,Test Purpose / Requirement,Initial Conditions,Test Steps,Example Test Input,Example Test Output,Success Criteria,Warning Criteria,Failure Criteria,Result,Comments,Include Test (tb deleted),DMD Test,CMD Test,,New IDs
+Test Name,Section #,Section Name,Test ID,Function Block,Test Type,Category,Method,IUT,Test Purpose / Requirement,Initial Conditions,Test Steps,Example Test Input,Example Test Output,Success Criteria,Warning Criteria,Failure Criteria,Result,Comments,Include Test (tb deleted),DMD Test,CMD Test,,New IDs
 ApplicationInformation,REQ.21.4,,APP001,FB_99,,Application,,,,,,,,,,,,,,,,,
 Subscription,REQ.21.4,,BAT001,FB_99,Positive,Batch,Test,,,,,,,,,,,,,,,,
 Notification,REQ.21.4,,BAT002,FB_99,Positive,Batch,Test,,,,,,,,,,,,,,,,
@@ -521,29 +522,27 @@ Properly Formatted Authorization Code Request,,Authorization,OAT002,FB_46,Positi
 7. Verify the ""scope"" element is present and its values are semi-colon separated and meet the Scope Parameter Definitions
      defined by the Authorization document
 8. Verify the ""state"" element is present in the authorization request",,,,,,,,,,X,,
-Malformed Authorization Code Requests,,Authorization,OAD001,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects malformed OAuth Authorization Request,,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
-2.   Verify Data Custodian Scope Selection URI is present
-3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
-4.   SoapUI Dialog box appears to be completed after step 8
-5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
-6.   Data Custodian testee navigates required website steps including Login and Scope selection
-7.   Test Harness tester resumes control
-8.   Test Harness tester copies Session cookie from Firefox (right-click, select View Page Info, select Security tab, select View Cookies, copy JSESSIONID cookie Content: data)
-9.   Test Harness tester paste Session cookie into SoapUI dialog and select OK
-10. SoapUI Dialog box appears to be completed after step 11
-11. Test Harness tester selects the first listed Scope string and selects SUBMIT
-12. Test Harness tester selects OK on SoapUI Dialog
-13. Verify Data Custodian rejects malformed OAuth Authorization Requests with -- No response_type field-value pair, No client_id field-value pair, No redirect_uri field-value pair, No scope field-value pair, No state field-value pair, Multiple response_type field-value pairs, Multiple client_id field-value pairs, Multiple redirect_uri field-value pairs, Multiple scope field-value pairs, Multiple state field-value pairs, Invalid field-value pair, Invalid response_type field-value pair, Invalid client_id field-value pair, Invalid redirect_uri field-value pair, Invalid scope field-value pair",,,,,,,,,,X,,
-Authorization Code Request (Retail Customer Passes Authentication and DENIES access),,Authorization,OAD002,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly handles a Retail Customer who DENIES access while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
-2.   Verify Data Custodian Scope Selection URI is present
-3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
-4.   SoapUI Dialog box appears to be completed after step 9
-5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
-6.   Data Custodian testee navigates required website steps including Login and Scope selection
-7.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
-8.   Data Custodian testee DENIES access
-9.   Test Harness tester resumes control
-10. Test Harness tester selects OK on SoapUI Dialog
+Malformed Authorization Code Requests,,Authorization,OAD001,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects malformed OAuth Authorization Request,,"1.   Verify Data Custodian Scope Selection URI is present
+2.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+3.   SoapUI Dialog box appears to be completed during step 8
+4.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+5.   Data Custodian testee navigates required website steps including Login and Scope selection
+6.   Test Harness tester resumes control
+7.   Test Harness tester copies Session cookie from Firefox (right-click, select View Page Info, select Security tab, select View Cookies, copy JSESSIONID cookie Content: data)
+8.   Test Harness tester paste Session cookie into SoapUI dialog and select OK
+9.   SoapUI Dialog box appears to be completed during step 11
+10. Test Harness tester selects the first listed Scope string and selects SUBMIT
+11. Test Harness tester selects OK on SoapUI Dialog
+12. Verify Data Custodian rejects malformed OAuth Authorization Requests with -- No response_type field-value pair, No client_id field-value pair, Invalid response_type field-value pair, Invalid client_id field-value pair, Invalid redirect_uri field-value pair, Invalid scope field-value pair",,,,,,,,,,X,,
+Authorization Code Request (Retail Customer Passes Authentication and DENIES access),,Authorization,OAD002,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian properly handles a Retail Customer who DENIES access while processing a valid Authorization Code Request,Third Party has been authorized (registered) and configured,"1.   Verify Data Custodian Scope Selection URI is present
+2.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+3.   SoapUI Dialog box appears to be completed during step 9
+4.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+5.   Data Custodian testee navigates required website steps including Login and Scope selection
+6.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
+7.   Data Custodian testee DENIES access
+8.   Test Harness tester resumes control
+9.   Test Harness tester selects OK on SoapUI Dialog
 ",,,,,,,,,,X,X,
 Authorization Code Request (Ignore invalid Authorization Code Response elements),,Authorization,OAT003,FB_46,Positive,Protocol,Test,Client,Verify Third Party ignores any unrecognized response parameters in the Authorization Code Response,Third Party has been authorized (registered) and configured,"1. Third Party issues a validly formatted OAuth 2.0 Authorization Request to Test Software
 2. Test Software issues a valid Authorization Code Request Response with a ""&gigo=GarbageInGarbageOut"" response parameter
@@ -556,21 +555,20 @@ Properly Formatted Authorizaiton Code Access Token Request,,Authorization,OAT004
 6. Verify the access token request contains a ""redirection_uri="" element 
 7. Verify the access token request does NOT contain a ""client_id="" element
                                           ",,,,,,,,,,X,,
-Access Token Request Authorization Header Rejection and malformed OAuth Authorization Code Access Token Request,,Authorization,OAD003,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request with an INVALID HTTP BASIC Authorization header or a malformed Authorization Code Access Token Request,,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
+Access Token Request Authorization Header Rejection and malformed OAuth Authorization Code Access Token Request,,Authorization,OAD003,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects an Access Token Request with an INVALID HTTP BASIC Authorization header or a malformed Authorization Code Access Token Request,,"1.   Verify Data Custodian Scope Selection URI is present
+2.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
+3.   SoapUI Dialog box appears to be completed during step 9
+4.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
+5.   Data Custodian testee navigates required website steps including Login and Scope selection
+6.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
+7.   Data Custodian testee APPROVES access
+8.   Test Harness tester resumes control
+9.   Test Harness tester selects OK on SoapUI Dialog
+10. Verify Data Custodian rejects OAuth Authorization Code Token Request with -- No Authorization Header, Invalid HTTP Authorization Header, No grant_type field-value pair, No code field-value pair, No redirect_uri field-value pair,  HTTP Basic Authorization Header and client_id field_value pair, redirect_uri field-value pair that does NOT match redirect_uri field-value pair sent in the OAuth Authorization Code Request,  Contains a code field-value pair issued to another Third Party application, code field-pair contains an invalid authorization code, code field-pair contains an authorization code value issued 6 minutes prior (verifies authorization code has a 5 minute life span)",,,,,,,,,,X,,
+Successful Access Token Request,,Authorization,OAD004,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian successfully issues an Authorization Code Access Token,,"1.   Request Data Custodian testee to expire an authorization
 2.   Verify Data Custodian Scope Selection URI is present
 3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
-4.   SoapUI Dialog box appears to be completed after step 9
-5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
-6.   Data Custodian testee navigates required website steps including Login and Scope selection
-7.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
-8.   Data Custodian testee APPROVES access
-9.   Test Harness tester resumes control
-10. Test Harness tester selects OK on SoapUI Dialog
-11. Verify Data Custodian rejects OAuth Authorization Code Token Request with -- Invalid HTTP Authorization Header, No grant_type field-value pair, No code field-value pair, No redirect_uri field-value pair, Multiple grant_type field-value pairs,  Multiple code  field-value pairs, Multiple redirect_uri field-value pairs,  HTTP Basic Authorization Header and client_id field_value pair, redirect_uri field-value pair that does NOT match redirect_uri field-value pair sent in the OAuth Authorization Code Request,  Contains a code field-value pair issued to another Third Party application, code field-pair contains an invalid authorization code, code field-pair contans an authorization code value issued 6 minutes prior (verifies authorization code has a 5 minute life span),  an ApplicationInformation record contains a grant_type value of ""client_credentials""",,,,,,,,,,X,,
-Successful Access Token Request,,Authorization,OAD004,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian successfully issues an Authorization Code Access Token,,"1.   Retrieve required parameters (dataCustodianScopeSelectionScreenURI, authorizationServerAuthorizationEndpoint, and redirect_uri) from ApplicationInformation by ID
-2.   Verify Data Custodian Scope Selection URI is present
-3.   Activate browser with Data Custodian Scope Selection URI (dataCustodianScopeSelectionScreenURI)
-4.   SoapUI Dialog box appears to be completed after step 9
+4.   SoapUI Dialog box appears to be completed during step 10
 5.   Pass control of keyboard and mouse to testee (via  Web Meeting control panel)
 6.   Data Custodian testee navigates required website steps including Login and Scope selection
 7.   Data Custodian testee selects the first listed Scope string and selects SUBMIT
@@ -594,8 +592,9 @@ Properly Formatted Client Credentials Access Token Request,,Authorization,OAT006
 5. Verify the access token request contains a ""scope="" element
 
                                           ",,,,,,,,,,X,,
-Malformed Client Credentials Grant Access Token Request,,Authorization,OAD006,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a malformed Client Credentials Access Token Request,,"1.   Test Harness issues an malformed OAuth Client Credentials Access Token request with -- No grant_type field-value pair, No scope field-value pair, Multiple grant_type field-value pairs, Multiple scope field-value pairs, scope field-value pair that does NOT match ApplicationInformation ""scope"" field
-2.   Verify status code is NOT 200",,,,,,,,,,X,,
+Malformed Client Credentials Grant Access Token Request,,Authorization,OAD006,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a malformed Client Credentials Access Token Request,,"1.   Test Harness issues an malformed OAuth Client Credentials Access Token request with -- No grant_type field-value pair, scope field-value pair that does NOT match ApplicationInformation ""scope"" field
+2.   Verify status code is NOT 200
+3.   ApplicationInformation record only contains a grant_type value of ""client_credentials""",,,,,,,,,,X,,
 Valid JSON structure returned during Data Custodian Client Credentials Grant Access Token Request processing,,Authorization,OAD007,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian responds with a valid Client Credentials Access Token Request JSON response,,"1.   Test Harness issues a valid OAuth Client Credentials Grant Access Token Request to the Data Custodian under test
 2.   Verify the response JSON structure contains the following Member Keys and that all have data -- ""access_token"", ""token_type"", ""expires_in"", ""scope"", ""resourceURI"", ""authorizationURI""
 3.   Verify the response JSON structure does NOT contain the following Member Key -- ""refresh_token""",,,,,,,,,,X,,
@@ -607,25 +606,32 @@ Properly Formatted Refresh Token Request,,Authorization,OAT008,FB_46,Positive,Fo
 2. Verify Access Token Request is sent to the Test Software's Token Endpoint
 3. Verify the access token request contains an HTTP BASIC Authentication Authorization header
 4. Verify the access token request contains a  ""grant_type="" element value containing ""refresh_token""
-5. Verify the access token request contains a ""refresh_token="" paramter
-5. Verify the access token request contains a ""scope="" parameter",,,,,,,,,,X,,
-Malformed Refresh Token Request,,Authorization,OAD008,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a malformed Refresh Token Access Token Request,,"1.   Test Harness issues an malformed OAuth Refresh Access Token request with -- No grant_type field-value pair, No refresh_token field-value pair, No scope field-value pair, Multiple grant_type field-value pairs, Multiple refresh-token field-value pairs, Multiple scope field-value pairs, refresh_token field-value pair that was issued to another Third Party, scope field-value pair that does NOT match the scope field-value pair contained in the original access token request, refresh_token field-value pair has expired
+5. Verify the access token request contains a ""refresh_token="" element
+5. Verify the access token request contains a ""scope="" element",,,,,,,,,,X,,
+Malformed Refresh Token Request,,Authorization,OAD008,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian rejects a malformed Refresh Token Access Token Request,,"1.   Test Harness issues an malformed OAuth Refresh Access Token request with -- No grant_type field-value pair, No refresh_token field-value pair, refresh_token field-value pair that was issued to another Third Party, scope field-value pair that does NOT match the scope field-value pair contained in the original access token request, refresh_token field-value pair has expired
 2.    Verify status code is NOT 200
 ",,,,,,,,,,X,,
-Invalid Access Token Request (Access Token contained in the Authorization Header has expired),,Authorization,OAD009,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a request containing an Access Token that has expired,,"1.   Test Harness issues a valid GET RESTful request to a Data Custodian resource with -- an expired ""access token""
-2.   Verify status code is 403",,,,,,,,,,X,X,
-Invalid Access Token Requests for ApplicationInformation,,Authorization,OAD010,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for ApplicationInformation resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""client_access_token"", ""access_token""
+Invalid Access Token Request (Access Token contained in the Authorization Header has expired),,Authorization,OAD009,FB_14,Negative,Protocol,Test,Server,Verify Data Custodian under test rejects a request containing an Access Token that has expired,,"1.   Request Data Custodian testee to expire an authorization
+2.   Test Harness issues a valid GET RESTful request to a Data Custodian resource with -- an expired ""access token""
+3.   Verify status code is 401",,,,,,,,,,X,X,
+Invalid Access Token Requests for ApplicationInformation,,Authorization,OAD010,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for ApplicationInformation resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""client_access_token""
 2.   Verify status code is 403
-3.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- No access token
-4.   Verify status code is 401",,,,,,,,,,X,,
-Invalid Access Token Requests for Authorization entry,,Authorization,OAD011,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Authorization entry resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET Authorization by ID request with an incorrect Access Token -- ""registration_access_token"", ""access_token""
+3.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""access_token""
+4.   Verify status code is 401
+5.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- No access token
+6.   Verify status code is 403",,,,,,,,,,X,,
+Invalid Access Token Requests for Authorization entry,,Authorization,OAD011,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Authorization entry resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""registration_access_token""
 2.   Verify status code is 403
-3.   Test Harness issues a valid GET Authorization by ID request with an incorrect Access Token -- No access token
-4.   Verify status code is 401",,,,,,,,,,X,,
-Invalid Access Token Requests for Authorization feed,,Authorization,OAD012,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Authorization feed resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET Authorization feed request with an incorrect Access Token -- ""registration_access_token"", ""access_token""
+3.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""access_token""
+4.   Verify status code is 401
+5.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- No access token
+6.   Verify status code is 403",,,,,,,,,,X,,
+Invalid Access Token Requests for Authorization feed,,Authorization,OAD012,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Authorization feed resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""registration_access_token""
 2.   Verify status code is 403
-3.   Test Harness issues a valid GET Authorization feed request with an incorrect Access Token -- No access token
-4.   Verify status code is 401",,,,,,,,,,X,,
+3.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""access_token""
+4.   Verify status code is 401
+5.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- No access token
+6.   Verify status code is 403",,,,,,,,,,X,,
 "Invalid Access Token Request (Get RESTful Batch/Subscription request contains ""registration_access_token"")",,Authorization,OAD013,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for Batch/Subscription resource that contains an incorrect ""access token""",,"1.   Retrieve resourceURI from Authorization for registration access token
 2.   Test Harness issues a valid GET Batch/Subscription request with an incorrect Access Token -- ""registration_access_token""
 3.   Verify status code is 403
@@ -633,40 +639,37 @@ Invalid Access Token Requests for Authorization feed,,Authorization,OAD012,FB_14
 5.   Test Harness issues a valid GET Batch/Subscription request with an incorrect Access Token -- ""client_access_token""
 6.   Verify status code is 403
 7.   Test Harness issues a valid GET Batch/Subscription request with an incorrect Access Token --  No access token
-8.   Verify status code is 401",,,,,,,,,,X,,
-"Invalid Access Token Request (Get RESTful ReadServiceStats request contains ""registration_access_token"")",,Authorization,OAD014,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for ServiceStatus resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ServiceStatus request with an incorrect Access Token -- ""registration_access_token"",""access_token""
+8.   Verify status code is 403",,,,,,,,,,X,,
+"Invalid Access Token Request (Get RESTful ReadServiceStats request contains ""registration_access_token"")",,Authorization,OAD014,FB_14,Negative,Protocol,Test,Server,"Verify Data Custodian rejects a GET RESTful request for ServiceStatus resource that contains an incorrect ""access token""",,"1.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""registration_access_token""
 2.   Verify status code is 403
-3.   Test Harness issues a valid GET ServiceStatus request with an incorrect Access Token --  No access token
-4.    Verify status code is 401",,,,,,,,,,X,,
+3.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- ""access_token""
+4.   Verify status code is 401
+5.   Test Harness issues a valid GET ApplicationInformation request with an incorrect Access Token -- No access token
+6.   Verify status code is 403",,,,,,,,,,X,,
+Secure REST response header,,Security,TC002,FB_13,Positive,Security,Test,Server,Verify Data Custodian under test REST presonse headers include fields TBD,,"1. Perform request of ApplicationInformation
+2. Verify that REST header includes Authorization=Bearer <access token>",,,,,,,,,,X,,
 Request / Reply,REQ.21.4,Communication,ON001,FB_99,,Online,Test,,,,,,,,,,,,,,,,
 Use of HTTPS,,Security,TC001,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test response HTTP header contains field indicating establishment of a secure session.,,"1. Test software isses a GET request to: {HomePageURLEndpoint}/DataCustodian
 2. Verify that the response HTTP header contains the following information: 'Set-Cookie: JSESSIONID=' and 'Secure;'",,,,,,,,,,X,,
-Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to authorizationServer
-2. Verify that OpenSSL indicates that TLS 1.2 is implmented though a successful result of 'Protocol  : TLSv1.2'
-3. Repeat test using resourceServer",,,,,,,,,,X,,
-Negotiate highest level of TLS ,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to authorizationServer obtained from ApplicationInformation
+Data Custodian implements TLS 1.2,,Security,TC003,FB_13,Positive,Security,Test,Server,Verify the Data Custodian under test implements TLS 1.2.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL indicates that TLS 1.2 is implmented though a successful result of 'Protocol  : TLSv1.2'",,,,,,,,,,X,,
+Negotiate highest level of TLS with browser,,Security,TC004,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {DataCustodianScopeSelectionScreen}:${config.DataCustodianSSLPort}
 2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
-3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to authorizationServer obtained from ApplicationInformation
+3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
-5.  Using OpenSSL the test harness issues a client mode tls1 connection request to authorizationServer obtained fr\om ApplicationInformation
+5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
 6. Verify that OpenSSL reports a successful TLS 1 negotiation
-7. Repeat 1..6 for resourceServer
 ",,,,,,,,,,X,,
-Reject TLS_RSA_WITH_NULL_SHA cipher suite,,Security,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,"1. Using OpenSSL the test harness issues a client mode connection request to the authorizationServer using the cipher suite 'NULL-SHA'
-2. Verify that OpenSSL reports that the NULL-SHA connection request was not accepted
-3. Repeat for resourceServer",,,,,,,,,,X,,
-Accept TLS_RSA_WITH_AES_128_CBC_SHA cipher suite,,Security,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,"1. Using OpenSSL the test harness issues a client mode connection request to the authorizationServer using the cipher suite 'AES128-SHA'
-2. Verify that OpenSSL reports that the connection request was accepted with cipher 'AES128-SHA'
-3. Repeat for resourceServer",,,,,,,,,,X,,
+Reject TLS_RSA_WITH_NULL_SHA cipher suite,,Security,TC005,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Data Custodian rejects TLS_RSA_WITH_NULL_SHA cipher suites.,,"1. Using OpenSSL the test harness issues a client mode connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort} using the cipher suite 'NULL-SHA'
+2. Verify that OpenSSL reports that the NULL-SHA connection request was not accepted",,,,,,,,,,X,,
+Accept TLS_RSA_WITH_AES_128_CBC_SHA cipher suite,,Security,TC006,FB_13,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer at a minimum the Data Custodian accepts the TLS_RSA_WITH_AES_128_CBC_SHA cipher suite.,,"1. Using OpenSSL the test harness issues a client mode connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort} using the cipher suite 'AES128-SHA'
+2. Verify that OpenSSL reports that the connection request was accepted with cipher 'AES128-SHA'",,,,,,,,,,X,,
 Negotiate highest level of cipher suite- covered by test FB_13:TC003,,Security,TC007,FB_99,Positive,Security,Test,Server,Verify that when communicating with a Third Party the Data Custodian negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,,
-Quality of Certificate,,Security,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,"1. Using OpenSSL the test harness issues a client mode connection request to the authorizationServer 
-2. Verify that OpenSSL reports that the connection request was accepted and reports 'Server public key is 2048 bit'
-3. Verify that certificate is unexpired and unrevoked
-4. Verify that certificate uses RSA algorithm",,,,,,,,,,X,,
-Root of trust,,Security,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to authorizationServer
-2. OpenSSL certificate issuer report will be presented to the test operator along with references to ETSI and WebTrust
-3. The operator will confirm that the retificate was issued by a CA recognized by ESTI or WebTrust
-4. Repeat for resourceServer
+Quality of Certificate,,Security,TC008,FB_13,Positive,Security,Test,Server,Verify that the Data Custodian maintains an unexpired unrevoked RSA certificate with a public key length of at least 2048 bits.,,"1. Using OpenSSL the test harness issues a client mode connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports that the connection request was accepted and reports 'Server public key is 2048 bit'",,,,,,,,,,X,,
+Root of trust,,Security,TC009,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that the Data Custodian RSA certificate was issued by a Certificate Authority (CA) that has been successfully audited according to the criteria of ETSI or WebTrust.,,"1. Using OpenSSL the test harness issues a client mode tls1_2 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+2. OpenSSL certificate report will be presented to the test operator along with references to ETSI and WebTrust
+3. The operator will confirm that the RSA retificate as issues by an appropriate CA
 ",,,,,,,,,,X,,
 Tokens and IDs have no PII,,Security,TC010,FB_13,Positive,Security,Test,Server,Test software or manual inspection shall verify that Tokens and IDs communicated by the Data Custodian are opaque and if based on actual Customer information that they are randomized using a secure method to protect privacy.,,"1. The test harness will issue REST GET requests for ApplicationInformation{ID}, UsagePoint{ID}
 2. The test harness will present the test operator with the contents of the response messages
@@ -675,6 +678,20 @@ Tokens and IDs have at least 48bits,,Security,TC011,FB_13,Positive,Security,Test
 2. The test harness will present the test operator with the contents of the response messages
 3. The test harness will query the test operator to confirm that  Tokens and IDs communicated by the Data Custodian consist of at least 48 bits and can be the random number part of an RFC2422 UUID.",,,,,,,,,,X,,
 FIPS 140-2 support,,Security,TC012,FB_13,Positive,Security,Test,Server,Manual inspection of supporting documentation shall confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website.,,1. The test harness will query the test operator to review DC documentation and to confirm that the Data Custodian implementation utilizes software libraries which are FIPS 140-2 level 1 or higher and listed on the CMVP website http://csrc.nist.gov/groups/STM/cmvp/validation.html.,,,,,,,,,,X,,
+Negotiate highest level of TLS using resourceServer,,Security,TC013,FB_13,Positive,Security,Test,Server,Verify that when communicating with a resourceServer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {dataCustodianResourceEndpoint}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
+3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
+5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+6. Verify that OpenSSL reports a successful TLS 1 negotiation
+",,,,,,,,,,X,,
+Negotiate highest level of TLS using authorizationServer,,Security,TC014,FB_13,Positive,Security,Test,Server,Verify that when communicating with a authorizationServer the Data Custodian negotiates the highest level of TLS supported by both parties.,,"1. Using OpenSSL the test harness issues a client mode tls1, tls1_1 and tls1_2 connection request to {authorizationServerUri}:${config.DataCustodianSSLPort}
+2. Verify that OpenSSL reports a successful TLS 1.2 negotiation
+3. Using OpenSSL the test harness issues a client mode tls1, tls1_1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+4. Verify that OpenSSL reports a successful TLS 1.1 negotiation
+5.  Using OpenSSL the test harness issues a client mode tls1 connection request to {config.DataCustodianHostName}:${config.DataCustodianSSLPort}
+6. Verify that OpenSSL reports a successful TLS 1 negotiation
+",,,,,,,,,,X,,
 Third Party implements TLS 1.1 or higher,,,TCT01,FB_45,Positive,Security,Test,Server,Verify that the Third Party implements TLS 1.1 or higher.,,,,,,,,,,,,,X,
 Third Party negotiates highest level of TLS,,,TCT02,FB_45,Positive,Security,Test,Server,Verify that when communicating with a Retail Customer the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,X,
 Third Party negotiates highest level of TLS,,,TCT03,FB_45,Positive,Security,Test,Server,Verify that when communicating with a Data Custodian the Third Party negotiates the highest level of TLS mutually supported.,,,,,,,,,,,,,X,
@@ -843,3 +860,58 @@ Query Parameters,REQ.21.6.2,Communication,QRY_001,FB_37,TBD,TBD,TBD,TBD,"support
 Offline RetailCustomer Authorization,REQ.21.6.2,Communication,OFA_001,FB_40,TBD,TBD,TBD,TBD,"This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.","Manual creation of ApplicationInformation, Authorization(s)",,,,,,,,"TBD: This test requires that the DC provide the TP with ApplicationInformation and one or more Authorizations in valid XML files. If the file contents are valid, they are good. In essence these are similar to what is needed for other tests but this FB requires that they be provided as valid XML.",,,X,,
 Valid refresh_token request,,Authorization,OAD015,FB_14,Positive,Protocol,Test,Server,Verify Data Custodian successfully process a refresh_token request,,"1.   Test Harness issues a valid OAuth Refresh  Access Token Request to the Data Custodian under test
 2.   Verify the response JSON structure contains the following Member Keys and that all have data -- ""access_token"", ""token_type"", ""expires_in"", ""scope"", ""resourceURI"", ""authorizationURI"", ""refresh_token""",,,,,,,,,,X,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+Valid refresh_token request invalidates prior access_token,,Authorization,OAD016,FB_14 ,Positive,Protocol,Test,Server,Verify Data Custodian invalidates prior access_token after a successful refresh_token request,,"1.   Test Harness extracts current access_token from Authorization 
+2.   Test Harness issues a valid OAuth Refresh Access Token Request to the Data Custodian under test
+3.   Test Harness issues a GET Batch/Subscription Request using the previously valid access token
+4.   Verify status code is 401",,,,,,,,,,X,,
