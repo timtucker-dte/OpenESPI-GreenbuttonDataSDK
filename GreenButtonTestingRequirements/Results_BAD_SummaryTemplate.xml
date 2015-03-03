@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<anElement xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:espi="http://naesb.org/espi" xmlns:atom="http://www.w3.org/2005/Atom">
+<pattern name=""/>
+<assert TestID="D000">
+     <TestName>feed</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D136">
+     <TestName>LocalTimeParameters</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D006">
+     <TestName>UsagePoint</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D001">
+     <TestName>feed id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D002">
+     <TestName>feed title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D003">
+     <TestName>feed updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D004">
+     <TestName>entry id's (URNs)</TestName>
+     <Report>verify the uniqueness</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D138">
+     <TestName>LocalTimeParameters id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D139">
+     <TestName>LocalTimeParameters self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D140">
+     <TestName>LocalTimeParameters up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D141">
+     <TestName>LocalTimeParameters published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D137">
+     <TestName>LocalTimeParameters title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D142">
+     <TestName>LocalTimeParameters updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D143">
+     <TestName>LocalTimeParameters self link</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D135">
+     <TestName>LocalTimeParameters self link</TestName>
+     <Report>verify that each LocalTimeParameter points to at least one UsagePoint</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D008">
+     <TestName>UsagePoint ServiceCategory</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D011">
+     <TestName>UsagePoint id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D016">
+     <TestName>UsagePoint related MeterReadingList</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D013">
+     <TestName>UsagePoint self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D015">
+     <TestName>UsagePoint up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D009">
+     <TestName>UsagePoint published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D012">
+     <TestName>UsagePoint title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D010">
+     <TestName>UsagePoint updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D007">
+     <TestName>UsagePoint related LocalTimeParameters</TestName>
+     <Report>verify that UsagePoint points to at most one LocalTimeParameters</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D014">
+     <TestName>UsagePoint self link</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D032">
+     <TestName>IntervalBlock</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D027">
+     <TestName>MeterReading</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D049">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D039">
+     <TestName>IntervalBlock interval start</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D042">
+     <TestName>first interval in block</TestName>
+     <Report>verify that first interval in block start time matches the start time of the block</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D044">
+     <TestName>IntervalReading timePeriod duration</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D045">
+     <TestName>IntervalReading timePeriod start</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D046">
+     <TestName>IntervalReading value</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D038">
+     <TestName>IntervalBlock interval duration</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D031">
+     <TestName>IntervalBlock id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D034">
+     <TestName>IntervalBlock self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D036">
+     <TestName>IntervalBlock up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D040">
+     <TestName>IntervalBlock published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D033">
+     <TestName>IntervalBlock title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D041">
+     <TestName>IntervalBlock updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D035">
+     <TestName>IntervalBlock self link unique</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D037">
+     <TestName>IntervalBlock up link</TestName>
+     <Report>verify that each IntervalBlock points to a single MeterReading</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D028">
+     <TestName>MeterReading (this test row is temporary for testing)</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D018">
+     <TestName>MeterReading id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D020">
+     <TestName>MeterReading self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D022">
+     <TestName>MeterReading up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D029">
+     <TestName>MeterReading published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D019">
+     <TestName>MeterReading title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D030">
+     <TestName>MeterReading updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D145">
+     <TestName>MeterReading Interval Block/Interval Readings/ are all unique (by start time)</TestName>
+     <Report>verify the presence of unique values</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D146">
+     <TestName>MeterReading Interval Blocks are all unique (by start time)</TestName>
+     <Report>verify the presence of unique values</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D025">
+     <TestName>MeterReading related (IntervalBlockList)</TestName>
+     <Report>verify that each MeterReading has associated metering data</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D021">
+     <TestName>MeterReading self link</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D024">
+     <TestName>MeterReading related (ReadingType)</TestName>
+     <Report>verify that each MeterReading has one and only one associated ReadingType</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D023">
+     <TestName>Meter reading up link</TestName>
+     <Report>verify correct up link</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D026">
+     <TestName>MeterReading</TestName>
+     <Report>verify that "load profile" meter readings (accumulationBehavour=4) have any associated interval blocks</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D062">
+     <TestName>ReadingType intervalLength</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D063">
+     <TestName>ReadingType kind</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D065">
+     <TestName>ReadingType powerOfTenMultiplier</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D068">
+     <TestName>ReadingType uom</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D048">
+     <TestName>ReadingType id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D051">
+     <TestName>ReadingType self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D053">
+     <TestName>ReadingType up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D069">
+     <TestName>ReadingType published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D050">
+     <TestName>ReadingType title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D070">
+     <TestName>ReadingType updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D054">
+     <TestName>ReadingType up link</TestName>
+     <Report>verify that each ReadingType points to at least one MeterReading</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D052">
+     <TestName>ReadingType self link</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D078">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of 'Wh integrated over an interval' readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D064">
+     <TestName>ReadingType phase</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D072">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of VA demand readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D073">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of VAR demand readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D071">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of W demand readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D074">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of Wh net flow readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D075">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of Wh forward readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D076">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of Wh reverse readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D077">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of Wh register readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D079">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of gas (therms) readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D080">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of water (USG) readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D043">
+     <TestName>IntervalReading cost</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D058">
+     <TestName>ReadingType currency</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D083">
+     <TestName>ElectricPowerUsageSummary</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D089">
+     <TestName>ElectricPowerUsageSummary billingPeriod duration</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D090">
+     <TestName>ElectricPowerUsageSummary billingPeriod start</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D081">
+     <TestName>ElectricPowerUsageSummary overallConsumptionLastPeriod</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D099">
+     <TestName>ElectricPowerUsageSummary qualityOfReading</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D100">
+     <TestName>ElectricPowerUsageSummary statusTimeStamp</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D095">
+     <TestName>ElectricPowerUsageSummary currentBillingPeriodOverAllConsumption powerOfTenMultiplier</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D096">
+     <TestName>ElectricPowerUsageSummary currentBillingPeriodOverAllConsumption timeStamp</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D097">
+     <TestName>ElectricPowerUsageSummary currentBillingPeriodOverAllConsumption uom</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D098">
+     <TestName>ElectricPowerUsageSummary currentBillingPeriodOverAllConsumption value</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D082">
+     <TestName>ElectricPowerUsageSummary id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D085">
+     <TestName>ElectricPowerUsageSummary self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D087">
+     <TestName>ElectricPowerUsageSummary up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D101">
+     <TestName>ElectricPowerUsageSummary published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D084">
+     <TestName>ElectricPowerUsageSummary title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D102">
+     <TestName>ElectricPowerUsageSummary updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D086">
+     <TestName>ElectricPowerUsageSummary self link</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D088">
+     <TestName>ElectricPowerUsageSummary up link</TestName>
+     <Report>verify that each ElectricPowerUsageSummary points to a single UsagePoint</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D091">
+     <TestName>ElectricPowerUsageSummary billLastPeriod</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D093">
+     <TestName>ElectricPowerUsageSummary costAdditionalLastPeriod</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D094">
+     <TestName>ElectricPowerUsageSummary currency</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D126">
+     <TestName>ElectricPowerQualitySummary</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D113">
+     <TestName>ElectricPowerQualitySummary flickerPlt</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D114">
+     <TestName>ElectricPowerQualitySummary flickerPst</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D115">
+     <TestName>ElectricPowerQualitySummary harmonicVoltage</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D116">
+     <TestName>ElectricPowerQualitySummary longInterruptions</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D117">
+     <TestName>ElectricPowerQualitySummary mainsVoltage</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D118">
+     <TestName>ElectricPowerQualitySummary powerFrequency</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D119">
+     <TestName>ElectricPowerQualitySummary rapidVoltageChanges</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D120">
+     <TestName>ElectricPowerQualitySummary shortInterruptions</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D121">
+     <TestName>ElectricPowerQualitySummary summaryInterval</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D134">
+     <TestName>summaryInterval DateTimeInterval</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D122">
+     <TestName>ElectricPowerQualitySummary supplyVoltageDips</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D123">
+     <TestName>ElectricPowerQualitySummary supplyVoltageImbalance</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D124">
+     <TestName>ElectricPowerQualitySummary supplyVoltageVariations</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D125">
+     <TestName>ElectricPowerQualitySummary tempOvervoltage</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D128">
+     <TestName>ElectricPowerQualitySummary id</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D129">
+     <TestName>ElectricPowerQualitySummary self link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D130">
+     <TestName>ElectricPowerQualitySummary up link</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D131">
+     <TestName>ElectricPowerQualitySummary published</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D127">
+     <TestName>ElectricPowerQualitySummary title</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D132">
+     <TestName>ElectricPowerQualitySummary updated</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D133">
+     <TestName>ElectricPowerQualitySummary self link</TestName>
+     <Report>verify that link is unique</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D106">
+     <TestName>ElectricPowerUsageSummary currentDayOverallConsumption</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D111">
+     <TestName>currentDayOverallConsumption SummaryMeasurement</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D105">
+     <TestName>ElectricPowerUsageSummary peakDemand</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D110">
+     <TestName>peakDemand SummaryMeasurement</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D107">
+     <TestName>ElectricPowerUsageSummary previousDayOverallConsumption</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D112">
+     <TestName>previousDayOverallConsumptionSummaryMeasurement</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D103">
+     <TestName>ElectricPowerUsageSummary ratchetDemand</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D108">
+     <TestName>ratchetDemand SummaryMeasurement</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D104">
+     <TestName>ElectricPowerUsageSummary ratchetDemandPeriod</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D109">
+     <TestName>ratchetDemandPeriod  DateTimeInterval</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D092">
+     <TestName>ElectricPowerUsageSummary billToDate</TestName>
+     <Report>verify the presence of a valid value</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+<assert TestID="D147">
+     <TestName>ReadingType</TestName>
+     <Report>verify the presence of temperature (Kelvin) readings</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
+</anElement>
