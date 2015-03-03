@@ -1,0 +1,16 @@
+msxsl .\GeneratedTests\FB_01.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_01.xsl
+msxsl .\GeneratedTests\FB_04.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_04.xsl
+msxsl .\GeneratedTests\FB_05.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_05.xsl
+msxsl .\GeneratedTests\FB_06.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_06.xsl
+msxsl .\GeneratedTests\FB_07.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_07.xsl
+msxsl .\GeneratedTests\FB_08.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_08.xsl
+msxsl .\GeneratedTests\FB_09.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_09.xsl
+msxsl .\GeneratedTests\FB_10.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_10.xsl
+msxsl .\GeneratedTests\FB_11.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_11.xsl
+msxsl .\GeneratedTests\FB_12.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_12.xsl
+msxsl .\GeneratedTests\FB_15.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_15.xsl
+msxsl .\GeneratedTests\FB_16.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_16.xsl
+msxsl .\GeneratedTests\FB_17.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_17.xsl
+msxsl .\GeneratedTests\FB_27.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_27.xsl
+msxsl .\GeneratedTests\FB_28.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_28.xsl
+msxsl .\GeneratedTests\FB_29.sch XMLschematron-report.xsl diagnose=yes -v -o .\GeneratedTests\FB_29.xsl
