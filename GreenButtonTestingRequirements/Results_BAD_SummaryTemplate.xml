@@ -386,9 +386,16 @@
             <Occurance>NONE</Occurance>
          </Occurances>
     </assert>
+<assert TestID="D054">
+     <TestName>MeterReading has ReadingType</TestName>
+     <Report>verify that each MeterReading points to a ReadingType</Report>
+         <Occurances>
+            <Occurance>NONE</Occurance>
+         </Occurances>
+    </assert>
 <assert TestID="D026">
      <TestName>MeterReading</TestName>
-     <Report>verify that "load profile" meter readings (accumulationBehavour=4) have any associated interval blocks</Report>
+     <Report>verify that "load profile" meter readings (ReadingType.accumulationBehavour=4) have associated interval blocks</Report>
          <Occurances>
             <Occurance>NONE</Occurance>
          </Occurances>
@@ -459,13 +466,6 @@
 <assert TestID="D070">
      <TestName>ReadingType updated</TestName>
      <Report>verify the presence of a valid value</Report>
-         <Occurances>
-            <Occurance>NONE</Occurance>
-         </Occurances>
-    </assert>
-<assert TestID="D054">
-     <TestName>ReadingType up link</TestName>
-     <Report>verify that each ReadingType points to at least one MeterReading</Report>
          <Occurances>
             <Occurance>NONE</Occurance>
          </Occurances>

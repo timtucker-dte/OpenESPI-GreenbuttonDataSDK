@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="GreenButtonDataStyleSheet.xslt"?>
 <!--
 =========================================================
 =========================================================
@@ -49,7 +48,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
 implied.  See the License for the specific language governing 
 permissions and limitations under the License.
 -->
-<feed xmlns="http://www.w3.org/2005/Atom" xsi:schemaLocation="http://naesb.org/espi espiDerived.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<feed xmlns="http://www.w3.org/2005/Atom" xsi:schemaLocation="http://naesb.org/espi ../espiDerived.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>urn:uuid:BA570CBD-EE5E-4D45-A2D4-1CF171281941</id>
 	<title>ThirdPartyX Batch Feed</title>
 	<updated>2012-10-24T00:00:00Z</updated>
@@ -218,7 +217,7 @@ permissions and limitations under the License.
 		</content>
 		<published>2012-10-24T00:00:00Z</published>
 		<updated>2012-10-24T00:00:00Z</updated>
-	</entry>		
+	</entry>
 	<entry>
 		<id>urn:uuid:81ED3A7C-AF13-4632-AD63-5A2565EE20A3</id>
 		<link rel="self" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/01/IntervalBlock/0173"/>
@@ -427,7 +426,7 @@ permissions and limitations under the License.
 		<published>2012-10-24T00:00:00Z</published>
 		<updated>2012-10-24T00:00:00Z</updated>
 	</entry>
-<entry>
+	<entry>
 		<id>urn:uuid:81ED3A7C-AF13-4632-AD63-5A2565EE20A3</id>
 		<link rel="self" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/09/IntervalBlock/0173"/>
 		<link rel="up" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/09/IntervalBlock"/>
@@ -453,7 +452,7 @@ permissions and limitations under the License.
 		<published>2012-10-24T00:00:00Z</published>
 		<updated>2012-10-24T00:00:00Z</updated>
 	</entry>
-<entry>
+	<entry>
 		<id>urn:uuid:81ED3A7C-AF13-4632-AD63-5A2565EE20A3</id>
 		<link rel="self" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/10/IntervalBlock/0173"/>
 		<link rel="up" href="RetailCustomer/9b6c7063/UsagePoint/01/MeterReading/10/IntervalBlock"/>
@@ -478,12 +477,12 @@ permissions and limitations under the License.
 		</content>
 		<published>2012-10-24T00:00:00Z</published>
 		<updated>2012-10-24T00:00:00Z</updated>
-	</entry>		
+	</entry>
 	<entry>
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/01"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Energy Delivered (Wh)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>4</accumulationBehaviour>
@@ -506,7 +505,7 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/02"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Real Power (W)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>12</accumulationBehaviour>
@@ -529,7 +528,7 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/03"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Apparent Power (W)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>12</accumulationBehaviour>
@@ -552,7 +551,7 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/04"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Reactive Power (VAR)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>12</accumulationBehaviour>
@@ -575,10 +574,10 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/05"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Energy Received Net Flow (Wh)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
-				<accumulationBehaviour>1</accumulationBehaviour>
+				<accumulationBehaviour>4</accumulationBehaviour>
 				<commodity>1</commodity>
 				<currency>840</currency>
 				<dataQualifier>12</dataQualifier>
@@ -598,10 +597,10 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/06"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Forward Energy (Wh)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
-				<accumulationBehaviour>1</accumulationBehaviour>
+				<accumulationBehaviour>4</accumulationBehaviour>
 				<commodity>1</commodity>
 				<currency>840</currency>
 				<dataQualifier>12</dataQualifier>
@@ -621,10 +620,10 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/07"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Reverse Energy (Wh)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
-				<accumulationBehaviour>1</accumulationBehaviour>
+				<accumulationBehaviour>4</accumulationBehaviour>
 				<commodity>1</commodity>
 				<currency>840</currency>
 				<dataQualifier>12</dataQualifier>
@@ -644,7 +643,7 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/08"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Energy Register (Wh)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>1</accumulationBehaviour>
@@ -667,7 +666,7 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/09"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Energy Delivered (Wh)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>4</accumulationBehaviour>
@@ -690,7 +689,7 @@ permissions and limitations under the License.
 		<id>urn:uuid:C1E56A47-8D3A-44C3-B03B-27BF4AC1E077</id>
 		<link rel="self" href="ReadingType/10"/>
 		<link rel="up" href="ReadingType"/>
-		<title>Energy Delivered (kWh)</title>
+		<title>Gas Energy Delivered (Therms)</title>
 		<content>
 			<ReadingType xmlns="http://naesb.org/espi">
 				<accumulationBehaviour>4</accumulationBehaviour>
@@ -708,7 +707,7 @@ permissions and limitations under the License.
 		</content>
 		<published>2012-10-24T00:00:00Z</published>
 		<updated>2012-10-24T00:00:00Z</updated>
-	</entry>		
+	</entry>
 	<entry>
 		<id>urn:uuid:59DFF5EF-3D6A-43C3-B8EE-1B8082771E2D</id>
 		<link rel="self" href="RetailCustomer/9b6c7063/ElectricPowerUsageSummary/01"/>

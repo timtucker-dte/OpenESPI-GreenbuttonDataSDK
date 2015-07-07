@@ -108,6 +108,8 @@ msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults
 msxsl .\TestData\1hrLP_32Days_D024_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D024_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D023_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_D023_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D023_BAD.xml
+msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D054_GOOD.xml
+msxsl .\TestData\1hrLP_32Days_D054_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D054_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D026_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_D026_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D026_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D062_GOOD.xml
@@ -130,8 +132,6 @@ msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults
 msxsl .\TestData\1hrLP_32Days_D050_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D050_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D070_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_D070_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D070_BAD.xml
-msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D054_GOOD.xml
-msxsl .\TestData\1hrLP_32Days_D054_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D054_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D052_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_D052_BAD.xml .\GeneratedTests\FB_04.xsl -v -o .\TestResults\FB_04_D052_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_05.xsl -v -o .\TestResults\FB_05_D078_GOOD.xml

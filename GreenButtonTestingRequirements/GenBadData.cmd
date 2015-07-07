@@ -53,6 +53,7 @@ msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D025_BAD.xsl -v -o .\TestData
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D021_BAD.xsl -v -o .\TestData\1hrLP_32Days_D021_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D024_BAD.xsl -v -o .\TestData\1hrLP_32Days_D024_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D023_BAD.xsl -v -o .\TestData\1hrLP_32Days_D023_BAD.xml
+msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D054_BAD.xsl -v -o .\TestData\1hrLP_32Days_D054_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D026_BAD.xsl -v -o .\TestData\1hrLP_32Days_D026_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D062_BAD.xsl -v -o .\TestData\1hrLP_32Days_D062_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D063_BAD.xsl -v -o .\TestData\1hrLP_32Days_D063_BAD.xml
@@ -64,7 +65,6 @@ msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D053_BAD.xsl -v -o .\TestData
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D069_BAD.xsl -v -o .\TestData\1hrLP_32Days_D069_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D050_BAD.xsl -v -o .\TestData\1hrLP_32Days_D050_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D070_BAD.xsl -v -o .\TestData\1hrLP_32Days_D070_BAD.xml
-msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D054_BAD.xsl -v -o .\TestData\1hrLP_32Days_D054_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D052_BAD.xsl -v -o .\TestData\1hrLP_32Days_D052_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GenBadData\Gen_D078_BAD.xsl -v -o .\TestData\1hrLP_32Days_Additional2_M_D078_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D064_BAD.xsl -v -o .\TestData\1hrLP_32Days_D064_BAD.xml
