@@ -486,7 +486,7 @@
     </assert>
 <assert TestID="D064">
      <TestName>ReadingType phase</TestName>
-     <Report>verify the presence of a valid value</Report>
+     <Report>verify the presence of a valid value for electricity</Report>
          <Occurances>
             <Occurance>NONE</Occurance>
          </Occurances>
