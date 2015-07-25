@@ -4,7 +4,7 @@
 <sch:ns uri="http://www.w3.org/2005/Atom" prefix="atom"/>
 <sch:pattern name="/atom:feed">
      <sch:rule context="/atom:feed">
-         <sch:assert test="count(atom:entry[*/espi:ReadingType[espi:accumulationBehaviour=1 and espi:commodity=1 and espi:flowDirection=4 and espi:kind=12 and espi:uom=72]])>0" diagnostics="for future use">
+         <sch:assert test="count(atom:entry[*/espi:ReadingType[espi:accumulationBehaviour=4 and espi:commodity=1 and espi:flowDirection=4 and espi:kind=12 and espi:uom=72]])>0" diagnostics="for future use">
              D074|ReadingType|verify the presence of Wh net flow readings
          </sch:assert>
      </sch:rule>

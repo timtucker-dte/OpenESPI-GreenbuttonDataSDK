@@ -110,12 +110,15 @@
          <sch:assert test="count(/atom:feed/atom:entry[*/espi:UsagePoint]/atom:link[@rel='related' and @href=current()/atom:link[@rel='up']/@href])=1" diagnostics="for future use">
              D023|Meter reading up link|verify correct up link
          </sch:assert>
+         <sch:assert test="count(current()) = count(current()/atom:link[@rel='related' and @href=/atom:feed/atom:entry/atom:content/espi:ReadingType/../../atom:link[@rel='self']/@href])" diagnostics="for future use">
+             D054|MeterReading has ReadingType|verify that each MeterReading points to a ReadingType
+         </sch:assert>
      </sch:rule>
 </sch:pattern>
-<sch:pattern name="/atom:feed/atom:entry[*/espi:ReadingType[espi:accumulationBehaviour=4]]">
-     <sch:rule context="/atom:feed/atom:entry[*/espi:ReadingType[espi:accumulationBehaviour=4]]">
-         <sch:assert test="count(/atom:feed/atom:entry[*/espi:IntervalBlock]/atom:link[@rel = 'up' and @href = /atom:feed/atom:entry[*/espi:MeterReading][atom:link[@rel='related' and @href = current()/atom:link[@rel='self']/@href]]/atom:link[@rel='related']/@href])>0" diagnostics="for future use">
-             D026|MeterReading|verify that "load profile" meter readings (accumulationBehavour=4) have any associated interval blocks
+<sch:pattern name="/atom:feed/atom:entry[*/espi:MeterReading]/atom:link[@rel='related' and @href=/atom:feed/atom:entry[*/espi:ReadingType[espi:accumulationBehaviour=4]]/atom:link[@rel='self']/@href]">
+     <sch:rule context="/atom:feed/atom:entry[*/espi:MeterReading]/atom:link[@rel='related' and @href=/atom:feed/atom:entry[*/espi:ReadingType[espi:accumulationBehaviour=4]]/atom:link[@rel='self']/@href]">
+         <sch:assert test="count(/atom:feed/atom:entry[*/espi:IntervalBlock]/atom:link[@rel='up' and @href=current()/../atom:link[@rel='related']/@href])>0" diagnostics="for future use">
+             D026|MeterReading|verify that "load profile" meter readings (ReadingType.accumulationBehavour=4) have associated interval blocks
          </sch:assert>
      </sch:rule>
 </sch:pattern>
@@ -154,9 +157,6 @@
          </sch:assert>
          <sch:assert test="atom:updated" diagnostics="for future use">
              D070|ReadingType updated|verify the presence of a valid value
-         </sch:assert>
-         <sch:assert test="count(/atom:feed/atom:entry[*/espi:MeterReading]/atom:link[@rel='related' and @href=current()/atom:link[@rel='self']/@href])>0" diagnostics="for future use">
-             D054|ReadingType up link|verify that each ReadingType points to at least one MeterReading
          </sch:assert>
          <sch:assert test="count(/atom:feed/atom:entry[*/espi:ReadingType]/atom:link[@rel='self' and @href=current()/atom:link[@rel='self']/@href])=1" diagnostics="for future use">
              D052|ReadingType self link|verify that link is unique

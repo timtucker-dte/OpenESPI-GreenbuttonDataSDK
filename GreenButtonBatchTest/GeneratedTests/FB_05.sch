@@ -9,10 +9,10 @@
          </sch:assert>
      </sch:rule>
 </sch:pattern>
-<sch:pattern name="/atom:feed/atom:entry[*/espi:ReadingType]">
-     <sch:rule context="/atom:feed/atom:entry[*/espi:ReadingType]">
+<sch:pattern name="/atom:feed/atom:entry[*/espi:ReadingType[espi:commodity=1]]">
+     <sch:rule context="/atom:feed/atom:entry[*/espi:ReadingType[espi:commodity=1]]">
          <sch:assert test="atom:content/espi:ReadingType/espi:phase" diagnostics="for future use">
-             D064|ReadingType phase|verify the presence of a valid value
+             D064|ReadingType phase|verify the presence of a valid value for electricity
          </sch:assert>
      </sch:rule>
 </sch:pattern>
