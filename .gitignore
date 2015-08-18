@@ -1,0 +1,5 @@
+GreenButtonTestingRequirements/GenBadData
+GreenButtonTestingRequirements/GeneratedTests
+GreenButtonTestingRequirements/OnDemandResults
+GreenButtonTestingRequirements/TestResults
+GreenButtonTestingRequirements/TestData/*_BAD.xml

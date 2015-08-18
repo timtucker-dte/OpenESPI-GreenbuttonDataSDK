@@ -5,7 +5,7 @@
 <sch:pattern name="/atom:feed">
      <sch:rule context="/atom:feed">
          <sch:assert test="count(atom:entry[*/espi:ReadingType[espi:kind=46 and espi:uom=6]])>0" diagnostics="for future use">
-             D147|ReadingType|verify the presence of temperatire (Kelvin) readings
+             D147|ReadingType|verify the presence of temperature (Kelvin) readings
          </sch:assert>
      </sch:rule>
 </sch:pattern>

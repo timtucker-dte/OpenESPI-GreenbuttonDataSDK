@@ -64,15 +64,11 @@
          <sch:assert test="atom:updated" diagnostics="for future use">
              D102|ElectricPowerUsageSummary updated|verify the presence of a valid value
          </sch:assert>
+         <sch:assert test="count(/atom:feed/atom:entry[*/espi:ElectricPowerUsageSummary | */espi:UsageSummary]/atom:link[@rel='self' and @href=current()/atom:link[@rel='self']/@href])=1" diagnostics="for future use">
+             D086|ElectricPowerUsageSummary self link|verify that link is unique
+         </sch:assert>
          <sch:assert test="count(/atom:feed/atom:entry[*/espi:UsagePoint]/atom:link[@rel='related' and @href=current()/atom:link[@rel='up']/@href])=1" diagnostics="for future use">
              D088|ElectricPowerUsageSummary up link|verify that each ElectricPowerUsageSummary points to a single UsagePoint
-         </sch:assert>
-     </sch:rule>
-</sch:pattern>
-<sch:pattern name="/atom:feed/atom:entry[*/espi:ElectricPowerUsageSummary]">
-     <sch:rule context="/atom:feed/atom:entry[*/espi:ElectricPowerUsageSummary]">
-         <sch:assert test="count(/atom:feed/atom:entry[*/espi:ElectricPowerUsageSummary]/atom:link[@rel='self' and @href=current()/atom:link[@rel='self']/@href])=1" diagnostics="for future use">
-             D086|ElectricPowerUsageSummary self link|verify that link is unique
          </sch:assert>
      </sch:rule>
 </sch:pattern>

@@ -11,6 +11,9 @@
 </sch:pattern>
 <sch:pattern name="/atom:feed">
      <sch:rule context="/atom:feed">
+         <sch:assert test="atom:entry[*/espi:LocalTimeParameters]" diagnostics="for future use">
+             D136|LocalTimeParameters|verify the presence of a valid value
+         </sch:assert>
          <sch:assert test="atom:entry[*/espi:UsagePoint]" diagnostics="for future use">
              D006|UsagePoint|verify the presence of a valid value
          </sch:assert>
