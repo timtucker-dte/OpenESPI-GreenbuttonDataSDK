@@ -75,7 +75,7 @@ msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GenBadData\Gen_D074_BAD.xsl -v
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GenBadData\Gen_D075_BAD.xsl -v -o .\TestData\1hrLP_32Days_Additional2_M_D075_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GenBadData\Gen_D076_BAD.xsl -v -o .\TestData\1hrLP_32Days_Additional2_M_D076_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GenBadData\Gen_D077_BAD.xsl -v -o .\TestData\1hrLP_32Days_Additional2_M_D077_BAD.xml
-msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GenBadData\Gen_D079_BAD.xsl -v -o .\TestData\1hrLP_32Days_Additional2_M_D079_BAD.xml
+msxsl .\TestData\gas.xml .\GenBadData\Gen_D079_BAD.xsl -v -o .\TestData\gas_D079_BAD.xml
 msxsl .\TestData\water.xml .\GenBadData\Gen_D080_BAD.xsl -v -o .\TestData\water_D080_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D043_BAD.xsl -v -o .\TestData\1hrLP_32Days_D043_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GenBadData\Gen_D058_BAD.xsl -v -o .\TestData\1hrLP_32Days_D058_BAD.xml

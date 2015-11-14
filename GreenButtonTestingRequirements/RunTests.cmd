@@ -152,8 +152,8 @@ msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_08.xsl -v -o
 msxsl .\TestData\1hrLP_32Days_Additional2_M_D076_BAD.xml .\GeneratedTests\FB_08.xsl -v -o .\TestResults\FB_08_D076_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_09.xsl -v -o .\TestResults\FB_09_D077_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M_D077_BAD.xml .\GeneratedTests\FB_09.xsl -v -o .\TestResults\FB_09_D077_BAD.xml
-msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_10.xsl -v -o .\TestResults\FB_10_D079_GOOD.xml
-msxsl .\TestData\1hrLP_32Days_Additional2_M_D079_BAD.xml .\GeneratedTests\FB_10.xsl -v -o .\TestResults\FB_10_D079_BAD.xml
+msxsl .\TestData\gas.xml .\GeneratedTests\FB_10.xsl -v -o .\TestResults\FB_10_D079_GOOD.xml
+msxsl .\TestData\gas_D079_BAD.xml .\GeneratedTests\FB_10.xsl -v -o .\TestResults\FB_10_D079_BAD.xml
 msxsl .\TestData\water.xml .\GeneratedTests\FB_11.xsl -v -o .\TestResults\FB_11_D080_GOOD.xml
 msxsl .\TestData\water_D080_BAD.xml .\GeneratedTests\FB_11.xsl -v -o .\TestResults\FB_11_D080_BAD.xml
 msxsl .\TestData\1hrLP_32Days.xml .\GeneratedTests\FB_12.xsl -v -o .\TestResults\FB_12_D043_GOOD.xml
