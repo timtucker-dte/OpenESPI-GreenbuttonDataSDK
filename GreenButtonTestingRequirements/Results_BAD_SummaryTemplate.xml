@@ -542,14 +542,14 @@
     </assert>
 <assert TestID="D079">
      <TestName>ReadingType</TestName>
-     <Report>verify the presence of gas (therms) readings</Report>
+     <Report>verify the presence of gas readings -- therms, joule, ft3, or m3</Report>
          <Occurances>
             <Occurance>NONE</Occurance>
          </Occurances>
     </assert>
 <assert TestID="D080">
      <TestName>ReadingType</TestName>
-     <Report>verify the presence of water (USG) readings</Report>
+     <Report>verify the presence of water readings USG, ft3, or m3</Report>
          <Occurances>
             <Occurance>NONE</Occurance>
          </Occurances>
