@@ -519,13 +519,6 @@
             <Occurance>NONE</Occurance>
          </Occurances>
     </assert>
-<assert TestID="D075">
-     <TestName>ReadingType</TestName>
-     <Report>verify the presence of Wh forward readings</Report>
-         <Occurances>
-            <Occurance>NONE</Occurance>
-         </Occurances>
-    </assert>
 <assert TestID="D076">
      <TestName>ReadingType</TestName>
      <Report>verify the presence of Wh reverse readings</Report>

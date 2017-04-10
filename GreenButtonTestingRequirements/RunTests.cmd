@@ -146,8 +146,6 @@ msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_06.xsl -v -o
 msxsl .\TestData\1hrLP_32Days_Additional2_M_D071_BAD.xml .\GeneratedTests\FB_06.xsl -v -o .\TestResults\FB_06_D071_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_07.xsl -v -o .\TestResults\FB_07_D074_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M_D074_BAD.xml .\GeneratedTests\FB_07.xsl -v -o .\TestResults\FB_07_D074_BAD.xml
-msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_08.xsl -v -o .\TestResults\FB_08_D075_GOOD.xml
-msxsl .\TestData\1hrLP_32Days_Additional2_M_D075_BAD.xml .\GeneratedTests\FB_08.xsl -v -o .\TestResults\FB_08_D075_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_08.xsl -v -o .\TestResults\FB_08_D076_GOOD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M_D076_BAD.xml .\GeneratedTests\FB_08.xsl -v -o .\TestResults\FB_08_D076_BAD.xml
 msxsl .\TestData\1hrLP_32Days_Additional2_M.xml .\GeneratedTests\FB_09.xsl -v -o .\TestResults\FB_09_D077_GOOD.xml
