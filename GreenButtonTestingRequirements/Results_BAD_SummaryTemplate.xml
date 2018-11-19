@@ -535,7 +535,7 @@
     </assert>
 <assert TestID="D079">
      <TestName>ReadingType</TestName>
-     <Report>verify the presence of gas readings -- therms, joule, ft3, or m3</Report>
+     <Report>verify the presence of gas readings -- therms, joule, ft3, m3 or BTU</Report>
          <Occurances>
             <Occurance>NONE</Occurance>
          </Occurances>

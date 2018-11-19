@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2019 (x64) (http://www.altova.com) by Donald Coffin (REMI Networks) -->
 <xs:schema xmlns="http://naesb.org/espi" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://naesb.org/espi" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.7.20131008">
 	<!-- 
 ==========================================================================
  Schema: espiDerived.xsd
-    Version: 0.7.20140924     
-    Author: Ron Pasquarelli & Marty Burns (Hypertek for NIST), John Teeter (for NIST), Don Coffin (Remi Networks)
+    Version: 0.7.20181119    
+    Author: Ron Pasquarelli & Marty Burns (Hypertek for NIST), John Teeter (for NIST), Don Coffin (REMI Networks)
 ========================================================================== 
 
 This product includes software developed within the EnergyOS Initiative
-Copyright (c) 2011, 2012, 2013, 2014 EnergyOS.Org
+Copyright (c) 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018 EnergyOS.Org
 
 Licensed by EnergyOS.Org under one or more contributor license agreements.
 See the NOTICE section file below for additional information
@@ -46,7 +47,32 @@ The NAESB Copyright Policy may be found here http://www.naesb.org/pdf2/copyright
 
 The NAESB Intellectual Property Rights Policy Concerning Contributions and Comments may be found here http://www.naesb.org/pdf4/naesb_ipr_policy.doc. 
 
-______________________________________________________
+	______________________________________________________
+	NOTICE
+	______________________________________________________
+
+	Licensed by Green Button Alliance, Inc. under one or more contributor license agreements.
+	See the NOTICE section file below for additional information
+	regarding copyright ownership.  The GreenButtonAlliance.org licenses this file
+	to you under the Apache License, Version 2.0 (the "License"); you may not
+	use this file except in compliance with the License.  You may obtain a copy
+	of the License at:
+
+	  http://www.apache.org/licenses/LICENSE-2.0
+ 
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+
+	______________________________________________________
+	NOTICE
+	______________________________________________________
+	______________________________________________________
+	END NOTICE
+____________________________________________________________________________________________________________
 END NOTICE
 ______________________________________________________
 -->
@@ -66,12 +92,12 @@ self link to this resource</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="IdentifiedObject">
 				<xs:sequence>
-					<xs:element name="dataCustodianId" type="String64" minOccurs="0">
+					<xs:element name="dataCustodianId" type="String64">
 						<xs:annotation>
 							<xs:documentation>Contains the identifier for the Data Custodian. (e.g. "Sandbox Data Custodian")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="dataCustodianApplicationStatus" type="DataCustodianApplicationStatus" minOccurs="0">
+					<xs:element name="dataCustodianApplicationStatus" type="DataCustodianApplicationStatus">
 						<xs:annotation>
 							<xs:documentation>A code indicating the current status of the application. This value is provided by Data Custodian, cannot be modified by Third Party. (e.g. "2" => production)</xs:documentation>
 						</xs:annotation>
@@ -106,13 +132,12 @@ self link to this resource</xs:documentation>
 							<xs:documentation>Contains the base URI link to the authorization server. (e.g. "https://services.greenbuttondata.org/DataCustodian")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="thirdPartyNotifyUri" type="xs:anyURI" minOccurs="0">
+					<xs:element name="thirdPartyNotifyUri" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>URI used to notify ThirdParty that subscribed information is available. (e.g. "https://services.greenbuttondata.org/ThirdParty/espi/1_1/Notification")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<!--Johns adds-->
-					<xs:element name="authorizationServerAuthorizationEndpoint" type="xs:anyURI" minOccurs="0">
+					<xs:element name="authorizationServerAuthorizationEndpoint" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>An OAuth 2.0 URI used by the client to obtain authorization from the resource owner via user-agent redirection - {AuthorizationServer}{AuthorizationPath}. (e.g.  "https://services.greenbuttondata.org/DataCustodian/oauth/authorize" </xs:documentation>
 						</xs:annotation>
@@ -122,22 +147,22 @@ self link to this resource</xs:documentation>
 							<xs:documentation>A URI used by the client to register a Third Party with a Data Custodian via its {AuthorizationServer}{AuthorizationServer}{RegistrationPath}. (e.g. "https://services.greenbuttondata.org/DataCustodian/espi/1_1/register")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="authorizationServerTokenEndpoint" type="xs:anyURI" minOccurs="0">
+					<xs:element name="authorizationServerTokenEndpoint" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>An OAuth 2.0 URL used by the client to exchange an authorization grant for an access token, typically with client authentication. (e.g. "https://services.greenbuttondata.org/DataCustodian/oauth/token")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="dataCustodianBulkRequestURI" type="xs:anyURI" minOccurs="0">
+					<xs:element name="dataCustodianBulkRequestURI" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>{DataCustodianBulkRequestURI}  URI of DataCustodian’s Bulk Request endpoint.  The value is provided by the Data Custodian and cannot be modified by the ThirdParty. (e.g. "https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/Batch/Bulk/{BulkID}" => bulkID from BR={bulkId} from Scope)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="dataCustodianResourceEndpoint" type="xs:anyURI" minOccurs="0">
+					<xs:element name="dataCustodianResourceEndpoint" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>{ResourceServer}{ResourcePath}. (e.g. "https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="thirdPartyScopeSelectionScreenURI" type="xs:anyURI" minOccurs="0">
+					<xs:element name="thirdPartyScopeSelectionScreenURI" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>URI of the Scope Selection Screen used by the Retail Customer to select the characteristics of the Green Button data to be shared with the ThirdParty.  (e.g. "https://services.greenbuttondata.org/ThirdParty/espi/1_1/RetailCustomer/ScopeSelection")</xs:documentation>
 						</xs:annotation>
@@ -148,7 +173,7 @@ self link to this resource</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<!-- OAuth 2.0 fields -->
-					<xs:element name="client_secret" type="String512" minOccurs="0">
+					<xs:element name="client_secret" type="String512">
 						<xs:annotation>
 							<xs:documentation>A secret to be associated with this application, used to sign OAuth requests. This value is provided by Data Custodian (OAuth client_secret). (e.g. "secret")</xs:documentation>
 						</xs:annotation>
@@ -158,7 +183,7 @@ self link to this resource</xs:documentation>
 							<xs:documentation>The link to the logo image for the application. Size greater than 180 x 150 may be cropped or reduced (OAuth logo_uri). (e.g. "http://services.greenbuttondata.org/ThirdParty/favicon.png")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="client_name" type="String256" minOccurs="0">
+					<xs:element name="client_name" type="String256">
 						<xs:annotation>
 							<xs:documentation>The name of the application to which access will be granted (OAuth client_name). (e.g. "Green Button ThirdParty")</xs:documentation>
 						</xs:annotation>
@@ -168,12 +193,12 @@ self link to this resource</xs:documentation>
 							<xs:documentation>The link to the main page of the application (OAuth client_uri). (e.g. "https://services.greenbuttondata.org/ThirdParty")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="redirect_uri" type="xs:anyURI" minOccurs="0">
+					<xs:element name="redirect_uri" type="xs:anyURI" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>The default redirect back to the application after authorization grant (OAuth redirect uri). (e.g. "https://services.greenbuttondata.org/ThirdParty/espi/1_1/OAuthCallBack")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="client_id" type="String64" minOccurs="0">
+					<xs:element name="client_id" type="String64">
 						<xs:annotation>
 							<xs:documentation>Contains the identifier for the Third Party (OAuth client_id). (e.g. "ThirdParty Name")</xs:documentation>
 						</xs:annotation>
@@ -188,22 +213,22 @@ self link to this resource</xs:documentation>
 							<xs:documentation>A URI that points to a human-readable Policy document for the Third Party Application.  The policy usually describes how a Retail Customer's energy usage information will be used by the Third Party Application. (e.g. "http://services.greenbuttondata.org/ThirdParty/UsagePolicy")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="software_id" type="String32" minOccurs="0">
+					<xs:element name="software_id" type="String256">
 						<xs:annotation>
 							<xs:documentation>An identifier for the software that comprises the Third Party Application.  The software_id is asserted by the Third Party software and is intended to be shared between all copies of the Third Party software.  The value of this field MAY be a UUID [RFC4122]. (e.g. "MyCoolGreenButtonAnalyzer")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="software_version" type="String32" minOccurs="0">
+					<xs:element name="software_version" type="String32">
 						<xs:annotation>
 							<xs:documentation>A version identifier for the software that comprises a Third Party Application.  The value of this field is a string that is intended to be compared using string equality matching.  The value of the software_version SHOULD change on any update to the Third Party software. (e.g. "Version 1.00.00")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="client_id_issued_at" type="TimeType" minOccurs="0">
+					<xs:element name="client_id_issued_at" type="TimeType">
 						<xs:annotation>
 							<xs:documentation>Time date stamp at which this client_id was issued. Note the schema data type is TimeType and the presentation in OAuth message flow is xs:dateTime and requires a conversion when accessed. (e.g. "1403190000" => 2014-06-19T15:00:00Z)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="client_secret_expires_at" type="TimeType" minOccurs="0">
+					<xs:element name="client_secret_expires_at" type="TimeType">
 						<xs:annotation>
 							<xs:documentation>Date time at which this client_secret expires -- value of 0 means the client_secret never expires. (e.g. "0" => never expires)</xs:documentation>
 						</xs:annotation>
@@ -214,38 +239,38 @@ self link to this resource</xs:documentation>
 							<xs:documentation>Array of email addresses for people responsible for the Authorized Third Party Application.  These MAY be made available to Retail Customers for support requests for the Authorized Third Party application.  The Data Custodian Authorization Server MAY use the email addresses as identifiers for an Authorized Third Party application administrative page. (e.g. "support@energyos.org")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="token_endpoint_auth_method" type="TokenEndPointMethod" minOccurs="0">
+					<xs:element name="token_endpoint_auth_method" type="TokenEndPointMethod">
 						<xs:annotation>
 							<xs:documentation>The authentication method used by the OAuth 2.0 Token Endpoint to authenticate the Third Party Application. (e.g. "client_secret_basic")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="scope" type="String256" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="scope" type="String256" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation> Space separated list of scope values the Third Party Application may use when requesting access Tokens. (e.g. "FB=1_3_4_5_8_13_18_19_31_34_35_39;IntervalDuration=900_3600;BlockDuration=Daily; HistoryLength= 34128000;SubscriptionFrequency=Daily; AccountCollection=5;BR=1;")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="grant_types" type="GrantType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="grant_types" type="GrantType" minOccurs="2" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>Grant types this interface supports. (e.g. "client_credentials, authorization_code, refresh_token" in separate tags</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="response_types" type="ResponseType" minOccurs="0">
+					<xs:element name="response_types" type="ResponseType">
 						<xs:annotation>
 							<xs:documentation>Response types supported. (e.g. "code")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="registration_client_uri" type="xs:anyURI" minOccurs="0">
+					<xs:element name="registration_client_uri">
 						<xs:annotation>
 							<xs:documentation>{ClientConfigurationURI} A URI used by a registered client to manage registration information.  This URI is returned by the AuthorizationServer in the “registration_client_uri” field of the client information response. {AuthorizationServerRegistrationEndpoint}/ApplicationInformation/{ApplicationInformationID}. (e.g. "https://services.greenbuttondata.org/DataCustodian/espi/1_1/resource/ApplicationInformation/{ApplicationInformationID}/")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<!-- OAuth 2.0 fields END -->
-					<xs:element name="registration_access_token" minOccurs="0">
+					<xs:element name="registration_access_token">
 						<xs:annotation>
 							<xs:documentation>A credential obtained during Third Party registration with the Data Custodian to enable access to the ApplicationInformation resource. This is persisted in the ApplicationInformation resource structure. (e.g. "fe82518d-e325-404e-978c-c02f9339bccc")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="dataCustodianScopeSelectionScreenURI" minOccurs="0">
+					<xs:element name="dataCustodianScopeSelectionScreenURI">
 						<xs:annotation>
 							<xs:documentation>The URI used by the Third Party to redirect the Retail Customer to the Data Custodian Scope Selection Screen (note that this will likely involve a dialog with the Retail Customer including a log in authentication process). (e.g. http://localhost:8080/DataCustodian/RetailCustomer/ScopeSelection)</xs:documentation>
 						</xs:annotation>
@@ -270,7 +295,7 @@ Note: for privacy there is no identifier of the RetailCustomer in this structure
 				<xs:sequence>
 					<xs:element name="authorizedPeriod" type="DateTimeInterval" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Restricts access to requests or subscriptions within this date time interval. (e.g. "duration=31536000,start=1333252800")</xs:documentation>
+							<xs:documentation>Restricts access to requests or subscriptions within this date time interval. (e.g. "duration=31536000,start=1333252800", a duration value of "0" (zero) indicates an infinite duration period)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="publishedPeriod" type="DateTimeInterval" minOccurs="0">
@@ -278,17 +303,19 @@ Note: for privacy there is no identifier of the RetailCustomer in this structure
 							<xs:documentation>Restricts access to the objects within the associated resource that were published within this date time interval. (e.g. "duration=31536000" for most recent 365 days)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<!--
 					<xs:element name="access_token" type="String512" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Contains the access token associated with this authorization. (OAuth contains access_token for RetailCustomer resources obtained through authorization code flow, registration_access_token obtained in the registration process, and an access_token obtained through  client credentials flow) (e.g. "AA886A7A-078D-4307-A3D9-AA036796DBC3")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="status" type="AuthorizationStatus" minOccurs="0">
+-->
+					<xs:element name="status" type="AuthorizationStatus">
 						<xs:annotation>
 							<xs:documentation>The status of this authorization. (e.g. "1" => active)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="expires_at" type="TimeType" minOccurs="0">
+					<xs:element name="expires_at" type="TimeType">
 						<xs:annotation>
 							<xs:documentation>Expiration period for the accessToken. (e.g. "1403190000" for 2014-06-19T15:00:00Z)</xs:documentation>
 						</xs:annotation>
@@ -298,19 +325,21 @@ Note: for privacy there is no identifier of the RetailCustomer in this structure
 							<xs:documentation>Type of grant being negotiated for. (e.g. "authorization_code")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<!--					
 					<xs:element name="refresh_token" type="String512" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Used to obtain a fresh access_token. (e.g. "AA886A7A-078D-4307-A3D9-AA036796DBC4")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="scope" type="String256" minOccurs="0">
+-->
+					<xs:element name="scope" type="String256">
 						<xs:annotation>
 							<xs:documentation>Negotiated scope of the authorization. (e.g. "FB=1_3_4_5_13_14_15_1937_39;IntervalDuration=3600;BlockDuration=monthly;HistoryLength=94608000"</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="token_type" type="TokenType" minOccurs="0">
+					<xs:element name="token_type" type="TokenType">
 						<xs:annotation>
-							<xs:documentation>Type of token used. (e.g. "bearer")</xs:documentation>
+							<xs:documentation>Type of token used. (e.g. "Bearer")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="error" type="OAuthError" minOccurs="0">
@@ -328,14 +357,19 @@ Note: for privacy there is no identifier of the RetailCustomer in this structure
 							<xs:documentation>Specific error URI for last returned error. (e.g. "na" if not supported)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="resourceURI" type="xs:anyURI" minOccurs="0">
+					<xs:element name="resourceURI" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>resourceURI that represents the data set authorized. Can be used in a GET of the resource subscription. (e.g. "http://localhost:8080/DataCustodian/espi/1_1/resource/Batch/Subscription/1")</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="authorizationURI" type="xs:anyURI" minOccurs="0">
+					<xs:element name="authorizationURI" type="xs:anyURI">
 						<xs:annotation>
 							<xs:documentation>URI that can be used to update or delete this Authorization. (e.g. "http://localhost:8080/DataCustodian/espi/1_1/resource/Authorization/1")</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="customerResourceURI" type="xs:anyURI" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>URI that can be used to retrieve customer account information. Note will have differnt namespace than resourceURI</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -499,13 +533,110 @@ Value 0 in 'numerator' and 'denominator' means not applicable.</xs:documentation
 							<xs:documentation>[extension] Contains service delivery point information about the UsagePoint if it does represent the service delivery point.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="amiBillingReady" type="AmiBillingReadyKind" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Tracks the lifecycle of the metering installation at a usage point with respect to readiness for billing via advanced metering infrastructure reads.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="checkBilling" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] True if as a result of an inspection or otherwise, there is a reason to suspect that a previous billing may have been performed with erroneous data. Value should be reset once this potential discrepancy has been resolved.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="connectionState" type="UsagePointConnectedKind" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] State of the usage point with respect to connection to the network.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="estimatedLoad" type="SummaryMeasurement" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Estimated load.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="grounded" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] True if grounded.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isSdp" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] If true, this usage point is a service delivery point, i.e., a usage point where the ownership of the service changes hands.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="isVirtual" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] If true, this usage point is virtual, i.e., no physical location exists in the network where a meter could be located to collect the meter readings. For example, one may define a virtual usage point to serve as an aggregation of usage for all of a company's premises distributed widely across the distribution territory. Otherwise, the usage point is physical, i.e., there is a logical point in the network where a meter could be located to collect meter readings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minimalUsageExpected" type="xs:boolean" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] If true, minimal or zero usage is expected at this usage point for situations such as premises vacancy, logical or physical disconnect. It is used for readings validation and estimation.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="nominalServiceVoltage" type="SummaryMeasurement" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Nominal service voltage.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="outageRegion" type="String256" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Outage region in which this usage point is located.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="phaseCode" type="PhaseCodeKind" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Phase code. Number of wires and specific nominal phases can be deduced from enumeration literal values. For example, ABCN is three-phase, four-wire, s12n (splitSecondary12N) is single-phase, three-wire, and s1n and s2n are single-phase, two-wire.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ratedCurrent" type="SummaryMeasurement" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Current flow that this usage point is configured to deliver.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ratedPower" type="SummaryMeasurement" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Active power that this usage point is configured to deliver.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="readCycle" type="String256" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Cycle day on which the meter for this usage point will normally be read.  Usually correlated with the billing cycle.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="readRoute" type="String256" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Identifier of the route to which this usage point is assigned for purposes of meter reading. Typically used to configure hand held meter reading systems prior to collection of reads.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="serviceDeliveryRemark" type="String256" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Remarks about this usage point, for example the reason for it being rated with a non-nominal priority.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="servicePriority" type="String32" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>[extension] Priority of service for this usage point. Note that usage points at the same service location can have different priorities.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="pnodeRefs" type="PnodeRefs" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] A single electrical system Node or subset of Nodes where a
+physical injection or withdrawal of electricity is modeled and for which a Locational
+Marginal Price is calculated by the RTO/ISO and used for financial settlements.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="aggregateNodeRefs" type="AggregateNodeRefs" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] A sequence of references to AggregateNodes.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="ElectricPowerQualitySummary">
 		<xs:annotation>
-			<xs:documentation>A summary of power quality events. This information represents a summary of power quality information typically required by customer facility energy management systems. It is not intended to satisfy the detailed requirements of power quality monitoring. All values are as defined by measurementProtocol during the period. The standards typically also give ranges of allowed values; the information attributes are the raw measurements, not the “yes/no” determination by the various standards. See referenced standards for definition, measurement protocol and period.</xs:documentation>
+			<xs:documentation>A summary of power quality events. This information represents a summary of power quality information typically required by customer facility energy management systems. It is not intended to satisfy the detailed requirements of power quality monitoring. All values are as defined by measurementProtocol during the period. The standards typically also give ranges of allowed values; the information attributes are the raw measurements, not the "yes/no" determination by the various standards. See referenced standards for definition, measurement protocol and period.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="IdentifiedObject">
@@ -702,6 +833,9 @@ Value 0 in 'numerator' and 'denominator' means not applicable.</xs:documentation
 		<xs:complexContent>
 			<xs:extension base="IdentifiedObject">
 				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>[extension] List of rate options applied to the base tariff profile</xs:documentation>
+					</xs:annotation>
 					<xs:element name="billingPeriod" type="DateTimeInterval" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>The billing period to which the included measurements apply. May also be an off-bill arbitrary period.</xs:documentation>
@@ -802,6 +936,26 @@ Value 0 in 'numerator' and 'denominator' means not applicable.</xs:documentation
 							<xs:documentation>[extension] The commodity for this summary report</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="tariffProfile" type="String256" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] A schedule of charges; structure associated with Tariff that allows the definition of complex tariff structures such as step and time of use.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="readCycle" type="String256" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] Cycle day on which the meter for this usage point will normally be read.  Usually correlated with the billing cycle.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="tariffRiderRefs" type="TariffRiderRefs" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] List of rate options applied to the base tariff profile</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="billingChargeSource" type="BillingChargeSource" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] Source of Billing Charge</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -832,6 +986,46 @@ Value 0 in 'numerator' and 'denominator' means not applicable.</xs:documentation
 						<xs:annotation>
 							<xs:documentation>Local time zone offset from UTCTime. Does not include any daylight savings time offsets.</xs:documentation>
 						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProgramIdMappings">
+		<xs:annotation>
+			<xs:documentation>[extension] List of programIDmappings</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IdentifiedObject">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="programIdMapping">
+						<xs:annotation>
+							<xs:documentation>[extension] single program id mapping</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="tOUorCPPorConsumptionTier" type="tOUorCPPorConsumptionTier">
+									<xs:annotation>
+										<xs:documentation>[extension] Type of billing tariff profile uses</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="code">
+									<xs:annotation>
+										<xs:documentation>[extension] code (numeric value)</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="name">
+									<xs:annotation>
+										<xs:documentation>[extension] name associated with code</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="note" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>[extension] optional description of code</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
 					</xs:element>
 				</xs:sequence>
 			</xs:extension>
@@ -1005,6 +1199,11 @@ Other EUI Types
 							<xs:documentation>Agreement between the customer and the ServiceSupplier to pay for service at a specific service location. It provides for the recording of certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="tariffRiderRefs" type="TariffRiderRefs" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[extension] List of rate options applied to the base tariff profile</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1137,12 +1336,12 @@ Additional Complex Types
 		<xs:complexContent>
 			<xs:extension base="Object">
 				<xs:sequence>
-					<xs:element name="duration" type="UInt32" minOccurs="0">
+					<xs:element name="duration" type="UInt32">
 						<xs:annotation>
 							<xs:documentation>[correction] Duration of the interval, in seconds.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="start" type="TimeType" minOccurs="0">
+					<xs:element name="start" type="TimeType">
 						<xs:annotation>
 							<xs:documentation>[correction] Date and time that this interval started.</xs:documentation>
 						</xs:annotation>
@@ -1173,7 +1372,7 @@ Additional Complex Types
 	</xs:simpleType>
 	<xs:complexType name="Object">
 		<xs:annotation>
-			<xs:documentation>Superclass of all object classes to allow extensions.</xs:documentation>
+			<xs:documentation>Superclass of all object classes to allow extensions. Inheritance from Object provides an inherent extension mechanism permitting custom data to be included in a separate namespace.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="extension" type="xs:anyType" minOccurs="0" maxOccurs="unbounded">
@@ -1230,7 +1429,7 @@ Additional Complex Types
 			<xs:documentation>[extension] Line item of detail for additional cost</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="amount" type="Int48">
+			<xs:element name="amount" type="Int48" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Cost of line item.</xs:documentation>
 				</xs:annotation>
@@ -1240,7 +1439,7 @@ Additional Complex Types
 					<xs:documentation>Rounded to nearest increment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="dateTime" type="TimeType">
+			<xs:element name="dateTime" type="TimeType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Significant date for line item.</xs:documentation>
 				</xs:annotation>
@@ -1255,6 +1454,142 @@ Additional Complex Types
 					<xs:documentation>[extension] relevant measurment for line item.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="itemKind" type="ItemKind">
+				<xs:annotation>
+					<xs:documentation>[extension] Classification of a line item -- i.e. usage charge, taxes, etc...</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitCost" type="Int48" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>[extension] Per Unit cost.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="itemPeriod" type="DateTimeInterval" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>[extension] Time period covered by the LineItem, to support pricing changes in the middle of a billing period</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PnodeRefs">
+		<xs:annotation>
+			<xs:documentation>[extension] Sequence of references to Pnodes assoicated with a UsagePoint.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="pnodeRef" type="PnodeRef" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>pnodeRef structure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AggregateNodeRefs">
+		<xs:annotation>
+			<xs:documentation>[extension] References to associated AggregateNodes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="aggregateNodeRef" type="AggregateNodeRef" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TariffRiderRefs">
+		<xs:annotation>
+			<xs:documentation>[extension] References to associated Tariff Riders.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="tariffRiderRef" type="TariffRiderRef" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>[extension] Tariff Rider structure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PnodeRef">
+		<xs:annotation>
+			<xs:documentation>[extension] Reference to a Pnode.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="apnodeType" type="ApnodeType">
+				<xs:annotation>
+					<xs:documentation>type of pnode.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ref" type="String256">
+				<xs:annotation>
+					<xs:documentation>Reference to a Pnode.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="startEffectiveDate" type="TimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[extension] Starting Effective Date of Pnode assignment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endEffectiveDate" type="TimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[extension] Ending Effective Date of Pnode assignment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AggregateNodeRef">
+		<xs:annotation>
+			<xs:documentation>[extension] Reference to an AggregateNode (could be a load aggregation point which is a specialization of AggregateNode).</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="anodeType" type="AnodeType">
+				<xs:annotation>
+					<xs:documentation>Type of aggregateNode.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ref" type="String256">
+				<xs:annotation>
+					<xs:documentation>Reference to an AggregateNode.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="startEffectiveDate" type="TimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[extension] Starting Effective Date of ANode assignment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endEffectiveDate" type="TimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[extension] Ending Effective Date of ANode assignment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pnodeRef" type="PnodeRef" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TariffRiderRef">
+		<xs:annotation>
+			<xs:documentation>[extension] Reference to a Tariff Rider.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="riderType" type="String256">
+				<xs:annotation>
+					<xs:documentation>[extension] Rate options applied to the base tariff profile</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="enrollmentStatus" type="EnrollmentStatus">
+				<xs:annotation>
+					<xs:documentation>[extension] Retail Customer's Tariff Rider enrollment status</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="effectiveDate" type="TimeType">
+				<xs:annotation>
+					<xs:documentation>[extension] Effective date of Retail Customer's Tariff Rider enrollment status</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BillingChargeSource">
+		<xs:annotation>
+			<xs:documentation>[extension] Information about source of billing charge</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="agencyName" type="String256" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[extension] Name of billing source</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<!--
@@ -1265,60 +1600,205 @@ Enumerations
 	<!--OAuth Enumerations-->
 	<xs:simpleType name="TokenEndPointMethod">
 		<xs:annotation>
-			<xs:documentation>[extension]Token endpoint method in OAuth 2.0.</xs:documentation>
+			<xs:documentation>[extension] Token endpoint method in OAuth 2.0.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="String64">
-			<xs:enumeration value="client_secret_basic"/>
+			<xs:enumeration value="client_secret_basic">
+				<xs:annotation>
+					<xs:documentation>[extension] Indicates the client uses HTTP Basic authentication (RFC 6749 Section 2.3.1).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="GrantType">
 		<xs:annotation>
-			<xs:documentation>[extension] Grant type in OAuth 2.0.</xs:documentation>
+			<xs:documentation>[extension] OAuth 2.0 ESPI supported grant types.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="authorization_code"/>
-			<xs:enumeration value="client_credentials"/>
-			<xs:enumeration value="refresh_token"/>
+			<xs:enumeration value="authorization_code">
+				<xs:annotation>
+					<xs:documentation>[extension] OAuth 2.0 Authorization Code Grant flow (RFC 6749 Section 4.1).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="client_credentials">
+				<xs:annotation>
+					<xs:documentation>[extension] OAuth 2.0 Client Credentials Grant flow (RFC 6749 Section 4.4).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="refresh_token">
+				<xs:annotation>
+					<xs:documentation>[extension] OAuth 2.0 Refresh Token flow (RFC 6749 Section 6.).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ResponseType">
 		<xs:annotation>
-			<xs:documentation>[extension] OAuth 2.0 response type.</xs:documentation>
+			<xs:documentation>[extension] OAuth 2.0 ESPI supported response types.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="code"/>
-			<xs:enumeration value="token"/>
+			<xs:enumeration value="code">
+				<xs:annotation>
+					<xs:documentation>[extension] indicates a request for an authorization code (RFC 6749 Section 4.1.1)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TokenType">
 		<xs:annotation>
-			<xs:documentation>[extension] Type of OAuth 2.0 token.</xs:documentation>
+			<xs:documentation>[extension] OAuth 2.0 ESPI supported token types.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="bearer"/>
+			<xs:enumeration value="Bearer">
+				<xs:annotation>
+					<xs:documentation>[extension] A security token with the property that any party in possession of the token (a "bearer") can use the token in any way that any other party in possession of it can.  Using a bearer token does not require a bearer to prove possession of cryptographic key material (proof-of-possession) (RFC6750 Section 1.2).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OAuthError">
 		<xs:annotation>
-			<xs:documentation>[extension] Error code for OAuth 2.0.</xs:documentation>
+			<xs:documentation>[extension] OAuth 2.0 ESPI supported error codes.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="invalid_request"/>
-			<xs:enumeration value="invalid_client"/>
-			<xs:enumeration value="invalid_grant"/>
-			<xs:enumeration value="unauthorized_client"/>
-			<xs:enumeration value="unsupported_grant_type"/>
-			<xs:enumeration value="invalid_scope"/>
-			<xs:enumeration value="invalid_redirect_uri"/>
-			<xs:enumeration value="invalid_client_metadata"/>
-			<xs:enumeration value="invalid_client_id"/>
-			<xs:enumeration value="access_denied"/>
-			<xs:enumeration value="unsupported_response_type"/>
-			<xs:enumeration value="server_error"/>
-			<xs:enumeration value="temporarily_unavailable"/>
+			<xs:enumeration value="invalid_request">
+				<xs:annotation>
+					<xs:documentation>[extension] The request is missing a required parameter, includes an unsupported parameter value (other than grant type), repeats a parameter, includes multiple credentials, utilizes more than one mechanism for authenticating the client, or is otherwise malformed (RFC 6749 Sections 4.1.2.1 and 5.2).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="invalid_client">
+				<xs:annotation>
+					<xs:documentation>[extension] Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method).  The authorization server MAY return an HTTP 401 (Unauthorized) status code to indicate which HTTP authentication schemes are supported.  If the client attempted to authenticate via the Authorization request header field, the authorization server MUST respond with an HTTP 401 (Unauthorized) status code and include the WWW-Authenticate response header field matching the authentication scheme used by the client. (RFC 6749 Section 5.2).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="invalid_grant">
+				<xs:annotation>
+					<xs:documentation>[extension] The provided authorization code or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client (RFC 6749 Section 5.2).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="unauthorized_client">
+				<xs:annotation>
+					<xs:documentation>[extension] The authenticated client is not authorized to use this authorization grant type (RFC 6749 Sections 4.1.2.1 and 5.2).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="unsupported_grant_type">
+				<xs:annotation>
+					<xs:documentation>[extension] The authorization grant type is not supported by the authorization server  (RFC 6749 Section 5.2).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="invalid_scope">
+				<xs:annotation>
+					<xs:documentation>[extension] The requested scope is invalid, unknown, malformed, or exceeds the scope granted by the resource owner (RFC 6749 Sections 4.1.2.1 and 5.2).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="invalid_redirect_uri">
+				<xs:annotation>
+					<xs:documentation>[extension] The value of one or more redirection URIs is invalid (RFC 7591 Section 3.2.2).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="invalid_client_metadata">
+				<xs:annotation>
+					<xs:documentation>[extension] The value of one of the client metadata fields is invalid and server has rejected the request.  Not that an authorization server MAY choose to substitute a valid value for any requested parameter of a client's metadata (RFC 7591 Section 3.2.2).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="invalid_client_id">
+				<xs:annotation>
+					<xs:documentation>[extension - deprecated] Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method).  The authorization server MAY return an HTTP 401 (Unauthorized) status code to indicate which HTTP authentication schemes are supported.  If the client attempted to authenticate via the Authorization request header field, the authorization server MUST respond with an HTTP 401 (Unauthorized) status code and include the WWW-Authenticate response header field matching the authentication scheme used by the client.
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="access_denied">
+				<xs:annotation>
+					<xs:documentation>[extension] The resource owner or authorization server denied the request (RFC 6749 Section 4.1.2.1).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="unsupported_response_type">
+				<xs:annotation>
+					<xs:documentation>[extension] The authorization server does not support obtaining an authorization code using this method (RFC 6749 Section 4.1.2.1).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="server_error">
+				<xs:annotation>
+					<xs:documentation>[extension] The authorization server encountered an unexpected condition that prevented it from fulfilling the request  (RFC 6749 Section 4.1.2.1).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="temporarily_unavailable">
+				<xs:annotation>
+					<xs:documentation>[extension] The authorization server is currently unable to handle the request due to a temporary overloading or maintenance of the server (RFC 6749 Section 4.1.2.1).
+</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--ESPI Enumerations-->
+	<xs:simpleType name="ItemKind">
+		<xs:annotation>
+			<xs:documentation>[extension] Code for classification billing line items.</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="UInt16">
+			<xs:simpleType>
+				<xs:restriction base="UInt16">
+					<xs:enumeration value="1">
+						<xs:annotation>
+							<xs:documentation>[extension]Energy Generation Fee. A charge for generation of energy.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2">
+						<xs:annotation>
+							<xs:documentation>[extension]Energy Delivery Fee. A charge for delivery of energy.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3">
+						<xs:annotation>
+							<xs:documentation>[extension]Energy Usage Fee. A charge for electricity, natural gas, water consumption</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="4">
+						<xs:annotation>
+							<xs:documentation>[extension]Administrative Fee. A fee for administrative services.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="5">
+						<xs:annotation>
+							<xs:documentation>[extension]Tax. A local, state, or federal energy tax.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="6">
+						<xs:annotation>
+							<xs:documentation>[extension]Energy Generation Credit. A credit, discount or rebate for generation of energy.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="7">
+						<xs:annotation>
+							<xs:documentation>[extension]Energy Delivery Credit. A credit, discount or rebate for delivery of energy.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="8">
+						<xs:annotation>
+							<xs:documentation>[extension]Administrative Credit. A credit, discount or rebate for administrative services.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="9">
+						<xs:annotation>
+							<xs:documentation>[extension]Payment. A payment for a previous billing.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="10">
+						<xs:annotation>
+							<xs:documentation>[extension]Information. An informational line item.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 	<xs:simpleType name="AccumulationKind">
 		<xs:annotation>
 			<xs:documentation>Code indicating how value is accumulated over time for Readings of ReadingType. The list of valid values per the standard are defined in AccumulationBehaviorType.</xs:documentation>
@@ -1557,6 +2037,12 @@ Enumerations
 						<xs:annotation>
 							<xs:appinfo>refuse</xs:appinfo>
 							<xs:documentation>trash</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="26">
+						<xs:annotation>
+							<xs:appinfo>electricity TransmissionMetered</xs:appinfo>
+							<xs:documentation>Service taken directly from transmission system without transformation from standard transmission voltages</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
@@ -2682,7 +3168,7 @@ Enumerations
 							<xs:documentation>AB to Neutral</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
-					<xs:enumeration value="97">
+					<xs:enumeration value="41">
 						<xs:annotation>
 							<xs:appinfo>ACN</xs:appinfo>
 							<xs:documentation>Phases A, C and neutral.</xs:documentation>
@@ -2806,12 +3292,6 @@ Enumerations
 						<xs:annotation>
 							<xs:appinfo>BAv</xs:appinfo>
 							<xs:documentation>Phase B current or voltage relative to Phase A voltage</xs:documentation>
-						</xs:annotation>
-					</xs:enumeration>
-					<xs:enumeration value="41">
-						<xs:annotation>
-							<xs:appinfo>CAN</xs:appinfo>
-							<xs:documentation>CA to Neutral</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="40">
@@ -3350,7 +3830,8 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="TimePeriodOfInterest">
 		<xs:annotation>
-			<xs:documentation>[extension]</xs:documentation>
+			<xs:documentation>[extension] Specific time intervals (e.g., billing period, daily, seasonal, etc) used to identify specific periods of time.
+</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -3364,37 +3845,37 @@ Enumerations
 					<xs:enumeration value="8">
 						<xs:annotation>
 							<xs:appinfo>billingPeriod</xs:appinfo>
-							<xs:documentation>Captured during the billing period starting at midnight of the first day of the billing period (as defined by the billing cycle day). If during the current billing period, it specifies a period from the start of the current billing period until "now".</xs:documentation>
+							<xs:documentation>[extension] Captured during the billing period starting at midnight of the first day of the billing period (as defined by the billing cycle day). If during the current billing period, it specifies a period from the start of the current billing period until "now".</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="11">
 						<xs:annotation>
 							<xs:appinfo>daily</xs:appinfo>
-							<xs:documentation>Daily Period starting at midnight. If for the current day, this specifies the time from midnight to "now".</xs:documentation>
+							<xs:documentation>[extension] Daily Period starting at midnight. If for the current day, this specifies the time from midnight to "now".</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="13">
 						<xs:annotation>
 							<xs:appinfo>monthly</xs:appinfo>
-							<xs:documentation>Monthly period starting at midnight on the first day of the month. If within the current month, this specifies the period from the start of the month until "now."</xs:documentation>
+							<xs:documentation>[extension] Monthly period starting at midnight on the first day of the month. If within the current month, this specifies the period from the start of the month until "now."</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="22">
 						<xs:annotation>
 							<xs:appinfo>seasonal</xs:appinfo>
-							<xs:documentation>A season of time spanning multiple months. E.g. "Summer," "Spring," "Fall," and "Winter" based cycle. If within the current season, it specifies the period from the start of the current season until "now."</xs:documentation>
+							<xs:documentation>[extension] A season of time spanning multiple months. E.g. "Summer," "Spring," "Fall," and "Winter" based cycle. If within the current season, it specifies the period from the start of the current season until "now."</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="24">
 						<xs:annotation>
 							<xs:appinfo>weekly</xs:appinfo>
-							<xs:documentation>Weekly period starting at midnight on the first day of the week and ending the instant before midnight the last day of the week. If within the current week, it specifies the period from the start of the week until "now."</xs:documentation>
+							<xs:documentation>[extension] Weekly period starting at midnight on the first day of the week and ending the instant before midnight the last day of the week. If within the current week, it specifies the period from the start of the week until "now."</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="32">
 						<xs:annotation>
 							<xs:appinfo>specifiedPeriod</xs:appinfo>
-							<xs:documentation>For the period defined by the start and end of the TimePeriod element in the message.</xs:documentation>
+							<xs:documentation>[extension] For the period defined by the start and end of the TimePeriod element in the message.</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
@@ -4182,6 +4663,12 @@ Enumerations
 							<xs:documentation/>
 						</xs:annotation>
 					</xs:enumeration>
+					<xs:enumeration value="202">
+						<xs:annotation>
+							<xs:appinfo>Accepted</xs:appinfo>
+							<xs:documentation/>
+						</xs:annotation>
+					</xs:enumeration>
 					<xs:enumeration value="204">
 						<xs:annotation>
 							<xs:appinfo>No Content</xs:appinfo>
@@ -4289,7 +4776,7 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="DataCustodianApplicationStatus">
 		<xs:annotation>
-			<xs:documentation/>
+			<xs:documentation>A code indicating the current status of the application. This value is provided by Data Custodian, cannot be modified by Third Party.</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -4297,25 +4784,25 @@ Enumerations
 					<xs:enumeration value="1">
 						<xs:annotation>
 							<xs:appinfo>Review</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Review</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="2">
 						<xs:annotation>
 							<xs:appinfo>Production (Live)</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Production (Live)</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="3">
 						<xs:annotation>
 							<xs:appinfo>On Hold</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>On Hold</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="4">
 						<xs:annotation>
 							<xs:appinfo>Revoked</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Revoked</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
@@ -4324,7 +4811,7 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="ThirdPartyApplicatonStatus">
 		<xs:annotation>
-			<xs:documentation/>
+			<xs:documentation>A code indicating the current status of the application</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -4332,13 +4819,13 @@ Enumerations
 					<xs:enumeration value="1">
 						<xs:annotation>
 							<xs:appinfo>Development</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Development</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="2">
 						<xs:annotation>
 							<xs:appinfo>ReviewTest</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Review/Test</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="3">
@@ -4359,7 +4846,7 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="ThirdPartyApplicationType">
 		<xs:annotation>
-			<xs:documentation/>
+			<xs:documentation>A code indicating the type of application</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -4394,7 +4881,7 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="ThirdPartyApplicationUse">
 		<xs:annotation>
-			<xs:documentation/>
+			<xs:documentation>A code indicating the expected use of the application.</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -4402,31 +4889,31 @@ Enumerations
 					<xs:enumeration value="1">
 						<xs:annotation>
 							<xs:appinfo>EnergyManagement</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Energy Management</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="2">
 						<xs:annotation>
 							<xs:appinfo>Comparisons</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Analytical</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="3">
 						<xs:annotation>
 							<xs:appinfo>Government</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Governmental</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="4">
 						<xs:annotation>
 							<xs:appinfo>Academic</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Academic</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="5">
 						<xs:annotation>
 							<xs:appinfo>LawEnforcement</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Law Enforcement</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
@@ -4435,7 +4922,7 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="AuthorizationStatus">
 		<xs:annotation>
-			<xs:documentation/>
+			<xs:documentation>A code indicating the status of an Authorization</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -4443,19 +4930,19 @@ Enumerations
 					<xs:enumeration value="0">
 						<xs:annotation>
 							<xs:appinfo>Revoked</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Revoked</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="1">
 						<xs:annotation>
 							<xs:appinfo>Active</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Active</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="2">
 						<xs:annotation>
 							<xs:appinfo>Denied</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Denied</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
@@ -4464,7 +4951,7 @@ Enumerations
 	</xs:simpleType>
 	<xs:simpleType name="ESPIServiceStatus">
 		<xs:annotation>
-			<xs:documentation/>
+			<xs:documentation>The current status of the service</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="UInt16">
 			<xs:simpleType>
@@ -4472,18 +4959,82 @@ Enumerations
 					<xs:enumeration value="0">
 						<xs:annotation>
 							<xs:appinfo>Unavailable</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Unavailable</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="1">
 						<xs:annotation>
 							<xs:appinfo>Normal</xs:appinfo>
-							<xs:documentation/>
+							<xs:documentation>Normal; operational</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="AmiBillingReadyKind">
+		<xs:annotation>
+			<xs:documentation>Lifecycle states of the metering installation at a usage point with respect to readiness for billing via advanced metering infrastructure reads.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="amiCapable">
+				<xs:annotation>
+					<xs:documentation>Usage point is equipped with an AMI capable meter that is not yet currently equipped with a communications module.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="amiDisabled">
+				<xs:annotation>
+					<xs:documentation>Usage point is equipped with an AMI capable meter; however, the AMI functionality has been disabled or is not being used.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="billingApproved">
+				<xs:annotation>
+					<xs:documentation>Usage point is equipped with an operating AMI capable meter and accuracy has been certified for billing purposes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="enabled">
+				<xs:annotation>
+					<xs:documentation>Usage point is equipped with an AMI capable meter having communications capability.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nonAmi">
+				<xs:annotation>
+					<xs:documentation>Usage point is equipped with a non AMI capable meter.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nonMetered">
+				<xs:annotation>
+					<xs:documentation>Usage point is not currently equipped with a meter.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="operable">
+				<xs:annotation>
+					<xs:documentation>Usage point is equipped with an AMI capable meter that is functioning and communicating with the AMI network.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UsagePointConnectedKind">
+		<xs:annotation>
+			<xs:documentation>State of the usage point with respect to connection to the network.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="connected">
+				<xs:annotation>
+					<xs:documentation>The usage point is connected to the network and able to receive or send the applicable commodity (electricity, gas, water, etc.).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="logicallyDisconnected">
+				<xs:annotation>
+					<xs:documentation>The usage point has been disconnected through operation of a disconnect function within the meter present at the usage point.  The usage point is unable to receive or send the applicable commodity (electricity, gas, water, etc.)  A logical disconnect can often be achieved without utilising a field crew.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="physicallyDisconnected">
+				<xs:annotation>
+					<xs:documentation>The usage point has been disconnected from the network at a point upstream of the meter. The usage point is unable to receive or send the applicable commodity (electricity, gas, water, etc.). A physical disconnect is often achieved by utilising a field crew.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DstRuleType">
 		<xs:annotation>
@@ -4520,6 +5071,246 @@ Month: 3</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="HexBinary32"/>
 	</xs:simpleType>
+	<xs:simpleType name="ApnodeType">
+		<xs:annotation>
+			<xs:documentation>Aggregate Node Types for example:
+AG -  Aggregated Generation
+CPZ -  Custom Price Zone
+DPZ -  Default Price Zone
+LAP - Load Aggregation Point
+TH -  Trading  Hub
+SYS - System Zone
+CA - Control Area
+
+GA - generic aggregation
+EHV - 500 kV
+GH - generic hub
+ZN - zone
+INT - Interface
+BUS - Bus</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AG">
+				<xs:annotation>
+					<xs:documentation>Aggregated Generation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CPZ">
+				<xs:annotation>
+					<xs:documentation>Custom Price Zone</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DPZ">
+				<xs:annotation>
+					<xs:documentation>Default Price Zone</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LAP">
+				<xs:annotation>
+					<xs:documentation>Load Aggregation Point</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TH">
+				<xs:annotation>
+					<xs:documentation>Trading  Hub</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SYS">
+				<xs:annotation>
+					<xs:documentation>System Zone</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CA">
+				<xs:annotation>
+					<xs:documentation>Control Area</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DCA">
+				<xs:annotation>
+					<xs:documentation>Designated Congestion Area</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GA">
+				<xs:annotation>
+					<xs:documentation>generic aggregation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GH">
+				<xs:annotation>
+					<xs:documentation>generic hub</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EHV">
+				<xs:annotation>
+					<xs:documentation>500 kV - Extra High Voltage aggregate price nodes</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ZN">
+				<xs:annotation>
+					<xs:documentation>Zone</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="INT">
+				<xs:annotation>
+					<xs:documentation>Interface</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BUS">
+				<xs:annotation>
+					<xs:documentation>Bus</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AnodeType">
+		<xs:annotation>
+			<xs:documentation>Aggregated Nodes Types for example:
+ - SYS - System Zone/Region; 
+ - RUC - RUC Zone; 
+ - LFZ - Load Forecast Zone; 
+ - REG - Market Energy/Ancillary Service Region; 
+ - AGR - Aggregate Generation Resource; 
+ - POD - Point of Delivery; 
+ - ALR - Aggregate Load Resource; 
+ - LTAC - Load TransmissionAccessCharge (TAC) Group;
+ - ACA - Adjacent Control Area
+ - ASR - Aggregated System Resource
+ - ECA - Embedded Control Area</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SYS">
+				<xs:annotation>
+					<xs:documentation>System Zone/Region; </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RUC">
+				<xs:annotation>
+					<xs:documentation>RUC Zone</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LFZ">
+				<xs:annotation>
+					<xs:documentation>Load Forecast Zone</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REG">
+				<xs:annotation>
+					<xs:documentation>Market Energy/Ancillary Service Region; </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AGR">
+				<xs:annotation>
+					<xs:documentation>Aggregate Generation Resource; </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="POD">
+				<xs:annotation>
+					<xs:documentation>Point of Delivery; </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ALR">
+				<xs:annotation>
+					<xs:documentation>Aggregate Load Resource; </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LTAC">
+				<xs:annotation>
+					<xs:documentation>Load TransmissionAccessCharge (TAC) Group;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ACA">
+				<xs:annotation>
+					<xs:documentation>Adjacent Control Area</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASR">
+				<xs:annotation>
+					<xs:documentation>Aggregated System Resource</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ECA">
+				<xs:annotation>
+					<xs:documentation>Embedded Control Area</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tOUorCPPorConsumptionTier">
+		<xs:annotation>
+			<xs:documentation>[extension] Type of billing tariff profile uses</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="tou">
+				<xs:annotation>
+					<xs:documentation>[extension] Time of Use</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cpp">
+				<xs:annotation>
+					<xs:documentation>[extension] Consumption Peak Period</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="consumptiontier">
+				<xs:annotation>
+					<xs:documentation>[extension] Consumption Tier</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ParticipationCategoryMPM">
+		<xs:annotation>
+			<xs:documentation>For example:
+'Y' - Participates in both LMPM and SMPM
+'N' - Not included in LMP price measures
+'S' - Participates in SMPM price measures
+'L' - Participates in LMPM price measures
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Y">
+				<xs:annotation>
+					<xs:documentation>Participates in both LMPM and SMPM</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="N">
+				<xs:annotation>
+					<xs:documentation>Not included in LMP price measures</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation>Participates in SMPM price measures</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="L">
+				<xs:annotation>
+					<xs:documentation>Participates in LMPM price measures</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EnrollmentStatus">
+		<xs:annotation>
+			<xs:documentation>[extension] Current Tariff Rider enrollment status</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="unenrolled">
+				<xs:annotation>
+					<xs:documentation>[extension] Currently NOT enrolled in Tariff Rider</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="enrolled">
+				<xs:annotation>
+					<xs:documentation>[extension] Currently enrolled in the Tariff Rider</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="enrolledPending">
+				<xs:annotation>
+					<xs:documentation>[extension] Currently pending enrollment in Tariff Rider</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 	<!--
 =======================================
 Global Elements
@@ -4543,5 +5334,6 @@ Global Elements
 	<xs:element name="Object" type="Object"/>
 	<xs:element name="ServiceStatus" type="ServiceStatus"/>
 	<xs:element name="LocalTimeParameters" type="TimeConfiguration"/>
+	<xs:element name="ProgramIdMappings" type="ProgramIdMappings"/>
 	<xs:element name="BatchList" type="BatchListType"/>
 </xs:schema>
