@@ -39,6 +39,7 @@ This file incorporates with the author's permission part of the contents of date
 	<xsl:variable name="XML" select="/"/>
 	<xsl:variable name="gl_PresentationMultiplierElectricy" select="3"/>
 	<xsl:variable name="gl_PresentationMultiplierGas" select="5"/>
+  <xsl:variable name="gl_PresentationMultiplierCCF" select="3"/>
 	<xsl:variable name="gl_PresentationMultiplierTherms" select="0"/>
 	<xsl:variable name="gl_PresentationMultiplierWater" select="3"/>
 	<xsl:variable name="GL_DEBUG_TIME" select="0"/>
@@ -1144,6 +1145,16 @@ This file incorporates with the author's permission part of the contents of date
 				<xsl:value-of select="$DisplayUnits"/>
 				<xsl:text>BTU</xsl:text>
 			</xsl:when>
+      <xsl:when test=". = 119">
+        <xsl:variable name="DisplayUnits">
+          <xsl:call-template name="GetPowerOf10String">
+            <xsl:with-param name="po10" select="gl_PresentationMultiplierCCF"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:text>Real energy in </xsl:text>
+        <xsl:value-of select="$DisplayUnits"/>
+        <xsl:text>CCF</xsl:text>
+      </xsl:when>
 			<xsl:when test=". = 128">
 				<xsl:variable name="DisplayUnits">
 					<xsl:call-template name="GetPowerOf10String">
@@ -1193,6 +1204,16 @@ This file incorporates with the author's permission part of the contents of date
 				<xsl:value-of select="$DisplayUnits"/>
 				<xsl:text>BTU</xsl:text>
 			</xsl:when>
+			<xsl:when test=". = 119">
+        <xsl:variable name="DisplayUnits">
+          <xsl:call-template name="GetPowerOf10String">
+            <xsl:with-param name="po10" select="gl_PresentationMultiplierCCF"/>
+          </xsl:call-template>
+        </xsl:variable>
+        
+        <xsl:value-of select="$DisplayUnits"/>
+        <xsl:text>BTU</xsl:text>
+      </xsl:when>
 			<xsl:when test=". = 128">
 				<xsl:variable name="DisplayUnits">
 					<xsl:call-template name="GetPowerOf10String">
