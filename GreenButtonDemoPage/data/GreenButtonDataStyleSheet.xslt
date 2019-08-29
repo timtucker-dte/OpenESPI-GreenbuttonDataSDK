@@ -39,7 +39,7 @@ This file incorporates with the author's permission part of the contents of date
 	<xsl:variable name="XML" select="/"/>
 	<xsl:variable name="gl_PresentationMultiplierElectricy" select="3"/>
 	<xsl:variable name="gl_PresentationMultiplierGas" select="5"/>
-  <xsl:variable name="gl_PresentationMultiplierCCF" select="3"/>
+  <xsl:variable name="gl_PresentationMultiplierCCF" select="-2"/>
 	<xsl:variable name="gl_PresentationMultiplierTherms" select="0"/>
 	<xsl:variable name="gl_PresentationMultiplierWater" select="3"/>
 	<xsl:variable name="GL_DEBUG_TIME" select="0"/>
@@ -497,22 +497,30 @@ This file incorporates with the author's permission part of the contents of date
 									<xsl:variable name="valuePoTM" select="$XML/atom:feed/atom:entry[atom:link[@rel='self' and @href=$ReadingTypeLink]]/atom:content/espi:ReadingType/espi:powerOfTenMultiplier"/>
 									<xsl:variable name="valueMultiplier">
 										<xsl:choose>
+										  <!--  0 = None -->
 											<xsl:when test="$valuePoTM=0">1</xsl:when>
-											<!--  0 = None -->
-											<xsl:when test="$valuePoTM=1">10</xsl:when>
 											<!--  1 = deca=x10 -->
-											<xsl:when test="$valuePoTM=2">100</xsl:when>
+											<xsl:when test="$valuePoTM=1">10</xsl:when>
 											<!--  2 = hecto=x100 -->
-											<xsl:when test="$valuePoTM=3">1000</xsl:when>
+											<xsl:when test="$valuePoTM=2">100</xsl:when>
 											<!--  3 = kilo=x1000 -->
-											<xsl:when test="$valuePoTM=6">1000000</xsl:when>
+											<xsl:when test="$valuePoTM=3">1000</xsl:when>
+											<xsl:when test="$valuePoTM=4">10000</xsl:when>
+											<xsl:when test="$valuePoTM=5">100000</xsl:when>
 											<!--  6 = Mega=x106 -->
-											<xsl:when test="$valuePoTM=9">1000000000</xsl:when>
+											<xsl:when test="$valuePoTM=6">1000000</xsl:when>
+											<xsl:when test="$valuePoTM=7">10000000</xsl:when>
+											<xsl:when test="$valuePoTM=8">100000000</xsl:when>
 											<!--  9 = Giga=x109 -->
-											<xsl:when test="$valuePoTM=-3">0.001</xsl:when>
+											<xsl:when test="$valuePoTM=9">1000000000</xsl:when>
+											<xsl:when test="$valuePoTM=-1">0.1</xsl:when>
+											<xsl:when test="$valuePoTM=-2">0.01</xsl:when>
 											<!--  -3 = mili=x10-3 -->
-											<xsl:when test="$valuePoTM=-6">0.000001</xsl:when>
+											<xsl:when test="$valuePoTM=-3">0.001</xsl:when>
+											<xsl:when test="$valuePoTM=-4">0.0001</xsl:when>
+											<xsl:when test="$valuePoTM=-5">0.00001</xsl:when>
 											<!--  -6 = micro=x10-3 -->
+											<xsl:when test="$valuePoTM=-6">0.000001</xsl:when>											
 											<xsl:otherwise>1</xsl:otherwise>
 										</xsl:choose>
 									</xsl:variable>
@@ -1041,22 +1049,30 @@ This file incorporates with the author's permission part of the contents of date
 
 		<xsl:variable name="valueMultiplier">
 			<xsl:choose>
+        <!--  0 = None -->
 				<xsl:when test="$valuePoTM=0">1</xsl:when>
-				<!--  0 = None -->
+        <!--  1 = deca=x10 -->
 				<xsl:when test="$valuePoTM=1">10</xsl:when>
-				<!--  1 = deca=x10 -->
+        <!--  2 = hecto=x100 -->
 				<xsl:when test="$valuePoTM=2">100</xsl:when>
-				<!--  2 = hecto=x100 -->
+        <!--  3 = kilo=x1000 -->
 				<xsl:when test="$valuePoTM=3">1000</xsl:when>
-				<!--  3 = kilo=x1000 -->
+				<xsl:when test="$valuePoTM=4">10000</xsl:when>
+				<xsl:when test="$valuePoTM=5">100000</xsl:when>
+        <!--  6 = Mega=x106 -->
 				<xsl:when test="$valuePoTM=6">1000000</xsl:when>
-				<!--  6 = Mega=x106 -->
+				<xsl:when test="$valuePoTM=7">10000000</xsl:when>
+				<xsl:when test="$valuePoTM=8">100000000</xsl:when>
+        <!--  9 = Giga=x109 -->
 				<xsl:when test="$valuePoTM=9">1000000000</xsl:when>
-				<!--  9 = Giga=x109 -->
+				<xsl:when test="$valuePoTM=-1">0.1</xsl:when>
+				<xsl:when test="$valuePoTM=-2">0.01</xsl:when>
+        <!--  -3 = mili=x10-3 -->
 				<xsl:when test="$valuePoTM=-3">0.001</xsl:when>
-				<!--  -3 = mili=x10-3 -->
+				<xsl:when test="$valuePoTM=-4">0.0001</xsl:when>
+				<xsl:when test="$valuePoTM=-5">0.00001</xsl:when>
+        <!--  -6 = micro=x10-3 -->
 				<xsl:when test="$valuePoTM=-6">0.000001</xsl:when>
-				<!--  -6 = micro=x10-3 -->
 				<xsl:otherwise>1</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
